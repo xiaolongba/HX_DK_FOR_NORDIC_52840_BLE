@@ -10,11 +10,20 @@
 
 ### 内存布局
 
- <span id = "jump">我们</span>先来看看Nordic 52840的内存分布，如下图所示	
+
+<span id="jump">我们</span>先来看看Nordic 52840的内存分布，如下图所示	
 
 ![bootloader_memory_nrf52](https://raw.githubusercontent.com/xiaolongba/picture/master/bootloader_memory_nrf52.svg?sanitize=true)
 
-我们先暂时不要去理会上图左右两边的标注，就单看中间的Nordic 52840的内存分布结构。由上图可以知道，Nordic 52840是由**MBR**+**SoftDevice**+**Application**+**Bootloader**+**MBR parameter storage**+**Bootloader settings**组成，那这时候问题来了，这些都是些啥鸡巴玩意啊？兄弟，莫慌！听哥徐徐道来（如果短时间看不明白，可以暂时忽略这些）。
+我们先暂时不要去理会上图左右两边的标注，就单看中间的Nordic 52840的内存分布结构。由上图可以知道，Nordic 52840是由以下几个部分组成:
+- MBR
+- SoftDevice
+- Application
+- Bootloader
+- MBR parameter storage
+- Bootloader settings
+
+那这时候问题来了，这些都是些啥鸡巴玩意啊？兄弟，莫慌！听哥徐徐道来（如果短时间看不明白，可以暂时忽略这些）。
 
 - MBR
 
