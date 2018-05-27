@@ -51,7 +51,7 @@
 - [配件模块相关文档](http://wireless-tech.vicp.io:5555)
 
 ### 软件
-- [快速入门指南](http://wireless-tech.vicp.io:5555)
+- [快速入门指南](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
 - [开发环境搭建](http://wireless-tech.vicp.io:5555)
 - [红旭无线开发板实战教程](http://wireless-tech.vicp.io:5555)
 - [红旭无线开发板实战教程对应源码](http://wireless-tech.vicp.io:5555)
