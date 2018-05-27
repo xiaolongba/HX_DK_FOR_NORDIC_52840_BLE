@@ -131,7 +131,7 @@
 - [Nordic 52820型号、SDK以及协议栈的映射表（官方会不定期更新）](http://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52%2Fdita%2Fnrf52%2Fcompatibility_matrix%2FnRF52840_ic_revision_overview.html)
 - [Nordic 52840协议栈](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/S140-SD-v6/60624)
 - [Nordic 52840 BLE软件开发包，即SDK](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/nRF5-SDK-zip/59021)
-- [Nordic 52840 Zigbeec以及Thread软件开发包，即SDK](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/nRF5-SDK-for-Thread-and-Zigbee/67604)
+- [Nordic 52840 Zigbee以及Thread软件开发包，即SDK](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/nRF5-SDK-for-Thread-and-Zigbee/67604)
 - [Nordic 52840 SIG Mesh软件开发包，即SDK](https://www.nordicsemi.com/eng/nordic/Products/nRF5-SDK-for-Mesh/nRF5-SDK-for-Mesh/62377)
 
 其中，SDK包中均包含有API手册，如果需要更多的文档可以到[官方的文档中心](https://infocenter.nordicsemi.com/index.jsp)下载
