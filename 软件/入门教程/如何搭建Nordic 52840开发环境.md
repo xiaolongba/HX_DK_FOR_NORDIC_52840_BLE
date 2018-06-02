@@ -24,7 +24,7 @@
 [SEGGER Embedded Studio下载地址](https://www.segger.com/downloads/embedded-studio/).
 
 ## 如何安装
-**SEGGER Embedded Studio**的安装就是无脑式地点击**"Next"**就可以完成安装了.
+**SEGGER Embedded Studio**的安装就是无脑式地点击<code>Next</code>就可以完成安装了.
 
 ## 如何激活
 默认情况下,首次安装**SEGGER Embedded Studio**之后,该软件是没有激活的,也就是说还没有获取到license.那么如何获取免费的license呢,如下步聚所示 **(这里所有操作均是在windows下进行,其他平台的操作跟这个类似)**:
