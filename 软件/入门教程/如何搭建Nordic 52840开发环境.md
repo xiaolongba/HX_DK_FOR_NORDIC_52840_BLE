@@ -53,3 +53,8 @@ C:\Users\Administrator\Desktop\Wireless_Tech\nRF5_SDK_15.0.0_a53641a\examples\bl
 ## 延伸
 如果大家想要更加了解SEGGER Embedded Studio的使用,其实Nordic官方已经推出了7节视频教程,小编已经从Youtube中下载了这套高清无码格式的视频,下载地址如下:
 [SEGGER Embedded Studio官方视频教程](https://pan.baidu.com/s/1PyrMZPZVAqpLKxGpdbeIWA)
+
+## 技术交流
+![QQ群](https://raw.githubusercontent.com/xiaolongba/picture/master/QQ%20Group.jpg)
+
+**本文原创,转载请注明出处**
