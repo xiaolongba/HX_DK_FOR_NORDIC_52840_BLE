@@ -33,7 +33,7 @@
 [ESP32工具链下载地址](http://esp-idf.readthedocs.io/en/latest/get-started/windows-setup.html)
 ## 如何使用
 下载完**Visual Studio Code**和**ESP32工具链**,那么如何搭建起来开发ESP32呢?其实很简单,
-**ESP32工具链**其实完成了大部分的设备了,只需要解压就可以直接使用,具体的使用步骤如下所示:
+**ESP32工具链**其实已经完成了大部分的设置了,只需要解压就可以直接使用,具体的使用步骤如下所示:
 - 在自己选择适当的路径下解压ESP32工具链 **(不要存在有中文路径,路径也要尽可能地短)**
 ![解压ESP32工具链](https://raw.githubusercontent.com/xiaolongba/picture/master/unzip_toolchain.gif)
 
