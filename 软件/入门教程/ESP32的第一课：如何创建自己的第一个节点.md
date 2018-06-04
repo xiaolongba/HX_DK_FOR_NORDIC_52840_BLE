@@ -106,7 +106,7 @@ void app_main()
 
 ```
 
-直接将**user_app_main.c**里面的所有内容用上面的代码直接全覆盖并编译下载**(在此之前,还需要调用make menuconfig设置下载串口)**即可实现创建一个热点.**(注意:首次编译会很耗时,大概是4~5分钟那样,看电脑性能)**
+直接将**user_app_main.c**里面的所有内容用上面的代码直接全覆盖并编译下载 **(在此之前,还需要调用make menuconfig设置下载串口)** 可实现创建一个热点. **(注意:首次编译会很耗时,大概是4~5分钟那样,看电脑性能)**
 ![设置串口](https://raw.githubusercontent.com/xiaolongba/picture/master/make_menuconfig.gif)
 
 ![编译下载](https://raw.githubusercontent.com/xiaolongba/picture/master/build_and_download.gif)
