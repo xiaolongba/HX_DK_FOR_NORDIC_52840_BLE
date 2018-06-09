@@ -1,0 +1,14 @@
+--start-group
+"Output/wireless_tech_template Release/Obj/ses_nRF_Startup.o"
+"Output/wireless_tech_template Release/Obj/ses_nrf52840_Vectors.o"
+"Output/wireless_tech_template Release/Obj/system_nrf52840.o"
+"Output/wireless_tech_template Release/Obj/main.o"
+"Output/wireless_tech_template Release/Obj/thumb_crt0.o"
+"E:/Software Application/lib/libdebugio_mempoll_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"E:/Software Application/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"E:/Software Application/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"E:/Software Application/lib/libcpp_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"E:/Software Application/lib/libdebugio_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"E:/Software Application/lib/libvfprintf_v7em_fpv4_sp_d16_hard_t_le_eabi.o"
+"E:/Software Application/lib/libvfscanf_v7em_fpv4_sp_d16_hard_t_le_eabi.o"
+--end-group
