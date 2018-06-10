@@ -27,7 +27,7 @@
     ```
     ![添加头文件路径](https://raw.githubusercontent.com/xiaolongba/picture/master/%E6%B7%BB%E5%8A%A0%E5%A4%B4%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84.gif)
 
-经过上次的设置,你就可以编译通过模板工程了.
+经过上面的设置,你就可以编译通过模板工程了.
 
 ![编译模板工程](https://raw.githubusercontent.com/xiaolongba/picture/master/%E7%BC%96%E8%AF%91%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B.gif)
 
