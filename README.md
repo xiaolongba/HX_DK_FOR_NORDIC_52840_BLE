@@ -44,15 +44,15 @@
 
 ## 开发板资料
 ### 硬件
-- [开发板原理图](http://wireless-tech.vicp.io:5555)
-- [NRF52840 芯片相关文档](http://wireless-tech.vicp.io:5555)
-- [ESP32 芯片相关文档](http://wireless-tech.vicp.io:5555)
-- [板载芯片相关文档](http://wireless-tech.vicp.io:5555)
-- [配件模块相关文档](http://wireless-tech.vicp.io:5555)
+- [开发板原理图](https://github.com/xiaolongba/wireless-tech/tree/master/%E7%A1%AC%E4%BB%B6/%E7%BA%A2%E6%97%ADnRF52840%2BESP32%20Mini%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%8E%9F%E7%90%86%E5%9B%BE)
+- [NRF52840 芯片相关文档](https://github.com/xiaolongba/wireless-tech/tree/master/%E7%A1%AC%E4%BB%B6/NRF52840%20%E8%8A%AF%E7%89%87%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+- [ESP32 芯片相关文档]()
+- [板载芯片相关文档]()
+- [配件模块相关文档]()
 
 ### 软件
 - [快速入门指南](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
 - [开发环境搭建](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
-- [红旭无线开发板实战教程](http://wireless-tech.vicp.io:5555)
-- [红旭无线开发板实战教程对应源码](http://wireless-tech.vicp.io:5555)
+- [红旭无线开发板实战教程](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B)
+- [红旭无线开发板实战教程对应源码](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81)
 - [软件开发工具](http://wireless-tech.vicp.io:5555)
