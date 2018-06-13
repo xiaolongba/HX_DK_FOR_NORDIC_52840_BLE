@@ -4,7 +4,7 @@
 ![](https://raw.githubusercontent.com/xiaolongba/picture/master/emoji.jpg)
 
 ## 准备动作
-在准备开始**Hello World**之前,我们还必须要有一个Nordic 52840的模板工程,这样我们才可以在工程模版的基础上进行以后一序列地开发.基本上,所有的模板工程就跟嵌入式硬件的最小系统一样,只保留最基本的配置文件,里面什么内容都没有,只有一个入口函数**main()**,至于如何在官方的SDK开发包裁剪出工程模板,这里不表.已经裁剪好的工程模版在这里([请点我](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B).
+在准备开始**Hello World**之前,我们还必须要有一个Nordic 52840的模板工程,这样我们才可以在工程模版的基础上进行以后一序列地开发.基本上,所有的模板工程就跟嵌入式硬件的最小系统一样,只保留最基本的配置文件,里面什么内容都没有,只有一个入口函数**main()**,至于如何在官方的SDK开发包裁剪出工程模板,这里不表.已经裁剪好的工程模版在这里([请点我](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B)).
 
 ## 欢迎来到这个世界
 有了工程模版之后,那么接下来进行我们今天的主题,即打印输出**Hello World**.那么通过什么方式打印呢?可以通过以下两种方式:
