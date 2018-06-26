@@ -84,7 +84,7 @@
 | Bootloader settings                 | 0x000F F000 - 0x0010 0000 (4 kB)   |
 | MBR parameter storage               | 0x000F E000 - 0x000F F000 (4 kB)   |
 | Bootloader                          | 0x000F 8000 - 0x000F E000 (24 kB)  |
-| Application area (incl. free space) | x0002 0000 - 0x000F 8000 (864 kB)  |
+| Application area (incl. free space) | 0x0002 0000 - 0x000F 8000 (864 kB)  |
 | SoftDevice                          | 0x0000 1000 - 0x0002 0000 (124 kB) |
 | Master Boot Record (MBR)            | 0x0000 0000 - 0x0000 1000 (4 kB)   |
 
