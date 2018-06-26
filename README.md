@@ -40,7 +40,7 @@
 ## 引脚位图
 红旭无线开发板中的所有IO口均引出成2.54mm间隔的排针，具体如下图所示：
 
-![红旭开发板硬件模块图](http://wireless-tech.vicp.io:5555/Helon_Git/Wireless_Tech/raw/master/pics/%E7%BA%A2%E6%97%AD%E5%BC%80%E5%8F%91%E6%9D%BF%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%9B%BE.jpg)
+![红旭开发板硬件模块图](https://raw.githubusercontent.com/xiaolongba/wireless-tech/master/pics/%E7%BA%A2%E6%97%AD%E5%BC%80%E5%8F%91%E6%9D%BF%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%9B%BE.jpg)
 
 ## 开发板资料
 ### 硬件
