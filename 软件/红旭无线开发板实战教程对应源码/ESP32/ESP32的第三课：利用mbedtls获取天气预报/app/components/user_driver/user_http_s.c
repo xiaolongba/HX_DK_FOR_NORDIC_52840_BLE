@@ -41,10 +41,12 @@
 // static ip_addr_t ip_addr;
 static char host[32];
 static char filename[1024];
+/* 存放get请求的相关数据 */
 static uint8_t https_get_buffer[1024];
 /* 存放接收到GET请求的数据 */
-static uint8_t  recv_buff[1024];
-// static uint16_t max_content_len = 3072;
+static uint8_t  recv_buff[1024*2];
+/* 存放接收到的josn数据 */
+static char *recv_json_buff = NULL;
 
 /*
 ===========================
@@ -140,6 +142,44 @@ static esp_err_t http_url_parse(char *URL, char *host, char *filename)
 }
 
 /** 
+ * 解析获取得到的HTTPS的GET请求命令的内容
+ * 根据不同的内容类型分别解析并打印出来
+ * @param[in]   json_data:存放https的get请求有效的json数据   
+ * @retval      null 
+ * @par         修改日志 
+ *               Ver0.0.1:
+                     Helon_Chan, 2018/06/28, 初始化版本\n 
+ */
+static void https_get_reuest_json_data_parse(cJSON *json_data)
+{
+  cJSON *results = cJSON_GetObjectItem(json_data,"results");
+  cJSON *location = cJSON_GetObjectItem(cJSON_GetArrayItem(results,0),"location");
+  cJSON *daily = cJSON_GetObjectItem(cJSON_GetArrayItem(results,0),"daily");
+  ESP_LOGI("", "city: %s\n%s\n%s\n%s\n",
+           cJSON_Print(cJSON_GetObjectItem(location, "name")),
+           cJSON_Print(cJSON_GetArrayItem(daily, 0)),
+           cJSON_Print(cJSON_GetArrayItem(daily, 1)),
+           cJSON_Print(cJSON_GetArrayItem(daily, 2)));
+}
+/** 
+ * 解析获取得到的HTTPS的GET请求命令的内容关打印出来
+ * 截取获取得到的相关内容
+ * @param[in]   pvParameters:传入任务的值,这里传进来的get请求返回的json数据      
+ * @retval      null 
+ * @par         修改日志 
+ *               Ver0.0.1:
+                     Helon_Chan, 2018/06/28, 初始化版本\n 
+ */
+static void https_get_reuest_json_data_task(void *pvParameters)
+{
+  char *json_data = (char *)pvParameters;
+  https_get_reuest_json_data_parse(cJSON_Parse(os_strchr(json_data, '{')));  
+  os_free(json_data);
+  vTaskDelete(NULL);
+}
+
+
+/** 
  * 建立TCP连接,并创建TLS环境,并执行HTTPS GET/POST请求
  * 必须先使用TLS创建好加密环境才能执行HTTPS的GET请求,否则强制执行GET请求会报400错误
  * @param[in]   method:
@@ -154,8 +194,8 @@ static esp_err_t http_url_parse(char *URL, char *host, char *filename)
  */
 static int16_t tls_client_handle(uint8_t method)
 {
-  int ret, len;
-  static uint8_t https_body_header;
+  int ret, len;  
+  recv_json_buff = (char*)os_malloc(sizeof(char)*1280);
   mbedtls_net_context *net_ctx = (mbedtls_net_context *)os_malloc(sizeof(mbedtls_net_context));
   mbedtls_entropy_context *entropy = (mbedtls_entropy_context *)os_malloc(sizeof(mbedtls_entropy_context));
   mbedtls_ctr_drbg_context *ctr_drbg = (mbedtls_ctr_drbg_context *)os_malloc(sizeof(mbedtls_ctr_drbg_context));
@@ -392,7 +432,6 @@ static int16_t tls_client_handle(uint8_t method)
       ESP_LOGI(TAG, "failed\n  ! mbedtls_ssl_read returned %d\n\n", ret);
       break;
     }
-
     if (ret == 0)
     {
       ESP_LOGI(TAG, "\n\nEOF\n\n");      
@@ -401,14 +440,18 @@ static int16_t tls_client_handle(uint8_t method)
     else
     {
       len = ret;
-      ESP_LOGI(TAG, " %d bytes read\n\n%s", len, recv_buff);
-      https_body_header++;
-      /* 因为第一次读取到的HTTPS的Header,第二次才是我们要的内容即Body */
-      if(https_body_header == 2)
+      os_memcpy(recv_json_buff,recv_buff,len);
+      // recv_json_buff = os_strchr((char *)recv_buff, '{');
+      // ESP_LOGI(TAG, " %d bytes read\n\n%s", len, recv_json_buff);
+      ret = xTaskCreate(https_get_reuest_json_data_task,
+                        "https_get_reuest_json_data_task",
+                        1024 * 4,
+                        recv_json_buff,
+                        3,
+                        NULL);
+      if(ret != pdPASS)
       {
-        https_body_header = 0;
-        // char *cjosn_string = cJSON_Print(cJSON_Parse(recv_buff));
-        // ESP_LOGI(TAG,"%s\n",cJSON_Print(cJSON_Parse((char*)recv_buff)));
+        ESP_LOGI(TAG, "https_get_reuest_json_data_task create failure,reason is %d\n\n", ret);
       }
     }
   } while (1);

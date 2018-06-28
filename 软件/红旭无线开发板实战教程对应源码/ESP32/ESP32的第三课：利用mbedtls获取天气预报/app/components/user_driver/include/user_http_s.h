@@ -22,12 +22,12 @@
 /* 远程服务器的端口 */
 #define REMOTE_PORT             "443"
 /* 获取天气预报的地址 */
-#define HTTPS_URL_BJ            "https://api.thinkpage.cn/v3/weather/now.json?key=24qbvr1mjsnukavo&location=beijing&language=zh-Hans&unit=c"
-#define HTTPS_URL_SH            "https://www.sojson.com/open/api/weather/json.shtml?city=上海"
-#define HTTPS_URL_GZ            "https://www.sojson.com/open/api/weather/json.shtml?city=广州"
-#define HTTPS_URL_SZ            "https://wthrcdn.etouch.cn/weather_mini?city=%E6%B7%B1%E5%9C%B3"
+#define HTTPS_URL_BJ            "https://api.seniverse.com/v3/weather/daily.json?key=4nik0ivxfmxfjzz1&location=beijing&language=zh-Hans&unit=c&start=0&days=5"
+#define HTTPS_URL_SH            "https://api.seniverse.com/v3/weather/daily.json?key=4nik0ivxfmxfjzz1&location=shanghai&language=zh-Hans&unit=c&start=0&days=5"
+#define HTTPS_URL_GZ            "https://api.seniverse.com/v3/weather/daily.json?key=4nik0ivxfmxfjzz1&location=guangzhou&language=zh-Hans&unit=c&start=0&days=5"
+#define HTTPS_URL_SZ            "https://api.seniverse.com/v3/weather/daily.json?key=4nik0ivxfmxfjzz1&location=shenzhen&language=zh-Hans&unit=c&start=0&days=5"
 /* GET请求 */
-#define GET                     "GET /%s HTTP/1.1\r\nAccept:*/*\r\ncharset=utf-8\r\nHost:%s\r\n\r\n"
+#define GET                     "GET /%s HTTP/1.1\r\nAccept:*/*\r\nHost:%s\r\n\r\n"
 /* POST请求,此章节暂时不讲 */
 #define POST                    "POST /%s HTTP/1.1\r\nAccept: */*\r\nContent-Length: %d\r\nContent-Type: application/x-www-form-urlencoded; charset=utf-8\r\nHost: %s\r\nConnection: Keep-Alive\r\n\r\n%s"
 /* 这里的内容由用户自己填充,具体内容用户自己填充 */

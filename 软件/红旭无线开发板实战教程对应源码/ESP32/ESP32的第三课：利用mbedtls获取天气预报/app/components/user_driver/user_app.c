@@ -63,6 +63,40 @@ static ledc_timer_config_t gs_p_m_ledc_timer_config = {
     .speed_mode = LEDC_HIGH_SPEED_MODE,
     .timer_num = LEDC_TIMER_0};
 
+
+/** 
+ * wifi事件处理函数
+ * @param[in]   ctx     :表示传入的事件类型对应所携带的参数
+ * @param[in]   event   :表示传入的事件类型
+ * @retval      
+ *              ESP_OK  : succeed
+ *              其他    :失败 
+ * @par         修改日志 
+ *               Ver0.0.1:
+                    Helon_Chan, 2018/06/04, 初始化版本\n 
+ */
+static void https_request_by_get_task(void *pvParameters)
+{
+  switch (*((uint8_t *)pvParameters))
+  {
+  case 1:
+    https_request_by_GET(HTTPS_URL_BJ);
+    break;
+  case 2:
+    https_request_by_GET(HTTPS_URL_SH);
+    break;
+  case 3:
+    https_request_by_GET(HTTPS_URL_GZ);
+    break;
+  case 4:
+    https_request_by_GET(HTTPS_URL_SZ);
+    break;
+  default:
+    break;
+  }
+  vTaskDelete(NULL);
+}
+
 /** 
  * 用户的短按处理函数
  * @param[in]   key_num                 :短按按键对应GPIO口
@@ -75,6 +109,7 @@ static ledc_timer_config_t gs_p_m_ledc_timer_config = {
 static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
 {
   static uint8_t s_sigle_click_num = 0;
+  static uint8_t s_city_select = 0;
   switch (key_num)
   {
   case BOARD_BUTTON:
@@ -87,7 +122,7 @@ static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
       case 0:
         r_fade_stop();
         g_fade_start();
-        s_sigle_click_num++;
+        s_sigle_click_num++;        
         break;
       case 1:
         g_fade_stop();
@@ -99,6 +134,21 @@ static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
         r_fade_start();
         s_sigle_click_num = 0;
         break;
+      }
+      s_city_select++;
+      if(s_city_select ==5)
+      {
+        s_city_select = 1;
+      }
+      int err_code = xTaskCreate(https_request_by_get_task,
+                                 "https_request_by_get_task",
+                                 1024 * 8,
+                                 &s_city_select,
+                                 3,
+                                 NULL);
+      if (err_code != pdPASS)
+      {
+        ESP_LOGI("event_handler", "https_request_by_get_task create failure,reason is %d\n", err_code);
       }
       break;
     case 2:
@@ -170,26 +220,8 @@ static void user_app_rgb_init(void)
   esp_err_t err_code;
   err_code = rgb_init(&gs_p_m_ledc_timer_config, gs_m_ledc_channel_config, 3);
   ESP_LOGI("user_app_rgb_init", "rgb_init is %d\n", err_code);
-
   // esp_err_t = r_fade_start();
   ESP_LOGI("user_app_rgb_init", "r_fade_start is %d\n", r_fade_start());
-}
-
-/** 
- * wifi事件处理函数
- * @param[in]   ctx     :表示传入的事件类型对应所携带的参数
- * @param[in]   event   :表示传入的事件类型
- * @retval      
- *              ESP_OK  : succeed
- *              其他    :失败 
- * @par         修改日志 
- *               Ver0.0.1:
-                    Helon_Chan, 2018/06/04, 初始化版本\n 
- */
-static void https_request_by_get_task(void *pvParameters)
-{
-  https_request_by_GET(HTTPS_URL_BJ);
-  vTaskDelete(NULL);
 }
 
 /** 
@@ -208,17 +240,7 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
   switch (event->event_id)
   {
   case SYSTEM_EVENT_STA_GOT_IP:
-    ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_GOT_IP\n");
-    int err_code = xTaskCreate(https_request_by_get_task,
-                               "https_request_by_get_task",
-                               1024 * 8,
-                               NULL,
-                               3,
-                               NULL);
-    if(err_code != pdPASS)                            
-    {
-      ESP_LOGI("event_handler", "https_request_by_get_task create failure,reason is %d\n", err_code);
-    }
+    ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_GOT_IP\n");    
     break;
   case SYSTEM_EVENT_STA_CONNECTED:
     ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_CONNECTED\n");
@@ -246,8 +268,8 @@ static void user_wifi_init(void)
   ESP_ERROR_CHECK(esp_wifi_init(&cfg));
   wifi_config_t wifi_config = {
       .sta = {
-          .ssid = "Feidiao_RD",
-          .password = "feidiaoJk",
+          .ssid = "Helon",
+          .password = "zjh147258369@",
       },
   };
   ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
