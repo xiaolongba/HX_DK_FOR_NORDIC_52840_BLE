@@ -65,15 +65,12 @@ static ledc_timer_config_t gs_p_m_ledc_timer_config = {
 
 
 /** 
- * wifi事件处理函数
- * @param[in]   ctx     :表示传入的事件类型对应所携带的参数
- * @param[in]   event   :表示传入的事件类型
- * @retval      
- *              ESP_OK  : succeed
- *              其他    :失败 
+ * https的get请求任务，用于处理并解析北上广深的天气预报的json数据
+ * @param[in]   pvParameters     :表示传进任务的值，此任务传进来的是城市的选择
+ * @retval      null            
  * @par         修改日志 
  *               Ver0.0.1:
-                    Helon_Chan, 2018/06/04, 初始化版本\n 
+                    Helon_Chan, 2018/06/29, 初始化版本\n 
  */
 static void https_request_by_get_task(void *pvParameters)
 {
@@ -120,19 +117,23 @@ static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
       switch (s_sigle_click_num)
       {
       case 0:
-        r_fade_stop();
-        g_fade_start();
+        r_fade_start();       
         s_sigle_click_num++;        
         break;
       case 1:
+        r_fade_stop();
+        g_fade_start();
+        s_sigle_click_num++;
+        break;
+      case 2:
         g_fade_stop();
         b_fade_start();
         s_sigle_click_num++;
         break;
-      case 2:
+      case 3:
         b_fade_stop();
         r_fade_start();
-        s_sigle_click_num = 0;
+        s_sigle_click_num = 1;
         break;
       }
       s_city_select++;
@@ -140,6 +141,7 @@ static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
       {
         s_city_select = 1;
       }
+      /* 创建https的get请求的任务，用于处理接收到的天气预报json数据 */
       int err_code = xTaskCreate(https_request_by_get_task,
                                  "https_request_by_get_task",
                                  1024 * 8,
@@ -220,8 +222,8 @@ static void user_app_rgb_init(void)
   esp_err_t err_code;
   err_code = rgb_init(&gs_p_m_ledc_timer_config, gs_m_ledc_channel_config, 3);
   ESP_LOGI("user_app_rgb_init", "rgb_init is %d\n", err_code);
-  // esp_err_t = r_fade_start();
-  ESP_LOGI("user_app_rgb_init", "r_fade_start is %d\n", r_fade_start());
+  /* 默认上电不亮灯 */
+  // ESP_LOGI("user_app_rgb_init", "r_fade_start is %d\n", r_fade_start());
 }
 
 /** 
@@ -240,7 +242,11 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
   switch (event->event_id)
   {
   case SYSTEM_EVENT_STA_GOT_IP:
-    ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_GOT_IP\n");    
+    ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_GOT_IP\n");
+    /* 1.连接上AP并获取得到IP地址
+       2.初始化按键防止还没有获取得到IP地址
+       3.此时还可以按下按键获取北上广深的天气预报 */
+    user_app_key_init();
     break;
   case SYSTEM_EVENT_STA_CONNECTED:
     ESP_LOGI("event_handler","\nSYSTEM_EVENT_STA_CONNECTED\n");
@@ -268,8 +274,8 @@ static void user_wifi_init(void)
   ESP_ERROR_CHECK(esp_wifi_init(&cfg));
   wifi_config_t wifi_config = {
       .sta = {
-          .ssid = "Helon",
-          .password = "zjh147258369@",
+          .ssid = "你的wifi账号",
+          .password = "你的wifi密码",
       },
   };
   ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA));
@@ -288,7 +294,7 @@ static void user_wifi_init(void)
  */
 void startup_initialization_task(void *pvParameters)
 {
-  user_app_key_init();
+  // user_app_key_init();
   user_app_rgb_init();
   user_wifi_init();
   /* 初始化完成,删除这个任务 */
