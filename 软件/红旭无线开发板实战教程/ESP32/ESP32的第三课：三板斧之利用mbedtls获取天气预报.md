@@ -37,7 +37,7 @@
       HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。
 ![httpmessage](http://www.runoob.com/wp-content/uploads/2013/11/httpmessage.jpg)
 
-      以下是小编在实战中获取得到的状行行+消息报头的内容:
+      以下是小编在实战中获取得到的状态行+消息报头的内容:
       ```c
       HTTP/1.1 200 OK
       Date: Sat, 30 Jun 2018 08:47:28 GMT
