@@ -153,6 +153,12 @@ tls_client_handle(GET_REQ);                        ///< TCP相关的写和读操
 ## 源码
 实现本章节中所有功能的源码均已经放置[红旭官方的GitHub地址](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/ESP32%E7%9A%84%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9A%E5%88%A9%E7%94%A8mbedtls%E8%8E%B7%E5%8F%96%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/app)了
 
+## 扩展
+上面有提到TLS,那么可能很多有人就会问了TLS和SSL到底两者之前有啥区别?它们的工作流程是啥?这里我推荐大家可以看看这几篇文章,写得很不错.
+- [SSL-TLS 双向认证(一) -- SSL-TLS工作原理](https://blog.csdn.net/espressif/article/details/78541410)
+- [SSL-TLS 双向认证(二) -- 基于mosquittto的MQTT双向认证](https://blog.csdn.net/espressif/article/details/78541435)
+- [SSL-TLS 双向认证(三) –- ESP8266与mosquitto的MQTT双向认证](https://blog.csdn.net/espressif/article/details/78541454)
+
 ## 技术交流
 ![QQ群](https://raw.githubusercontent.com/xiaolongba/picture/master/QQ%20Group.jpg)
 
