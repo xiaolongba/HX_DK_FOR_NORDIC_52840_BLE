@@ -50,7 +50,8 @@ GET请求只是HTTP请求中的其中一种方法,还有另外一个比较常用
   以上部分内容以及更多的HTTP详情就参考[菜鸟教程](http://www.runoob.com/http/http-messages.html)
 
 - 乐鑫的库还是第三方的库
-当时小编在做出选择的时候挣扎了好久,进行过激烈的思想斗争.最终下定决心选择了第三方的库即mbedtls(更多的详情[请点我](https://www.mbed.com/zh-cn/technologies/security/mbed-tls/)).理由如下:
+
+  当时小编在做出选择的时候挣扎了好久,进行过激烈的思想斗争.最终下定决心选择了第三方的库即mbedtls(更多的详情[请点我](https://www.mbed.com/zh-cn/technologies/security/mbed-tls/)).理由如下:
 
     - 加解密库
     
