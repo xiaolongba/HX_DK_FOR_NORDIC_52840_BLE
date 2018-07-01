@@ -169,9 +169,9 @@
       enum test g_em_value;
       ```
     - 共同体/联合体变量
-    ```c
-    union test g_un_value;
-    ```
+      ```c
+      union test g_un_value;
+      ```
         
 - 局部静态变量&局部变量
   - 普通变量
