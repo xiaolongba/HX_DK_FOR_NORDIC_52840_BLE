@@ -7,7 +7,7 @@
   
 - Nordic 52840软件开发包
   
-  该子目录存放各个不同版本的SDK软件开发包,官方会不断增加并完善SDK,然后发布新版本的SDK.因此,SDK也是会不断更新的.更多详情,请参考[Nordic 52840软件开发包](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/Nordic%2052840%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%8C%85)
+  该子目录存放各个不同版本的SDK软件开发包,官方会不断增加并完善SDK&API手册,然后发布新版本的SDK.因此,SDK也是会不断更新的.更多详情,请参考[Nordic 52840软件开发包](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/Nordic%2052840%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%8C%85)
   
 - PC上位机软件
 
