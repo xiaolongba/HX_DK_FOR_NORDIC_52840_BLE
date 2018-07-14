@@ -9,6 +9,7 @@
 红旭无线开发板包括丰富的硬件资源，**NRF52840**以及**ESP32**模块的IO口均全部引出。同时，红旭无线开发板支持**WiFi**、**BLE5.0**、**Zigbee3.0**、**Thread**、**2.4G**以及**SIG MESH**等市面上主流的无线通讯协议，基本上满足用户大部分的功能需求，特别是智能家居的应用场景。
 
 红旭无线开发板可以同时运行**Wifi+BLE5.0+Zigbee/Thread**或者**Wifi+SIG MESH**两种模式，并且提供丰富的示例以及软件实战教程，希望大家通过红旭无线开发板学习到这些无线技术，从而在工作上如鱼得水，获得更高的薪酬，为共和国的无线事业作出贡献，登上人生巅峰。
+[![NRF52840+ESP32 Mini海报图](https://raw.githubusercontent.com/xiaolongba/wireless-tech/master/pics/ESP32%2BNordic%2052840%20Mini.jpg)](https://shop507575225.taobao.com/index.htm?spm=2013.1.w5002-16973646476.2.56ea1f47dUx4Ha)
 ## 硬件规格
 - Nordic高性能多协议共存的SoC nRF52840
     - 32-bit ARM Cortex-M4F @ 64MHz内核 
