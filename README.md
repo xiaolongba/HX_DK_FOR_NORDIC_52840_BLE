@@ -57,6 +57,9 @@
 - [红旭无线开发板实战教程对应源码](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81)
 - [软件开发工具](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/PC%E4%B8%8A%E4%BD%8D%E6%9C%BA%E8%BD%AF%E4%BB%B6/README.md)
 
+## 技术交流
+![QQ群](https://raw.githubusercontent.com/xiaolongba/picture/master/QQ%20Group.jpg)
+
 ## 如何下载红旭无线开发板资料
 原本这里的内容其实应该很早就要面世的.但是,我们团队内部一直就生成PDF文档以及源码上传至百度网盘还是将Markdown写的文档以及源码上传至Github上没有一致的结论.两种不同的意见如下:
  - 百度网盘
