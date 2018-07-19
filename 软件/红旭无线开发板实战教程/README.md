@@ -15,6 +15,10 @@
       
 - nRF52840
 
-  - [Nordic 52840的第一课:Hello World](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/Nordic%2052840%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AF%BEHello%20World.md)
+  - [Nordic 52840基础教程第一课:Hello World](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/Nordic%2052840%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AF%BEHello%20World.md)
   
     该文档讲解了如何使用模板工程创建自己的第一个**Hello World**工程,并介绍了通过**UART**以及**RTT**打印输出Hello World信息
+    
+  - [Sig Mesh第一课:基于Generic OnOff Model的Mesh点灯应用](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/Sig%20Mesh%E7%AC%AC%E4%B8%80%E8%AF%BE:%E5%9F%BA%E4%BA%8EGeneric%20OnOff%20Model%E7%9A%84Mesh%E7%82%B9%E7%81%AF%E5%BA%94%E7%94%A8.md)
+  
+    该文档主要是讲解如何通过Nordic官方的Mesh SDK包,创建一个标准的Generic OnOff模型
