@@ -43,13 +43,14 @@
 
 ![红旭开发板硬件模块图](https://raw.githubusercontent.com/xiaolongba/wireless-tech/master/pics/%E7%BA%A2%E6%97%AD%E5%BC%80%E5%8F%91%E6%9D%BF%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%9B%BE.jpg)
 
-## 开发板资料
+## 资料
 ### 硬件
 - [开发板原理图](https://github.com/xiaolongba/wireless-tech/tree/master/%E7%A1%AC%E4%BB%B6/%E7%BA%A2%E6%97%ADnRF52840%2BESP32%20Mini%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%8E%9F%E7%90%86%E5%9B%BE)
 - [NRF52840 芯片相关文档](https://github.com/xiaolongba/wireless-tech/tree/master/%E7%A1%AC%E4%BB%B6/NRF52840%20%E8%8A%AF%E7%89%87%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
 - [ESP32 芯片相关文档](https://github.com/xiaolongba/wireless-tech/tree/master/%E7%A1%AC%E4%BB%B6/ESP32%20%E8%8A%AF%E7%89%87%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
-- [板载芯片相关文档]()
-- [配件模块相关文档]()
+- [配件模块芯片相关文档](https://github.com/xiaolongba/wireless-tech/blob/master/%E7%A1%AC%E4%BB%B6/%E7%BA%A2%E6%97%AD%E9%85%8D%E4%BB%B6%E6%A8%A1%E5%9D%97%E8%8A%AF%E7%89%87%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3/README.md)
+- [配件模块原理图](https://github.com/xiaolongba/wireless-tech/blob/master/%E7%A1%AC%E4%BB%B6/%E7%BA%A2%E6%97%AD%E9%85%8D%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%8E%9F%E7%90%86%E5%9B%BE/README.md)
+- [红旭nRF52840 Dongle原理图](https://github.com/xiaolongba/wireless-tech/blob/master/%E7%A1%AC%E4%BB%B6/%E7%BA%A2%E6%97%ADnRF52840%20Dongle%E5%8E%9F%E7%90%86%E5%9B%BE/README.md)
 
 ### 软件
 - [快速入门指南](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B)
