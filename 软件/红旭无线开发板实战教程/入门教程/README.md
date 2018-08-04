@@ -6,7 +6,7 @@
   
     该文档讲解了如何使用**vscode+乐鑫官方的工具链**搭建ESP32的开发环境;
     
-  -[vscode开发ESP32之修订篇](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91ESP32%E4%B9%8B%E4%BF%AE%E8%AE%A2%E7%AF%87.md)
+  - [vscode开发ESP32之修订篇](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91ESP32%E4%B9%8B%E4%BF%AE%E8%AE%A2%E7%AF%87.md)
   
     该文档讲解了基于[如何搭建ESP32开发环境](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.md)的修订补充以及完善了编译速度等相关的内容;
     
