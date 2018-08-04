@@ -28,7 +28,7 @@
   ```
   ![](https://raw.githubusercontent.com/xiaolongba/picture/master/CPU%E5%A4%84%E7%90%86%E5%99%A8.png)
 
- 同理,在编译ESP32时我们也可以这样 **(乐鑫原生态的ESP-IDF是没有指定CPU逻辑处理器的)**即
+  同理,在编译ESP32时我们也可以这样 **(乐鑫原生态的ESP-IDF是没有指定CPU逻辑处理器的)** 即
  
    ```
    make -j4 app
