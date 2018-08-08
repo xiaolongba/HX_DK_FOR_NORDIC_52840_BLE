@@ -4,7 +4,7 @@
 * 版本：Ver0.0.1  2018/08/08
 
 * 硬件连接
-    * 1.SHT30模块（I2C接口）：https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18402045841.2.378a2c2cZMcFL8&id=569636756628
+    * 1.[SHT30模块（I2C接口）](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18402045841.2.378a2c2cZMcFL8&id=569636756628)
     * 2.ESP32开发板
     * 3.ESP32的IO33  -->  SHT30的SCL
     * 4.ESP32的IO32  -->  SHT30的SDA
