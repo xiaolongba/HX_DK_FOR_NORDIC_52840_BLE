@@ -8,7 +8,7 @@
     * 2.ESP32开发板
     * 3.ESP32的IO33  -->  OLED的SCL
     * 4.ESP32的IO32  -->  OLED的SDA
-    * 5.       不接  -->  OLED的RST   
+    * 5.暂时不接  -->  OLED的RST   
     * 6.电源接3.3V
 
 * 代码使用步骤
