@@ -11,13 +11,21 @@
 
   讲解了如何在ESP32上利用队列/定时器/GPIO口中断实现多个按键的单击/双击/多击功能
 
-- PWM彩灯
+- [PWM彩灯](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/PWM%E5%BD%A9%E7%81%AF)
 
-- 深入了解ESP32的UART
+  讲解了如何使用ESP32的PWM去驱动红旭无线Mini开发板的RGB灯
 
-- 如何使用ESP32驱动SHT30
+- [深入了解ESP32的UART](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3ESP32%E7%9A%84UART)
+  
+  讲解了如何使用ESP32的UART
 
-- 如何使用ESP32驱动OLED屏
+- [如何使用ESP32驱动SHT30](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8ESP32%E9%A9%B1%E5%8A%A8SHT30)
+
+  讲解了如何使用ESP32的I2C去驱动SHT30传感器
+
+- [如何使用ESP32驱动OLED屏](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8ESP32%E9%A9%B1%E5%8A%A8OLED%E5%B1%8F)
+
+  讲解了如何使用ESP32的I2C去驱动OLED屏
 
 ### 基础应用篇
 
