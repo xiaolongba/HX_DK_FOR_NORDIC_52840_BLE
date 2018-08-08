@@ -4,7 +4,7 @@
 * 版本：Ver0.0.1  2018/08/08
 
 * 硬件连接
-    * 1.OLED模块（I2C接口）：https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18402045841.5.378a2c2cVxUhHD&id=569864974646
+    * 1[.OLED模块（I2C接口）](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-18402045841.5.378a2c2cVxUhHD&id=569864974646)
     * 2.ESP32开发板
     * 3.ESP32的IO33  -->  OLED的SCL
     * 4.ESP32的IO32  -->  OLED的SDA
