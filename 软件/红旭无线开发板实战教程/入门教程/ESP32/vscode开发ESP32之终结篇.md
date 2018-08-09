@@ -94,3 +94,164 @@
     "WindowPosition"=dword:001a001a
     "FaceName"="Lucida Console" 
    ```
+   填充完成之后,直接单击打开这两个 **.reg**文件.然后,不管弹什么警告都同意.
+
+## vscode
+好像前面的**准备工作**中所讲的内容有点多,但这一切都是值得的,接下来我好像听到大家**磨刀霍霍**的声音.
+
+### 打开示例工程
+使用vscode以文件夹打开的方式打开示例工程.在这里,我还要说明一下.使用vscode打开示例工程的时候,不需要打开整个ESP-IDF,你只需要打开示例工程即可.
+
+### 配置任务
+任务这个概念是vscode中的,不是小编提出来的.小编做为一个九线土锤的24K纯屌丝是搞不出这样的高级货的.那么如何来配置任务呢?
+ - <code>Ctrl</code>+<code>Shift</code>+<code>P</code>
+ - Tasks:Configure Task
+ - 使用模板创建tasks.json文件
+ - others
+ - 填充参数
+	 ```json
+	 {
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+	{
+	"label": "build app",
+	"command": "idf.py",
+	"type": "shell",
+	"args": [
+	"build"
+	],
+	"presentation": {
+	"reveal": "always",
+	"echo": true
+	},
+	"problemMatcher": {
+	"owner": "cpp",
+	"fileLocation": "absolute",
+	"pattern": {
+	"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+	"file": 1,
+	"line": 2,
+	"column": 3,
+	"severity": 4,
+	"message": 5
+	}
+	}
+	},
+	{
+	"label": "clean app",
+	"command": "idf.py",
+	"type": "shell",
+	"args": [
+	"clean"
+	],
+	"presentation": {
+	"reveal": "always",
+	},
+	},
+	{
+	"label": "flash app",
+	"command": "idf.py",
+	"type": "shell",
+	"args": [
+	"-p","COM3","flash"
+	],
+	"presentation": {
+	"reveal": "always",
+	},
+	},
+	{
+	"label": "monitor",
+	"type":"process",
+	"windows": {
+	"command": "",
+	"args": [
+	"idf.py",
+	"-p",
+	"COM3",
+	"monitor"
+	],
+	},
+	"presentation": {
+	"reveal": "always",
+	},
+	"problemMatcher": []
+	},
+	{
+	"label": "menuconfig",
+	"type":"shell",
+	"windows": {
+	"command": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell",
+	"args": [
+	"idf.py",
+	"menuconfig"
+	]
+	},
+	"presentation": {
+	"reveal": "always",
+	},
+	"problemMatcher": []
+	}
+	]
+	}
+	 ```
+	 注意,有可能**powershell**路径,不同的电脑有所不同,以上是小编的路径
+	
+ - 详细的操作图示
+![](https://raw.githubusercontent.com/xiaolongba/picture/master/%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1.gif)
+
+### 配置任务快捷键
+虽然我们已经配置任务,可以通过任务来调用编译.但是,每次去点**任务**->**运行任务**->**具体的编译命令**,其实这样也挺烦人的.对于喜欢了IDE的嵌入式的工程师来说,早就习惯了各种快捷键了,那么为了使不是IDE的vscode更像一个更像IDE,接下来我们给这些编译命令增加快捷键.
+
+- <code>Ctrl</code>+<code>Shift</code>+<code>P</code>
+- 首选项:打开键盘快捷方式
+- 高级自定义请打开和编辑**keybindings.json**
+- 填充参数
+	```json
+	// Place your key bindings in this file to overwrite the defaults
+	[
+	{
+	"key": "f5",
+	"command": "workbench.action.tasks.runTask",
+	"args": "build app"
+	},
+	{
+	"key": "f6",
+	"command": "workbench.action.tasks.runTask",
+	"args": "clean app"
+	},
+	{
+	"key": "f7",
+	"command": "workbench.action.tasks.runTask",
+	"args": "flash app"
+	},
+	{
+	"key": "f8",
+	"command": "workbench.action.tasks.runTask",
+	"args": "monitor"
+	},
+	{
+	"key": "f12",
+	"command": "workbench.action.tasks.runTask",
+	"args": "menuconfig"
+	}
+	]
+	```
+- 详细的操作图示
+![](https://raw.githubusercontent.com/xiaolongba/picture/master/%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E9%94%AE.gif)
+
+- 快捷键映射表
+
+| 快捷键  | 执行的编译命令  |
+| ------------ | ------------ |
+| F5  | build app  |
+| F6  | clean app |
+| F7  | flash app  |
+| F8  | monitor  |
+| F12  | menuconfig  |
+
+- [更多的命令](https://esp-idf.readthedocs.io/en/feature-cmake/api-guides/build-system.html#idf-py)
+
+## 最后
+至此,就可以愉快地使用快捷键来开发ESP32啦.此文档解决了前面两篇中提到的**乱码**以及**速度过慢**的问题.编译速度已经达到在linux下编译的水准,应该是目前最完美的vscode开发esp32教程了.
