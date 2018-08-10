@@ -13,7 +13,7 @@
 - ### 程序逻辑
     - wifi进入sc待配状态
     - 手机快配ssid和密码
-    - 连接快配的ssid
+    - ESP32连接快配的ssid
     - DNS获取服务器IP，esp32建立socket，使用tcp模拟http发送获取天气报文
     - 接收http报文进行json解析，串口打印天气信息
 
