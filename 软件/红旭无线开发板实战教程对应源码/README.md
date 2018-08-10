@@ -29,8 +29,10 @@
 
 ### 基础应用篇
 
-- ESP32如何建立TCP长连接
+- [ESP32如何建立TCP长连接](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/ESP32%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8BTCP%E9%95%BF%E8%BF%9E%E6%8E%A5)
   
+  讲解了如何使用ESP32建立tcp server和client，让ESP32和手机/进行数据交互
+
 - ESP32之UDP单播/组播/广播   
 
 - ESP32之MQTT通讯   
@@ -44,6 +46,10 @@
 - 如何利用第三方库加解密通讯数据
 
 - 如何实现空中升级功能
+
+- [ESP32如何使用SmartConfig快配](https://github.com/double2243/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/SmartConfig%E5%BF%AB%E9%85%8D)
+  
+  讲解了如何使用SmartConfig给ESP32快配SSID和密码，让其连接云服务器获取本地天气
 
 ### 中级应用篇    
 - [ESP32如何利用mbedtls获取天气预报](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/ESP32%E7%9A%84%E7%AC%AC%E4%B8%89%E8%AF%BE%EF%BC%9A%E5%88%A9%E7%94%A8mbedtls%E8%8E%B7%E5%8F%96%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/app)   
