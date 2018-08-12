@@ -22,8 +22,9 @@
 #define BIG_IOT_PORT                "8585"
 #define TAG                         "big_iot_cloud_connect"
 #define BIG_IOT_CONNECT_SUCCESS     "{\"M\":\"WELCOME TO BIGIOT\"}"
-#define BIG_IOT_SIGN_IN             "{\"M\":\"checkin\",\"ID\":\"7130\",\"K\":\"87e3a2638\"}\n"               
-#define BIG_IOT_SIGN_IN_MD5         "{\"M\":\"checkin\",\"ID\":\"7130\",\"K\":\"61569d7aee3bdef9c7b83ee0abc73df0\"}\n"    
+/* 贝壳物联提供的设备ID以及设备的API KEY */
+#define DEVICE_INFO                 "{\"M\":\"checkin\",\"ID\":\"7130\",\"K\":\"87e3a2638\"}\n"               
+
 /*
 ===========================
 函数声明

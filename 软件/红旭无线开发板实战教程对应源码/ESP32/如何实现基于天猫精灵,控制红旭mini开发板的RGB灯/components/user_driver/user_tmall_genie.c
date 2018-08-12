@@ -87,17 +87,16 @@ static void tcp_ssl_parameters_clean(void)
   os_free(tcp_ssl_connect.ssl_conf);
 }
 /** 
-* 连接云平台成功之后,进行用户登录
-* @param[in]   personal_info：云平台提供的用户登录信息
+* 向云平台服务器发送数据
+* @param[in]   p_json_data:需要发送给云平台的数据,json的数据格式
 * @retval      null
 * @note        修改日志 
 *               Ver0.0.1: 
                   Helon_Chan, 2018/08/12, 初始化版本\n 
 */
-static void big_iot_cloud_sign(const char *personal_info)
+static void tcp_ssl_write(const char *p_json_data)
 {
-  int ret, len;
-  ESP_LOGI("big_iot_cloud_sign", "BIG_IOT_SIGN_IN is %d\n",strlen(personal_info));   
+  int ret, len;    
   while ((ret = mbedtls_ssl_write(tcp_ssl_connect.ssl_ctx, (unsigned char*)personal_info, strlen(personal_info))) <= 0)
   {
     if (ret != MBEDTLS_ERR_SSL_WANT_READ && ret != MBEDTLS_ERR_SSL_WANT_WRITE)
@@ -107,19 +106,19 @@ static void big_iot_cloud_sign(const char *personal_info)
     }
   }
   len = ret;
-  ESP_LOGI("big_iot_cloud_sign", " %d bytes written\n\n%s", len, (char *)personal_info);  
-
-
-  while ((ret = mbedtls_ssl_write(tcp_ssl_connect.ssl_ctx, (unsigned char*)BIG_IOT_SIGN_IN_MD5, strlen(BIG_IOT_SIGN_IN_MD5))) <= 0)
-  {
-    if (ret != MBEDTLS_ERR_SSL_WANT_READ && ret != MBEDTLS_ERR_SSL_WANT_WRITE)
-    {
-      ESP_LOGI(TAG, " failed\n  ! mbedtls_ssl_write returned %d\n\n", ret);
-      return;
-    }
-  }
-  len = ret;
-  ESP_LOGI("big_iot_cloud_sign", " %d bytes written\n\n%s", len, (char *)BIG_IOT_SIGN_IN_MD5); 
+  ESP_LOGI("tcp_ssl_write", " %d bytes written\n\n%s", len, (char *)p_json_data);  
+}
+/** 
+* 连接云平台成功之后,进行设备登录
+* @param[in]   personal_info：云平台提供的用户以及设备相关的登录信息
+* @retval      null
+* @note        修改日志 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/12, 初始化版本\n 
+*/
+static void get_token_from_big_iot_cloud(const char *device_info)
+{ 
+  tcp_ssl_write(personal_info); 
 }
 
 /** 
@@ -169,7 +168,7 @@ static void tcp_receive_task(void *pvParameters)
       {
         ESP_LOGI(TAG, "big_iot_connect success\n");   
         
-        big_iot_cloud_sign(BIG_IOT_SIGN_IN);
+        // big_iot_cloud_sign(BIG_IOT_SIGN_IN);
       }
     }
   } while (1);
