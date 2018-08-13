@@ -163,7 +163,7 @@
 	},
 	{
 	"label": "monitor",
-	"type":"process",
+	"type":"shell",
 	"windows": {
 	"command": "",
 	"args": [
@@ -243,13 +243,13 @@
 
 - 快捷键映射表
 
-| 快捷键  | 执行的编译命令  |
-| ------------ | ------------ |
-| F5  | build app  |
-| F6  | clean app |
-| F7  | flash app  |
-| F8  | monitor  |
-| F12  | menuconfig  |
+	| 快捷键  | 执行的编译命令  |
+	| ------------ | ------------ |
+	| F5  | build app  |
+	| F6  | clean app |
+	| F7  | flash app  |
+	| F8  | monitor  |
+	| F12  | menuconfig  |
 
 - [更多的命令](https://esp-idf.readthedocs.io/en/feature-cmake/api-guides/build-system.html#idf-py)
 
