@@ -56,6 +56,9 @@
    
   讲解了如何在ESP32上利用mbedtls/按键/呼吸灯实现天气预报的功能   
 
+- [基于天猫精灵,语音控制ESP32](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/ESP32/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%9F%BA%E4%BA%8E%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5%2C%E6%8E%A7%E5%88%B6%E7%BA%A2%E6%97%ADmini%E5%BC%80%E5%8F%91%E6%9D%BF%E7%9A%84RGB%E7%81%AF)
+
+  讲解了如何通过天猫精灵来语音控制ESP32,源码是基于vscode+cmake特性的esp-idf下编译通过
 - 基于ESP32的实现wifi插座的功能  
 
 - 基于ESP32的实现MP3功能   

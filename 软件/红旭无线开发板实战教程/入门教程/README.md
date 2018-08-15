@@ -10,6 +10,10 @@
   
     该文档讲解了基于[如何搭建ESP32开发环境](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.md)的修订补充以及完善了编译速度等相关的内容;
     
+  - [windows开发ESP32的福音,编译速度堪比Linux]
+    
+    该文档讲解了如何使用Cmake ESP-IDF配合vscode开发ESP32,速度更快并且全面解决乱码问题，不需要安装任何跟linux相关的工具
+
 - nRF52840
 
   - [初识Nordic 52840](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/nRF52840/%E5%88%9D%E8%AF%86Nordic%2052840.md)
