@@ -52,6 +52,66 @@
  - 如果遇到增加了头文件中径之后,还是找不到**stdio.h**类似于这些标准的C头文件时.此时,你将找不到的头文件名字在你的编译工具链的根目录下全局搜索,直至找到这个头文件的绝对路径并手动添加至vscode的**c_cpp_properties.json**即可
  
 为什么要这样做呢?有人可能会说vscode不可以跟keil那样递归查找头文件吗?**答案是:可以的,但是你要失去vscode强大的代码提示功能**.但是,我们用vscode就是看中它代码补全的强大功能.因此,这种递归的方式小编也就不讲了.更多的详情可以参考[vscode官方文档](https://code.visualstudio.com/docs/languages/cpp)
- 
+
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceRoot}",
+                "D:\\Project\\ESP32\\esp\\esp-idf\\components",
+                "D:/Project/ESP32/esp/esp-idf/components/newlib/include",
+                "D:/Project/ESP32/esp/esp-idf/components/esp32/include",
+                "${workspaceFolder}/components/user_driver/include",
+                "D:/Project/Espressif/ESP-IDF Tools/toolchain/lib/gcc/xtensa-esp32-elf/5.2.0/include",
+                "D:/Project/ESP32/esp/esp-idf/components/driver/include",
+                "D:/Project/ESP32/esp/esp-idf/components/soc/esp32/include",
+                "D:/Project/ESP32/esp/esp-idf/components/freertos/include",
+                "${workspaceFolder}/build/config",
+                "D:/Project/ESP32/esp/esp-idf/components/log/include",
+                "D:/Project/ESP32/esp/esp-idf/components/heap/include",
+                "D:/Project/ESP32/esp/esp-idf/components/soc/include",
+                "D:/Project/ESP32/esp/esp-idf/components/spi_flash/include",
+                "D:/Project/ESP32/esp/esp-idf/components/tcpip_adapter/include",
+                "D:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip",
+                "D:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip/port",
+                "D:/Project/ESP32/esp/esp-idf/components/vfs/include",
+                "D:/Project/ESP32/esp/esp-idf/components/nvs_flash/include",
+                "D:/Project/ESP32/esp/esp-idf/components/newlib/platform_include",
+                "D:/Project/ESP32/esp/esp-idf/components/mbedtls/mbedtls/include",
+                "D:/Project/ESP32/esp/esp-idf/components/json/cJSON",
+                "D:/Project/ESP32/esp/esp-idf/components/wpa_supplicant/port/include"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                    "${workspaceRoot}",
+                    "D:\\Project\\ESP32\\esp\\esp-idf\\components",    ///< 填充您自己的实际esp-idf路径下的components的路径
+                    "D:\\Project\\Espressif\\ESP-IDF Tools\\toolchain" ///< 填充您自己的工具链实际路径
+                ]
+            },
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
+以上是vscode的**c_cpp_properties.json**,一般我们只要填充了
+```json
+"browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                    "${workspaceRoot}",
+                    "D:\\Project\\ESP32\\esp\\esp-idf\\components",    ///< 填充您自己的实际esp-idf路径下的components的路径
+                    "D:\\Project\\Espressif\\ESP-IDF Tools\\toolchain" ///< 填充您自己的工具链实际路径
+                ]
+            },
+```
+上面的文件路径根据小黄灯的提示,自动就会添加进来了,不需要进行再人为的去查找复制进来.
+
 ## 总结
 网友们反馈的问题,我基本上都给出了解决方案了.后续如果有更佳的方法我也会出文档说明.当然,我也希望更多的人参与进来完善它.
