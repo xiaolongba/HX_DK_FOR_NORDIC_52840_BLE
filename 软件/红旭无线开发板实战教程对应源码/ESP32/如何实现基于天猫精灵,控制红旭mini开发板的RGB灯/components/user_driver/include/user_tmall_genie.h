@@ -21,9 +21,31 @@
 #define BIG_IOT_URL                 "www.bigiot.net"
 #define BIG_IOT_PORT                "8585"
 #define TAG                         "big_iot_cloud_connect"
-#define BIG_IOT_CONNECT_SUCCESS     "{\"M\":\"WELCOME TO BIGIOT\"}"
-/* 贝壳物联提供的设备ID以及设备的API KEY */
-#define DEVICE_INFO                 "{\"M\":\"checkin\",\"ID\":\"7130\",\"K\":\"87e3a2638\"}\n"               
+
+/* 设备ID,当使用时请更改为您自己的设备ID */
+#define DEVICE_ID                   "7130"
+/* 设备API KEY,当使用时请更改为您自己的设备API KEY */
+#define DEVICE_API_KEY              "eb195935a"
+/* 用户API KEY,当使用时请更改为您自己的用户API KEY*/
+#define USER_API_KEY                "6dc19ba6a5"
+/* 心跳包 */
+#define HEART_BEAT                  "{\"M\":\"heart beat\"}\n"
+  
+/*
+===========================
+枚举变量定义
+=========================== 
+*/
+enum
+{
+  INVALID_METHOD,                     ///< 无效的方法
+  TCP_CONNECT_SUCCESS,                ///< tcp连接成功
+  GET_TOKEN,                          ///< 获取token成功
+  SIGN_IN_OK,                         ///< 设备登陆成功
+  RECEVICE,                           ///< 接收云平台的命令
+  ON,                                 ///< 打开
+  OFF,                                ///< 关闭            
+};
 
 /*
 ===========================

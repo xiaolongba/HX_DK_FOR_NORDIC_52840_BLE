@@ -15,7 +15,6 @@
 头文件包含
 =========================== 
 */
-#include "user_key.h"
 #include "user_led.h"
 #include "user_app.h"
 #include <freertos/FreeRTOS.h>
@@ -27,7 +26,6 @@
 #include "esp_log.h"
 #include "esp_err.h"
 #include "nvs_flash.h"
-#include "user_http_s.h"
 
 #include "user_tmall_genie.h"
 /*
@@ -35,11 +33,7 @@
 全局变量
 =========================== 
 */
-/* 填充需要配置的按键个数以及对应的相关参数 */
-static key_config_t gs_m_key_config[BOARD_BUTTON_COUNT] =
-    {
-        {BOARD_BUTTON, APP_KEY_ACTIVE_LOW, 0, LONG_PRESSED_TIMER},
-};
+
 /* 填充需要驱动rgb通道参数 */
 static ledc_channel_config_t gs_m_ledc_channel_config[] = {
     {.channel = R_CHANNEL,
@@ -65,99 +59,6 @@ static ledc_timer_config_t gs_p_m_ledc_timer_config = {
     .speed_mode = LEDC_HIGH_SPEED_MODE,
     .timer_num = LEDC_TIMER_0};
 
-/** 
- * 用户的短按处理函数
- * @param[in]   key_num                 :短按按键对应GPIO口
- * @param[in]   short_pressed_counts    :短按按键对应GPIO口按下的次数,这里用不上
- * @retval      null
- * @par         修改日志 
- *               Ver0.0.1:
-                     Helon_Chan, 2018/06/16, 初始化版本\n 
- */
-static void short_pressed_cb(uint8_t key_num, uint8_t *short_pressed_counts)
-{
-  static uint8_t s_sigle_click_num = 0;
-  switch (key_num)
-  {
-  case BOARD_BUTTON:
-    switch (*short_pressed_counts)
-    {
-    case 1:
-      ESP_LOGI("short_pressed_cb", "first press!!!\n");
-      switch (s_sigle_click_num)
-      {
-      case 0:
-        r_fade_stop();
-        g_fade_start();
-        s_sigle_click_num++;
-        break;
-      case 1:
-        g_fade_stop();
-        b_fade_start();
-        s_sigle_click_num++;
-        break;
-      case 2:
-        b_fade_stop();
-        r_fade_start();
-        s_sigle_click_num = 0;
-        break;
-      }
-      break;
-    case 2:
-      ESP_LOGI("short_pressed_cb", "double press!!!\n");
-      break;
-    case 3:
-      ESP_LOGI("short_pressed_cb", "trible press!!!\n");
-      break;
-    case 4:
-      ESP_LOGI("short_pressed_cb", "quatary press!!!\n");
-      break;
-      // case ....:
-      // break;
-    }
-    *short_pressed_counts = 0;
-    break;
-
-  default:
-    break;
-  }
-}
-
-/** 
- * 用户的长按处理函数
- * @param[in]   key_num                 :短按按键对应GPIO口
- * @param[in]   long_pressed_counts     :按键对应GPIO口按下的次数,这里用不上
- * @retval      null
- * @par         修改日志 
- *               Ver0.0.1:
-                     Helon_Chan, 2018/06/16, 初始化版本\n 
- */
-static void long_pressed_cb(uint8_t key_num, uint8_t *long_pressed_counts)
-{
-  switch (key_num)
-  {
-  case BOARD_BUTTON:
-    ESP_LOGI("long_pressed_cb", "long press!!!\n");
-    break;
-  default:
-    break;
-  }
-}
-
-/** 
- * 用户的按键初始化函数
- * @param[in]   null 
- * @retval      null
- * @par         修改日志 
- *               Ver0.0.1:
-                     Helon_Chan, 2018/06/16, 初始化版本\n 
- */
-static void user_app_key_init(void)
-{
-  int32_t err_code;
-  err_code = user_key_init(gs_m_key_config, BOARD_BUTTON_COUNT, DECOUNE_TIMER, long_pressed_cb, short_pressed_cb);
-  ESP_LOGI("user_app_key_init", "user_key_init is %d\n", err_code);
-}
 
 /** 
  * 用户的rgb驱动初始化函数
@@ -173,25 +74,11 @@ static void user_app_rgb_init(void)
   err_code = rgb_init(&gs_p_m_ledc_timer_config, gs_m_ledc_channel_config, 3);
   ESP_LOGI("user_app_rgb_init", "rgb_init is %d\n", err_code);
 
+  ledc_set_duty(LEDC_HIGH_SPEED_MODE,gs_m_ledc_channel_config[0].channel,0);
+  ledc_set_duty(LEDC_HIGH_SPEED_MODE,gs_m_ledc_channel_config[1].channel,0);
+  ledc_set_duty(LEDC_HIGH_SPEED_MODE,gs_m_ledc_channel_config[2].channel,0);
   // esp_err_t = r_fade_start();
-  ESP_LOGI("user_app_rgb_init", "r_fade_start is %d\n", r_fade_start());
-}
-
-/** 
- * wifi事件处理函数
- * @param[in]   ctx     :表示传入的事件类型对应所携带的参数
- * @param[in]   event   :表示传入的事件类型
- * @retval      
- *              ESP_OK  : succeed
- *              其他    :失败 
- * @par         修改日志 
- *               Ver0.0.1:
-                    Helon_Chan, 2018/06/04, 初始化版本\n 
- */
-static void https_request_by_get_task(void *pvParameters)
-{
-  https_request_by_GET(HTTPS_URL_BJ);
-  vTaskDelete(NULL);
+  // ESP_LOGI("user_app_rgb_init", "r_fade_start is %d\n", r_fade_start());
 }
 
 /** 
@@ -269,19 +156,21 @@ static void user_wifi_init(void)
 
   wifi_config_t wifi_config = {
       .sta = {
-          .ssid = "Feidiao_RD",
-          .password = "feidiaoJk",
+          .ssid = "你们的wifi账号",
+          .password = "你们的wifi密码",
       },
   };
   err_code = esp_wifi_set_mode(WIFI_MODE_STA);
-  ESP_LOGI("event_handler","\nesp_wifi_set_mode is %d\n",err_code);
+  ESP_LOGI("user_wifi_init","\nesp_wifi_set_mode is %d\n",err_code);
 
   err_code = esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_config);
-  ESP_LOGI("event_handler","\nesp_wifi_set_config is %d\n",err_code);  
+  ESP_LOGI("user_wifi_init","\nesp_wifi_set_config is %d\n",err_code);  
 
   err_code = esp_wifi_start();
-  ESP_LOGI("event_handler","\nesp_wifi_start is %d\n",err_code);  
+  ESP_LOGI("user_wifi_init","\nesp_wifi_start is %d\n",err_code);  
+  
   err_code = esp_wifi_connect();  
+  ESP_LOGI("user_wifi_init","\n esp_wifi_connect is %d\n",err_code);
 }
 
 /** 
@@ -294,7 +183,6 @@ static void user_wifi_init(void)
  */
 void startup_initialization_task(void *pvParameters)
 {
-  user_app_key_init();
   user_app_rgb_init();
   user_wifi_init();
   /* 初始化完成,删除这个任务 */

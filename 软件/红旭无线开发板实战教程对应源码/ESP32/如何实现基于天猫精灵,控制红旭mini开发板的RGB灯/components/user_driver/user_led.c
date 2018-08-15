@@ -284,6 +284,10 @@ void r_fade_stop(void)
   {
     ESP_LOGI("r_fade_stop", "ledc_stop fail,reason is %d\n", err_code);    
   }
+  else
+  {
+    ledc_set_duty(LEDC_HIGH_SPEED_MODE,gs_m_ledc_channel_config[0].channel,0);
+  }
 }
 
 /** 

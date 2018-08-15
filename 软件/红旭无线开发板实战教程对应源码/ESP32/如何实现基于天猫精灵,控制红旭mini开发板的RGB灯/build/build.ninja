@@ -297,24 +297,6 @@ build user_driver/CMakeFiles/user_driver.dir/user_app.c.obj: C_COMPILER__user_dr
   OBJECT_FILE_DIR = user_driver\CMakeFiles\user_driver.dir
   TARGET_COMPILE_PDB = user_driver\CMakeFiles\user_driver.dir\user_driver.pdb
   TARGET_PDB = user_driver\libuser_driver.pdb
-build user_driver/CMakeFiles/user_driver.dir/user_http_s.c.obj: C_COMPILER__user_driver ../components/user_driver/user_http_s.c || cmake_object_order_depends_target_user_driver
-  DEFINES = -DESP_PLATFORM -DHAVE_CONFIG_H -DIDF_VER=\"-128-NOTFOUND\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\"
-  DEP_FILE = user_driver\CMakeFiles\user_driver.dir\user_http_s.c.obj.d
-  FLAGS = -Og -std=gnu99 -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-old-style-declaration -ggdb
-  INCLUDES = -Iconfig -I../components/user_driver/include -ID:/Project/ESP32/esp/esp-idf/components/spi_flash/include -ID:/Project/ESP32/esp/esp-idf/components/nvs_flash/include -ID:/Project/ESP32/esp/esp-idf/components/mbedtls/port/include -ID:/Project/ESP32/esp/esp-idf/components/mbedtls/mbedtls/include -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip/port -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip/posix -ID:/Project/ESP32/esp/esp-idf/components/lwip/apps/ping -ID:/Project/ESP32/esp/esp-idf/components/vfs/include -ID:/Project/ESP32/esp/esp-idf/components/wpa_supplicant/include -ID:/Project/ESP32/esp/esp-idf/components/wpa_supplicant/port/include -ID:/Project/ESP32/esp/esp-idf/components/json/cJSON -ID:/Project/ESP32/esp/esp-idf/components/esp32/include -ID:/Project/ESP32/esp/esp-idf/components/driver/include -ID:/Project/ESP32/esp/esp-idf/components/tcpip_adapter/include -ID:/Project/ESP32/esp/esp-idf/components/newlib/platform_include -ID:/Project/ESP32/esp/esp-idf/components/newlib/include -ID:/Project/ESP32/esp/esp-idf/components/freertos/include -ID:/Project/ESP32/esp/esp-idf/components/heap/include -ID:/Project/ESP32/esp/esp-idf/components/log/include -ID:/Project/ESP32/esp/esp-idf/components/soc/esp32/include -ID:/Project/ESP32/esp/esp-idf/components/soc/include
-  OBJECT_DIR = user_driver\CMakeFiles\user_driver.dir
-  OBJECT_FILE_DIR = user_driver\CMakeFiles\user_driver.dir
-  TARGET_COMPILE_PDB = user_driver\CMakeFiles\user_driver.dir\user_driver.pdb
-  TARGET_PDB = user_driver\libuser_driver.pdb
-build user_driver/CMakeFiles/user_driver.dir/user_key.c.obj: C_COMPILER__user_driver ../components/user_driver/user_key.c || cmake_object_order_depends_target_user_driver
-  DEFINES = -DESP_PLATFORM -DHAVE_CONFIG_H -DIDF_VER=\"-128-NOTFOUND\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\"
-  DEP_FILE = user_driver\CMakeFiles\user_driver.dir\user_key.c.obj.d
-  FLAGS = -Og -std=gnu99 -ffunction-sections -fdata-sections -fstrict-volatile-bitfields -mlongcalls -nostdlib -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-but-set-variable -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-old-style-declaration -ggdb
-  INCLUDES = -Iconfig -I../components/user_driver/include -ID:/Project/ESP32/esp/esp-idf/components/spi_flash/include -ID:/Project/ESP32/esp/esp-idf/components/nvs_flash/include -ID:/Project/ESP32/esp/esp-idf/components/mbedtls/port/include -ID:/Project/ESP32/esp/esp-idf/components/mbedtls/mbedtls/include -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip/port -ID:/Project/ESP32/esp/esp-idf/components/lwip/include/lwip/posix -ID:/Project/ESP32/esp/esp-idf/components/lwip/apps/ping -ID:/Project/ESP32/esp/esp-idf/components/vfs/include -ID:/Project/ESP32/esp/esp-idf/components/wpa_supplicant/include -ID:/Project/ESP32/esp/esp-idf/components/wpa_supplicant/port/include -ID:/Project/ESP32/esp/esp-idf/components/json/cJSON -ID:/Project/ESP32/esp/esp-idf/components/esp32/include -ID:/Project/ESP32/esp/esp-idf/components/driver/include -ID:/Project/ESP32/esp/esp-idf/components/tcpip_adapter/include -ID:/Project/ESP32/esp/esp-idf/components/newlib/platform_include -ID:/Project/ESP32/esp/esp-idf/components/newlib/include -ID:/Project/ESP32/esp/esp-idf/components/freertos/include -ID:/Project/ESP32/esp/esp-idf/components/heap/include -ID:/Project/ESP32/esp/esp-idf/components/log/include -ID:/Project/ESP32/esp/esp-idf/components/soc/esp32/include -ID:/Project/ESP32/esp/esp-idf/components/soc/include
-  OBJECT_DIR = user_driver\CMakeFiles\user_driver.dir
-  OBJECT_FILE_DIR = user_driver\CMakeFiles\user_driver.dir
-  TARGET_COMPILE_PDB = user_driver\CMakeFiles\user_driver.dir\user_driver.pdb
-  TARGET_PDB = user_driver\libuser_driver.pdb
 build user_driver/CMakeFiles/user_driver.dir/user_led.c.obj: C_COMPILER__user_driver ../components/user_driver/user_led.c || cmake_object_order_depends_target_user_driver
   DEFINES = -DESP_PLATFORM -DHAVE_CONFIG_H -DIDF_VER=\"-128-NOTFOUND\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\"
   DEP_FILE = user_driver\CMakeFiles\user_driver.dir\user_led.c.obj.d
@@ -341,7 +323,7 @@ build user_driver/CMakeFiles/user_driver.dir/user_tmall_genie.c.obj: C_COMPILER_
 #############################################
 # Link the static library user_driver\libuser_driver.a
 
-build user_driver/libuser_driver.a: C_STATIC_LIBRARY_LINKER__user_driver user_driver/CMakeFiles/user_driver.dir/user_app.c.obj user_driver/CMakeFiles/user_driver.dir/user_http_s.c.obj user_driver/CMakeFiles/user_driver.dir/user_key.c.obj user_driver/CMakeFiles/user_driver.dir/user_led.c.obj user_driver/CMakeFiles/user_driver.dir/user_tmall_genie.c.obj
+build user_driver/libuser_driver.a: C_STATIC_LIBRARY_LINKER__user_driver user_driver/CMakeFiles/user_driver.dir/user_app.c.obj user_driver/CMakeFiles/user_driver.dir/user_led.c.obj user_driver/CMakeFiles/user_driver.dir/user_tmall_genie.c.obj
   OBJECT_DIR = user_driver\CMakeFiles\user_driver.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
