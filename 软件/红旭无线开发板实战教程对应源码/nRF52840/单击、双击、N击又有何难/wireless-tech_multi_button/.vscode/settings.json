@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "app_timer.h": "c",
+        "user_multi_click.h": "c",
+        "app_button.h": "c",
+        "stdint.h": "c"
+    },
+    // "C_Cpp.errorSquiggles": "Disabled"
+}

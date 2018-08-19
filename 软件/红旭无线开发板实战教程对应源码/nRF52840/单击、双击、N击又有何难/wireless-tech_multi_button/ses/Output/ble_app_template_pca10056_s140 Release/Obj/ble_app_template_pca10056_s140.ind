@@ -1,0 +1,14 @@
+--start-group
+"Output/ble_app_template_pca10056_s140 Release/Obj/ses_nRF_Startup.o"
+"Output/ble_app_template_pca10056_s140 Release/Obj/ses_nrf52840_Vectors.o"
+"Output/ble_app_template_pca10056_s140 Release/Obj/system_nrf52840.o"
+"Output/ble_app_template_pca10056_s140 Release/Obj/main.o"
+"Output/ble_app_template_pca10056_s140 Release/Obj/thumb_crt0.o"
+"F:/lib/libdebugio_mempoll_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"F:/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"F:/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"F:/lib/libcpp_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"F:/lib/libdebugio_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
+"F:/lib/libvfprintf_v7em_fpv4_sp_d16_hard_t_le_eabi.o"
+"F:/lib/libvfscanf_v7em_fpv4_sp_d16_hard_t_le_eabi.o"
+--end-group
