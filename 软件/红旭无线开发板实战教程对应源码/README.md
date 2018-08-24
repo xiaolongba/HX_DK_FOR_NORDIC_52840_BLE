@@ -33,7 +33,7 @@
   
   讲解了如何使用ESP32建立tcp server和client，让ESP32和手机/进行数据交互
 
-- ESP32之UDP单播/组播/广播   
+- ESP32之UDP单播/广播   
 
 - ESP32之MQTT通讯   
 
