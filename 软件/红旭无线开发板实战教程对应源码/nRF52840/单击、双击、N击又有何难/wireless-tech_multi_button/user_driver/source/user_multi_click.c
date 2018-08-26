@@ -37,17 +37,21 @@ static user_multi_click_t gs_m_user_multi_click  =
     {BUTTON1,APP_BUTTON_ACTIVE_LOW,NRF_GPIO_PIN_PULLUP,user_button_handler},
   },
   .user_long_pressed_handler = NULL,
-  .user_multi_click_handler =NULL,
+  .user_multi_click_handler  = NULL,
+  .click_counts              = 0,
+  .is_long_press             = 0,
 };
 
+/* 用于计时长按的timer_id */
+APP_TIMER_DEF(g_long_press_timer_id);
+/* 用于计时短按的timer_id */
+APP_TIMER_DEF(g_short_press_timer_id);
 
 /*
 ===========================
 函数定义
 =========================== 
 */
-
-
 
 /** 
 * 按键处理函数
@@ -68,11 +72,28 @@ static void user_button_handler(uint8_t pin_no, uint8_t button_action)
       {
         /* 按键按下 */
         case APP_BUTTON_PUSH:
-          NRF_LOG_INFO("APP_BUTTON_PUSH\n");
+          NRF_LOG_INFO("APP_BUTTON_PUSH\n");          
+          /* 开始长按计时 */
+          app_timer_start(g_long_press_timer_id,APP_TIMER_TICKS(TIMER_FOR_LONG_PRESSED),&pin_no);
+          /* 暂停短按计时 */
+          app_timer_stop(g_short_press_timer_id);
           break;
         /* 按键释放 */
         case APP_BUTTON_RELEASE:
           NRF_LOG_INFO("APP_BUTTON_RELEASE\n");
+          /* 开始短按计时,如果释放之后150ms内没有新的按键按下则说明该按键已经完全释放.注意这个时长可以根据自己的需要进行更改 */
+          app_timer_start(g_short_press_timer_id,APP_TIMER_TICKS(150),&pin_no);
+          /* 暂停长按计时 */
+          app_timer_stop(g_long_press_timer_id);
+          if(gs_m_user_multi_click.is_long_press)
+          {
+            gs_m_user_multi_click.is_long_press = 0;
+            gs_m_user_multi_click.click_counts  = 0;
+          }
+          else
+          {
+            gs_m_user_multi_click.click_counts++;
+          }
           break;
         default:
 
@@ -82,6 +103,36 @@ static void user_button_handler(uint8_t pin_no, uint8_t button_action)
     default:
       break;
   }
+}
+
+
+/** 
+* 按键长按处理函数
+* @param[in]   p_context：传进来给按键处理函数使用的参数，这里传进来的是具体的哪个按键
+* @retval      null
+* @note        修改日志 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/26, 初始化版本\n 
+*/
+
+static void user_long_press_handler(void *p_context)
+{
+  gs_m_user_multi_click.user_long_pressed_handler(*((uint8_t*)(p_context)));
+  gs_m_user_multi_click.is_long_press = 1;
+}
+
+/** 
+* 按键短按处理函数
+* @param[in]   p_context：传进来给按键处理函数使用的参数，这里传进来的是具体的哪个按键
+* @retval      null
+* @note        修改日志 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/26, 初始化版本\n 
+*/
+
+static void user_short_press_handler(void *p_context)
+{
+  gs_m_user_multi_click.user_multi_click_handler(*((uint8_t*)(p_context)),&gs_m_user_multi_click.click_counts);
 }
 
 /** 
@@ -109,7 +160,38 @@ static ret_code_t lfclk_config(void)
   return err_code;
 }
 
+/** 
+* 按键计时所用到的时钟初始化，一定要user_multi_click_init之前调用该函数，否则按键不会正常工作
+* @param[in]   null
+* @retval      NRF_SUCCESS：表示初始化成功，其他值则初始化失败
+* @note        修改日志 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/26, 初始化版本\n 
+*/
+ret_code_t user_button_timer_init(void)
+{
+  ret_code_t err_code = NRF_SUCCESS;
+  err_code = app_timer_init();
+  if(err_code != NRF_SUCCESS)
+  {
+    NRF_LOG_INFO("app_timer_init is %d\n",err_code);
+    return err_code;
+  }  
+  err_code = app_timer_create(&g_long_press_timer_id,APP_TIMER_MODE_SINGLE_SHOT,user_long_press_handler);
+  if(err_code != NRF_SUCCESS)
+  {
+    NRF_LOG_INFO("app_timer_create is %d\n",err_code);
+    return err_code;
+  } 
+  err_code = app_timer_create(&g_short_press_timer_id,APP_TIMER_MODE_SINGLE_SHOT,user_short_press_handler);
+  if(err_code != NRF_SUCCESS)
+  {
+    NRF_LOG_INFO("app_timer_create is %d\n",err_code);
+    return err_code;
+  } 
 
+  return err_code;
+}
 /** 
 * 填充按键的长按、单击以及多击的处理函数
 * @param[in]   multi_click_handler    ：填充单击、多击的处理函数
@@ -121,7 +203,6 @@ static ret_code_t lfclk_config(void)
 *               Ver0.0.1: 
                   Helon_Chan, 2018/08/19, 初始化版本\n 
 */
-
 ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,user_long_pressed_handler_t long_pressed_handler,uint8_t button_counts)
 {
   uint8_t loop_counts;
@@ -133,13 +214,6 @@ ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,
     NRF_LOG_INFO("lfclk_config is %d\n",err_code);
     return err_code;
   }
-
-  err_code = app_timer_init();
-  if(err_code != NRF_SUCCESS)
-  {
-    NRF_LOG_INFO("app_timer_init is %d\n",err_code);
-    return err_code;
-  }  
 
   if((!multi_click_handler)||(!button_counts))
   {

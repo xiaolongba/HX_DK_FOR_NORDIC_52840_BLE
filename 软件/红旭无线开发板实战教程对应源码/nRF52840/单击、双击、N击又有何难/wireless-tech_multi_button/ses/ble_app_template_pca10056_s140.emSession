@@ -28,8 +28,6 @@
  <Project>
   <ProjectSessionItem path="Solution ?wireless_tech_multi_button?"/>
   <ProjectSessionItem path="Solution ?wireless_tech_multi_button?;wireless_tech_multi_button"/>
-  <ProjectSessionItem path="Solution ?wireless_tech_multi_button?;wireless_tech_multi_button;Application"/>
-  <ProjectSessionItem path="Solution ?wireless_tech_multi_button?;wireless_tech_multi_button;nRF_Drivers"/>
   <ProjectSessionItem path="Solution ?wireless_tech_multi_button?;wireless_tech_multi_button;UserDriver"/>
  </Project>
  <Register1>
@@ -69,9 +67,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="78" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="65" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="60" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_application.c" selected="0" top="46" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="48" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_multi_click.c" selected="0" top="27" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="79" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="62" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="75" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_application.c" selected="0" top="66" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="41" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_multi_click.c" selected="1" top="5" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="59" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/include/user_multi_click.h" selected="0" top="55" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="wireless_tech_multi_button" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx/legacy" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="wireless_tech_multi_button" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx/legacy" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

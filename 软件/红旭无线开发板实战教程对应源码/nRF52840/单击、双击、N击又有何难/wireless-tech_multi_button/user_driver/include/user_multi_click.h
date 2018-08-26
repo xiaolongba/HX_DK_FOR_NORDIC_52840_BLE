@@ -1,76 +1,87 @@
 /**
 * @file         user_multi_click.h
-* @brief        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ê¶¨ï¿½ï¿½
-* @details      ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½
+* @brief        °´¼üÏà¹ØµÄº¯ÊýÉùÃ÷ÒÔ¼°ºê¶¨Òå
+* @details      °´¼üÏà¹ØµÄº¯ÊýÉùÃ÷ÒÔ¼°Ò»Ð©½á¹¹Ìå±äÁ¿ÉùÃ÷
 * @author       Helon_Chan
 * @par Copyright (c):
-*               ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½ï¿½Å¶ï¿½
+*               ºìÐñÎÞÏß¿ª·¢ÍÅ¶Ó
 * @par History:
 *               Ver0.0.1:
-                    Helon_Chan, 2018/08/19, ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½æ±¾\n
+                    Helon_Chan, 2018/08/19, ³õÊ¼»¯°æ±¾\n
 */
 #ifndef USER_MULTI_CLICK_H
 #define USER_MULTI_CLICK_H
 
 /*
 ===========================
-Í·ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+Í·ÎÄ¼þ°üº¬
 =========================== 
 */
 #include "app_button.h"
 #include "sdk_common.h"
 #include "app_timer.h"
 #include "user_log.h"
+#include "nrf_drv_clock.h"
 /*
 ===========================
-ï¿½ê¶¨ï¿½ï¿½
+ºê¶¨Òå
 =========================== 
 */
-#define BUTTON_COUNTS               1                           ///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-#define BUTTON1                     13                          ///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Åºï¿½
-#define TIMER_FOR_LONG_PRESSED      5000                        ///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ò³¬¹ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ç³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#define BUTTON_COUNTS               1                           ///< °´¼ü¸öÊý
+#define BUTTON1                     13                          ///< °´¼ü¶ÔÓ¦µÄGPIO¿Ú
+#define TIMER_FOR_LONG_PRESSED      5000                        ///< ³¤°´µÄÊ±¼ä,µ¥Î»Îªms
 /*
 ===========================
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+º¯Êý±ðÃû
 =========================== 
 */
-typedef void (*user_multi_click_handler_t)(uint8_t button_no,uint8_t click_counts);
+typedef void (*user_multi_click_handler_t)(uint8_t button_no,uint8_t *click_counts);
 
 typedef void (*user_long_pressed_handler_t)(uint8_t button_no);
 
 /*
 ===========================
-ï¿½á¹¹ï¿½å¶¨ï¿½ï¿½
+½á¹¹Ìå±ðÃû
 =========================== 
 */
 typedef struct
 {
+  uint8_t is_long_press : 1;
+  uint8_t click_counts;
   app_button_cfg_t app_button_cfg[BUTTON_COUNTS];
   user_multi_click_handler_t user_multi_click_handler;
   user_long_pressed_handler_t user_long_pressed_handler;
-}user_multi_click_t;
-
-
+} user_multi_click_t;
 
 /*
 ===========================
-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+º¯ÊýÉùÃ÷
 =========================== 
 */
 
 
 /** 
-* ï¿½ï¿½ä°´ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
-* @param[in]   multi_click_handler    ï¿½ï¿½ï¿½ï¿½äµ¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
-* @param[in]   long_pressed_handler   ï¿½ï¿½ï¿½ï¿½ä³¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-* @param[in]   button_counts          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-* @retval      NRF_SUCCESS            ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ê§ï¿½ï¿½
-* @note        ï¿½Þ¸ï¿½ï¿½ï¿½Ö¾ 
+* Ìî³ä°´¼üµÄ³¤°´¡¢µ¥»÷ÒÔ¼°¶à»÷µÄ´¦Àíº¯Êý
+* @param[in]   multi_click_handler    £ºÌî³äµ¥»÷¡¢¶à»÷µÄ´¦Àíº¯Êý
+* @param[in]   long_pressed_handler   £ºÌî³ä³¤°´´¦Àíº¯Êý
+* @param[in]   button_counts          £º°´¼ü¸öÊý
+* @retval      NRF_SUCCESS            £º±íÊ¾³õÊ¼»¯³É¹¦£¬ÆäËûÖµÔò³õÊ¼»¯Ê§°Ü
+* @note        ³õÊ¼»¯°´¼üÖ®Ç°±ØÐëÏÈ³õÊ¼»¯app_timerÊ±ÖÓ,ÒòÎªÓÃµ½ÁËÏû¶¶¼ÆÊ± 
+* @note        ÐÞ¸ÄÈÕÖ¾ 
 *               Ver0.0.1: 
-                  Helon_Chan, 2018/08/19, ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½æ±¾\n 
+                  Helon_Chan, 2018/08/19, ³õÊ¼»¯°æ±¾\n 
 */
 
 ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,user_long_pressed_handler_t long_pressed_handler,uint8_t button_counts);
 
+/** 
+* °´¼ü¼ÆÊ±ËùÓÃµ½µÄÊ±ÖÓ³õÊ¼»¯£¬Ò»¶¨Òªuser_multi_click_initÖ®Ç°µ÷ÓÃ¸Ãº¯Êý£¬·ñÔò°´¼ü²»»áÕý³£¹¤×÷
+* @param[in]   null
+* @retval      NRF_SUCCESS£º±íÊ¾³õÊ¼»¯³É¹¦£¬ÆäËûÖµÔò³õÊ¼»¯Ê§°Ü
+* @note        ÐÞ¸ÄÈÕÖ¾ 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/26, ³õÊ¼»¯°æ±¾\n 
+*/
+ret_code_t user_button_timer_init(void);
 
 #endif /* USER_MULTI_CLICK_H */
