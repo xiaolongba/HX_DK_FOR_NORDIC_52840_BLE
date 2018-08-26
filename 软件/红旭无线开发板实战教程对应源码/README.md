@@ -79,7 +79,9 @@
 
   讲解了如何使用硬件定时器/RTC/硬件PWM产生PWM波形
 
-- 单击,双击,N 击又有何难?
+- [单击,双击,N 击又有何难?](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/%E5%8D%95%E5%87%BB%E3%80%81%E5%8F%8C%E5%87%BB%E3%80%81N%E5%87%BB%E5%8F%88%E6%9C%89%E4%BD%95%E9%9A%BE/wireless-tech_multi_button)
+  
+  讲解了如何使用app_timer实现按键的单击以及多击的功能
 
 - 小阶段总结
 
