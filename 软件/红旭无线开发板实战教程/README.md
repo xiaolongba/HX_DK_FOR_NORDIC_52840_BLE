@@ -74,7 +74,11 @@
 
     - 红旭无线开发团队为什么选择SEGGER Embedded Studio做为IDE
     - 如何获取免费的license以及打开自己的第一个工程
+    
+- [如何使用Vscode开发调试nRF52840(全网首发)](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/nRF52840/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Vscode%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95nRF52840(%E5%85%A8%E7%BD%91%E9%A6%96%E5%8F%91).md)
 
+  该文档介绍了如何使用vscode开发并调试nRF52840
+  
 - [Nordic 52840基础教程第一课:Hello World](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/Nordic%2052840%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AF%BEHello%20World.md)
 
   该文档讲解了如何使用模板工程创建自己的第一个**Hello World**工程,并介绍了通过**UART**以及**RTT**打印输出Hello World信息
