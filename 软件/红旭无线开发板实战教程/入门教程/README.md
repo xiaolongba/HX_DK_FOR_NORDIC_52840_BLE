@@ -26,3 +26,7 @@
     
     - 红旭无线开发团队为什么选择**SEGGER Embedded Studio**做为IDE
     - 如何获取免费的license以及打开自己的第一个工程
+    
+  - [如何使用Vscode开发调试nRF52840(全网首发)](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/nRF52840/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Vscode%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95nRF52840(%E5%85%A8%E7%BD%91%E9%A6%96%E5%8F%91).md)
+
+    该文档介绍了如何使用vscode开发并调试nRF52840
