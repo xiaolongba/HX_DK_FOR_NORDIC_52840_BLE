@@ -267,6 +267,13 @@
       ]
     }
     ```
+1. 最后，将工程的<code>components</code>-><code>toolchain</code>-><code>gcc</code>-><code>Makefile.windows</code>工具链路径指向[windows-arm-none-eabi](https://marketplace.visualstudio.com/items?itemName=atomclip.windows-arm-none-eabi#review-details)的实际路径,以下是小编的工具链路径：
+    ```
+    GNU_INSTALL_ROOT := C:/Users/Administrator/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.2/bin/
+    GNU_VERSION := 7.3.1
+    GNU_PREFIX := arm-none-eabi
+    ```
+
 至此，就完成了所有的设置了，接下来就可以使用vscode开发nRF52840了。
 
 ## 效果
