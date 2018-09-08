@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceRoot}",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/drivers/include",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_log",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/util",
+                "E:/Software Application/include",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/mdk",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/softdevice/s140/headers",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_section_vars",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_log/src",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/button",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/hal",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/timer",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx/legacy",
+                "${workspaceFolder}/user_driver/include",
+                "${workspaceFolder}/config",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_memobj",
+                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/balloc"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                    "${workspaceRoot}",
+                    "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a",
+                    "E:/Software Application/include"
+                ]
+            },
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
