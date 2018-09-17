@@ -1,8 +1,7 @@
 # 前言
 近期，**nRF Connect**的版本升级到了v2.5.0，导致一些发货出去的nRF52840 Dongle根据**nRF Connect**的指引升级Bootloader时，出现无法升级的情况。最初，我们在遇到这个问题时也很纳闷，为什么在v2.4.0版本升级没有问题，怎么到了v2.5.0反而出问题了呢。后来，我们在官方的Release Note中看到了如下信息：
 
-- Updated connectivity firmware from SoftDevice v3.0 to v3.1 for better compatibility 
-- with SoftDevice 6.1
+- Updated connectivity firmware from SoftDevice v3.0 to v3.1 for better compatibility with SoftDevice 6.1
 - Support for upgrading bootloader on nRF52840 dongle
 - Support for Programmer app update
 - Updated electron to 2.0
