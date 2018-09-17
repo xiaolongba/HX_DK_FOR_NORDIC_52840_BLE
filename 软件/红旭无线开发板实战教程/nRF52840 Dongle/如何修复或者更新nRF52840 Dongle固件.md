@@ -25,19 +25,19 @@
 使用**pc-nrfutil**生成public key,具体步骤如下所示：
 
 - 在cmd中切换至pc-nrfutil路径下，并输入以下命令
+
   ```
   .\nrfutil.exe keys generate private.pem
-  ```
-  ![title](/api/file/getImage?fileId=5b9f560549b9631924000023)
+  ```  
+  ![](./local_pics/2fc939c2165e6f560c65d14655847325.png)
 
 - 将生成的<code>private.pem</code>转换成.c文件，并将生成的.c文件的内容覆盖掉<code>dfu_public_key.c</code>的内容，如下所示：
   ```
   .\nrfutil.exe keys display --key pk --format code private.pem --out_file public_key.c
   ```
-  ![title](/api/file/getImage?fileId=5b9f570a49b9631924000024)
-  覆盖后的情况，如下所示：
-  ![title](/api/file/getImage?fileId=5b9f594549b9631924000025)
-
+ 
+  覆盖后的情况，如下所示：  
+  
 ## 屏蔽哈希值校验函数
 
 屏蔽文件所在的绝对路径**（下面是小编的SDK路径下的绝对路径）**，如下所示：
