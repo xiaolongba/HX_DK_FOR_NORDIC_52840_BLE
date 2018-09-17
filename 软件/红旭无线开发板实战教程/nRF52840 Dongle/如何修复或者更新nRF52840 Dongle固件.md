@@ -42,7 +42,7 @@
   
 ## 屏蔽哈希值校验函数
 
-屏蔽文件所在的绝对路径**（下面是小编的SDK路径下的绝对路径）**，如下所示：
+屏蔽文件所在的绝对路径 **（下面是小编的SDK路径下的绝对路径）**，如下所示：
 <code>C:\Users\Administrator\Desktop\New_folder\nRF5_SDK_15.0.0_a53641a\components\libraries\bootloader\dfu\nrf_dfu_validation.c</code>
 ```
     err_code = nrf_crypto_ecdsa_verify(&m_verify_context,
