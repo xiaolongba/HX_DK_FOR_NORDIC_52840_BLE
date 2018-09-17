@@ -35,8 +35,10 @@
   ```
   .\nrfutil.exe keys display --key pk --format code private.pem --out_file public_key.c
   ```
+  ![](./732396df27b4cff49d3da269fe571958.png)
  
   覆盖后的情况，如下所示：  
+  ![](./36dbb318798de91c43199744a2604da3.png)
   
 ## 屏蔽哈希值校验函数
 
