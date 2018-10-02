@@ -15,6 +15,7 @@
   <ProjectSessionItem path="wireless_tech_template;wireless_tech_template"/>
   <ProjectSessionItem path="wireless_tech_template;wireless_tech_template;Application"/>
   <ProjectSessionItem path="wireless_tech_template;wireless_tech_template;None"/>
+  <ProjectSessionItem path="wireless_tech_template;wireless_tech_template;Segger Startup Files"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -39,8 +40,9 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../nrf5_sdk_15.0.0_a53641a/components/toolchain/cmsis/include/core_cm4.h" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="151" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/mdk/nrf52840.h" selected="1" top="116" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../components/toolchain/cmsis/include/core_cm4.h" selected="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="151" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/mdk/nrf52840.h" selected="0" top="142" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="27" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="wireless_tech_template" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="E:/Software Application/source" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="wireless_tech_template" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="E:/Software Application/source" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

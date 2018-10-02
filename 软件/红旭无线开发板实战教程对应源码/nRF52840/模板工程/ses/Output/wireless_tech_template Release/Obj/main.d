@@ -1,2 +1,2 @@
 Output/wireless_tech_template\ Release/Obj/main.o: \
- D:\Project\wireless_tech\wireless_tech_template\template_project\main.c
+ C:\Users\Helon\Desktop\test\nRF5_SDK_15.0.0_a53641a\template\ project\main.c
