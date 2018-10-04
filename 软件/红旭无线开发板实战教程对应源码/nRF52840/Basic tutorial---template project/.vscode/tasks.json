@@ -1,0 +1,174 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build firmware",
+        "type": "shell",        
+        "command": "make -j8",        
+        "options": {          
+          "cwd": "工程中的makefile的绝对路径"
+        },
+        "osx": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "linux": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "windows": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin};${env:PATH}",              
+            }
+          },
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "problemMatcher": "$gcc"
+      },
+      {
+        "label": "clean firmware",
+        "type": "shell",        
+        "command": "make clean",        
+        "options": {          
+          "cwd": "工程中的makefile的绝对路径"
+        },
+        "osx": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "linux": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "windows": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin};${env:PATH}",              
+            }
+          },
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "problemMatcher": "$gcc"
+      },
+      {
+        "label": "download flash",
+        "type": "shell",        
+        "command": "make flash -j8",        
+        "options": {          
+          "cwd": "工程中的makefile的绝对路径"
+        },
+        "osx": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "linux": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "windows": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin};${env:PATH}",              
+            }
+          },
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "problemMatcher": "$gcc"
+      },
+      {
+        "label": "erase all flash",
+        "type": "shell",        
+        "command": "make erase -j8",        
+        "options": {          
+          "cwd": "工程中的makefile的绝对路径"
+        },
+        "osx": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "linux": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "windows": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin};${env:PATH}",              
+            }
+          },
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "problemMatcher": "$gcc"
+      },{
+        "label": "download softdevice",
+        "type": "shell",        
+        "command": "make flash_softdevice -j8",        
+        "options": {          
+          "cwd": "工程中的makefile的绝对路径"
+        },
+        "osx": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "linux": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+            }
+          },
+        },
+        "windows": {
+          "options": {
+            "env": {
+              "PATH": "${config:arm-none-eabi.bin};${env:PATH}",              
+            }
+          },
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true,
+        },
+        "problemMatcher": "$gcc"
+      }
+    ]
+  }

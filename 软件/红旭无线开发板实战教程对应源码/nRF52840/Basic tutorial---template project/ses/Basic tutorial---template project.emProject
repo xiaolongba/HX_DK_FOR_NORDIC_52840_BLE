@@ -1,0 +1,59 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="Basic tutorial---template project" target="8" version="2">
+  <project Name="Basic tutorial---template project">
+    <configuration
+      Name="Common"
+      arm_architecture="v7EM"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_heap_size="8192"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="8192"
+      arm_linker_treat_warnings_as_errors="No"
+      arm_simulator_memory_simulation_parameter="RWX 00000000,00100000,FFFFFFFF;RWX 20000000,00010000,CDCDCDCD"
+      arm_target_device_name="nRF52840_xxAA"
+      arm_target_interface_type="SWD"
+      c_preprocessor_definitions="CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52840_XXAA;NRF_SD_BLE_API_VERSION=6;S140;SOFTDEVICE_PRESENT;SWI_DISABLE0"
+      c_user_include_directories="$(SDK_ROOT)/components/toolchain/cmsis/include"
+      debug_additional_load_file="../../../../../../components/softdevice/s140/hex/s140_nrf52_6.0.0_softdevice.hex"
+      debug_register_definition_file="../../../../../../modules/nrfx/mdk/nrf52840.svd"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      gcc_debugging_level="Level 3"
+      gcc_entry_point="Reset_Handler"
+      linker_output_format="hex"
+      linker_printf_fmt_level="long"
+      linker_printf_width_precision_supported="Yes"
+      linker_section_placement_file="flash_placement.xml"
+      linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x100000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x40000;FLASH_START=0x26000;FLASH_SIZE=0xda000;RAM_START=0x20002210;RAM_SIZE=0x3ddf0"
+      linker_section_placements_segments="FLASH RX 0x0 0x100000;RAM RWX 0x20000000 0x40000"
+      macros="CMSIS_CONFIG_TOOL=$(SDK_ROOT)/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
+      project_directory=""
+      project_type="Executable" />
+    <folder Name="None">
+      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf_common.s" />
+      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf52840.s" />
+      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/system_nrf52840.c" />
+    </folder>
+    <folder Name="Application">
+      <file file_name="../config/sdk_config.h" />
+      <file file_name="../main.c" />
+    </folder>
+    <folder Name="Segger Startup Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+    </folder>
+    <configuration
+      Name="Release"
+      gcc_optimization_level="Optimize For Size" />
+  </project>
+  <configuration
+    Name="Release"
+    c_preprocessor_definitions="NDEBUG"
+    gcc_optimization_level="Optimize For Size" />
+  <configuration
+    Name="Debug"
+    c_preprocessor_definitions="DEBUG; DEBUG_NRF"
+    gcc_optimization_level="None" />
+</solution>
