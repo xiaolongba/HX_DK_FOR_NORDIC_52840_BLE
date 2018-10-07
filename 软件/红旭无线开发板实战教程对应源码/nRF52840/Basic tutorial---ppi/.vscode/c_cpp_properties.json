@@ -3,40 +3,41 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceRoot}",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/drivers/include",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_log",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/util",
-                "E:/Software Application/include",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/mdk",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/softdevice/s140/headers",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_section_vars",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_log/src",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/button",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/modules/nrfx/hal",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/timer",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/integration/nrfx/legacy",
+                "${workspaceFolder}",
                 "${workspaceFolder}/user_driver/include",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/util",
                 "${workspaceFolder}/config",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/experimental_memobj",
-                "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a/components/libraries/balloc"
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/drivers/include",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx/legacy",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/hal",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/softdevice/s140/headers",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/experimental_section_vars",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/strerror",    
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/memobj",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/balloc",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log/src"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "NRF52840_XXAA"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": "",
                 "path": [
-                    "${workspaceRoot}",
-                    "D:/Project/wireless_tech/nRF5_SDK_15.0.0_a53641a",
-                    "E:/Software Application/include"
+                    "${workspaceFolder}",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration"
                 ]
             },
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
+            "cStandard": "c11",
             "intelliSenseMode": "msvc-x64"
         }
     ],

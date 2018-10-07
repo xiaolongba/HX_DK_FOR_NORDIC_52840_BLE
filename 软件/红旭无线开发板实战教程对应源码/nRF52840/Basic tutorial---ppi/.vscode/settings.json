@@ -1,9 +1,8 @@
 {
     "files.associations": {
-        "user_application.h": "c",
-        "nrf_drv_ppi.h": "c",
-        "nrfx_gpiote.h": "c",
-        "nrfx_ppi.h": "c",
-        "user_log.h": "c"
+        "nrf.h": "c",
+        "nrf52840.h": "c",
+        "user_log.h": "c",
+        "user_application.h": "c"
     }
 }
