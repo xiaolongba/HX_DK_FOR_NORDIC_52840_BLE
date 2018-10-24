@@ -74,9 +74,5 @@ int main(void)
   NRF_LOG_INFO("            website :bbs.wireless-tech.cn                                       \n");
   NRF_LOG_INFO("            QQ Group:671139854                                                  \n");
   NRF_LOG_INFO("/******************************************************************************/\n");
-  for(;;)
-  {
-    
-  }
 }
 

@@ -3789,14 +3789,14 @@
  
 
 #ifndef NRFX_TIMER0_ENABLED
-#define NRFX_TIMER0_ENABLED 1
+#define NRFX_TIMER0_ENABLED 0
 #endif
 
 // <q> NRFX_TIMER1_ENABLED  - Enable TIMER1 instance
  
 
 #ifndef NRFX_TIMER1_ENABLED
-#define NRFX_TIMER1_ENABLED 1
+#define NRFX_TIMER1_ENABLED 0
 #endif
 
 // <q> NRFX_TIMER2_ENABLED  - Enable TIMER2 instance
@@ -3854,7 +3854,7 @@
 // <3=> 32 bit 
 
 #ifndef NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH
-#define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 3
+#define NRFX_TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
 #endif
 
 // <o> NRFX_TIMER_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -5457,7 +5457,7 @@
 // <3=> 32 bit 
 
 #ifndef TIMER_DEFAULT_CONFIG_BIT_WIDTH
-#define TIMER_DEFAULT_CONFIG_BIT_WIDTH 0
+#define TIMER_DEFAULT_CONFIG_BIT_WIDTH 3
 #endif
 
 // <o> TIMER_DEFAULT_CONFIG_IRQ_PRIORITY  - Interrupt priority
@@ -7383,7 +7383,7 @@
 // <e> NRF_LOG_BACKEND_RTT_ENABLED - nrf_log_backend_rtt - Log RTT backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_RTT_ENABLED
-#define NRF_LOG_BACKEND_RTT_ENABLED 1
+#define NRF_LOG_BACKEND_RTT_ENABLED 0
 #endif
 // <o> NRF_LOG_BACKEND_RTT_TEMP_BUFFER_SIZE - Size of buffer for partially processed strings. 
 // <i> Size of the buffer is a trade-off between RAM usage and processing.
@@ -7416,7 +7416,7 @@
 // <e> NRF_LOG_BACKEND_UART_ENABLED - nrf_log_backend_uart - Log UART backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_UART_ENABLED
-#define NRF_LOG_BACKEND_UART_ENABLED 0
+#define NRF_LOG_BACKEND_UART_ENABLED 1
 #endif
 // <o> NRF_LOG_BACKEND_UART_TX_PIN - UART TX pin 
 #ifndef NRF_LOG_BACKEND_UART_TX_PIN
