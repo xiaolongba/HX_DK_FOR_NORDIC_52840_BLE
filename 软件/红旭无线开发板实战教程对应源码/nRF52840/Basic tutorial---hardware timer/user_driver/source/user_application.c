@@ -53,17 +53,17 @@ static void user_nrf_drv_gpiote_evt_handler(nrfx_gpiote_pin_t pin, nrf_gpiote_po
 }
 
 /**
- * 初始化gpio,并设置对应的GPIO为输出
+ * 初始化gpio,并设置对应的GPIO为输出,该工程未使用
  * @param[in]   NULL
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
                   Helon_Chan, 2018/10/23, 初始化版本\n
  */
-static void user_app_gpio_init(void)
-{
-  nrf_gpio_cfg_output(LED_NUMBER);
-}
+// static void user_app_gpio_init(void)
+// {
+//   nrf_gpio_cfg_output(LED_NUMBER);
+// }
 
 /**
  * 初始化gpiote

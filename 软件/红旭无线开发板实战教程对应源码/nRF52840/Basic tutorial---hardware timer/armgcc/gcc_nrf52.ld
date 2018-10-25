@@ -7,7 +7,7 @@ GROUP(-lgcc -lc -lnosys)
    2.如果没有使用协议栈，则flash的地址可以从0开始，如果使用了则保留原先的设置 NOINIT (r) :  ORIGIN = 0x2003FFF8, LENGTH = 0x04*/
 MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x26000, LENGTH = 0xda000
+  FLASH (rx) : ORIGIN = 0x00000, LENGTH = 0x100000
   RAM (rwx) :  ORIGIN = 0x20002210, LENGTH = 0x3ddec
   
 }
