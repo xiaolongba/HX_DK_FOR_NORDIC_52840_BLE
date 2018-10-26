@@ -10,8 +10,29 @@
                      Helon_Chan, 2018/07/28, 初始化版本\n
 */
 
-/* =============
+/* 
+=============
 头文件包含
- =============*/
+=============
+*/
 
 #include "user_application.h"
+
+/* 
+=============
+函数定义
+=============
+*/
+/**
+ * app初始化函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/10/26, 初始化版本\n
+ */
+ void user_app_init(void)
+ {
+   user_log_init();
+   user_pwm_init();
+ }

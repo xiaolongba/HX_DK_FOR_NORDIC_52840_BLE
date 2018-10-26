@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "name": "nRF52840",
+            "includePath": [
+                "${workspaceFolder}/user_driver/include",
+                "${workspaceFolder}/user_driver/include",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/util",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/pwm",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx/legacy",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/drivers/include",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx",
+                "${workspaceFolder}/config",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/drivers_nrf/nrf_soc_nosd",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/experimental_section_vars",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/strerror",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log/src",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/memobj",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/balloc",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/low_power_pwm",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/timer",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/toolchain/cmsis/include"
+            ],
+            "defines": [
+                "NRF52840_XXAA",
+                "__CC_ARM",
+                "BOARD_PCA10056",
+                "CONFIG_GPIO_AS_PINRESET",
+                "FLOAT_ABI_HARD",
+                "NRF_SD_BLE_API_VERSION=6",
+                "S140",
+                "SWI_DISABLE0",
+                "__SES_ARM"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceRoot}/.vscode/browse.vc.db",
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration",
+                    "F:/SEGGER Embedded Studio for ARM 3.40/include"
+                ]
+            },
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

@@ -17,6 +17,7 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
+#include "app_error.h"
 /**
  * log打印输出初始化函数
  * @param[in]   NULL
@@ -25,7 +26,7 @@
  *              Ver0.0.1:
                   Helon_Chan, 2018/06/09, 初始化版本\n
  */
- void log_init(void);
+ void user_log_init(void);
 
 
 #endif  //USER_LOG_H

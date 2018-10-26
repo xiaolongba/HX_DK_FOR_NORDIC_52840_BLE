@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "user_pwm.h": "c",
+        "user_log.h": "c",
+        "nrf_log.h": "c",
+        "nrf_log_default_backends.h": "c",
+        "low_power_pwm.h": "c",
+        "nrfx.h": "c",
+        "nrfx_config.h": "c",
+        "app_timer.h": "c",
+        "stdint.h": "c",
+        "stdio.h": "c",
+        "app_pwm.h": "c",
+        "user_application.h": "c"
+    }
+}

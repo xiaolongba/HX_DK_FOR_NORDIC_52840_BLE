@@ -17,6 +17,9 @@
 #include "app_pwm.h"
 #include "nrfx_pwm.h"
 #include "low_power_pwm.h"
+#include "user_log.h"
+#include "nrf_drv_clock.h"
+#include "nrf52840.h"
 /* =============
 宏定义
  =============*/
@@ -27,8 +30,8 @@
 
 
 
-#define BROAD_LED               13+P0_PIN_NUM
-#define BROAD_LED_MASK          1<<13
+#define BROAD_LED               26
+#define BROAD_LED_MASK          1<<26
 /* =============
 函数声明
  =============*/

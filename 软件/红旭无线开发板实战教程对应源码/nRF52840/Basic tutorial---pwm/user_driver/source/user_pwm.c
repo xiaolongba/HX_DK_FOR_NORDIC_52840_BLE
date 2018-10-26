@@ -13,10 +13,7 @@
 /* =============
 头文件包含
  =============*/
-
 #include "user_pwm.h"
-#include "user_log.h"
-#include "nrf_drv_clock.h"
 /* =============
 全局变量定义
  =============*/
@@ -57,14 +54,15 @@ APP_TIMER_DEF(gs_m_low_power_pwm_app_timer_id);
  *              Ver0.0.1:
                   Helon_Chan, 2018/07/29, 初始化版本\n
  */
+#if LOW_POWER_PWM
 static void lfclk_init(void)
-{
-    uint32_t err_code;
-    err_code = nrf_drv_clock_init();
-    APP_ERROR_CHECK(err_code);
-
-    nrf_drv_clock_lfclk_request(NULL);
+{  
+  ret_code_t err_code;
+  err_code = nrf_drv_clock_init();
+  APP_ERROR_CHECK(err_code);
+  nrf_drv_clock_lfclk_request(NULL);
 }
+#endif
 
 /**
  * pwm初始化函数
@@ -128,7 +126,7 @@ void user_pwm_init(void)
     {
       .active_high = false,
       .period      = UINT8_MAX,                         ///< 周期是255/32768,125Hz
-      .p_port      = NRF_P1,
+      .p_port      = NRF_P0,                            ///< 如果想要输出的PWM脚是P1，则此处要填充NRF_P1
       .bit_mask    = BROAD_LED_MASK,
       .p_timer_id  = &gs_m_low_power_pwm_app_timer_id,
     };

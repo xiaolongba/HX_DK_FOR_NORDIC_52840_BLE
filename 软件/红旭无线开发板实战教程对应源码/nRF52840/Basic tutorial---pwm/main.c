@@ -55,14 +55,19 @@
 */
 
 
-/* =============
+/* 
+=============
 头文件包含
- =============*/
-#include <stdbool.h>
-#include <stdint.h>
-#include <string.h>
-#include "user_log.h"
-#include "user_pwm.h"
+=============
+*/
+#include "user_application.h"
+
+/* 
+=============
+函数定义
+=============
+*/
+
  /**
  * 应用程序的函数入口
  * @param[in]   NULL
@@ -73,8 +78,6 @@
  */
 int main(void)
 {
-  /* log函数初始化  */
-  log_init();  
-  user_pwm_init();  
+  user_app_init();
 }
 

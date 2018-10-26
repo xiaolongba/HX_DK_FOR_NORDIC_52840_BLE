@@ -12,10 +12,7 @@
 /* =============
 头文件包含
  =============*/
-#include "nrf_log.h"
-#include "nrf_log_ctrl.h"
-#include "nrf_log_default_backends.h"
-#include "app_error.h"
+#include "user_log.h"
 
 /**
  * log初始化函数
@@ -25,7 +22,7 @@
  *              Ver0.0.1:
                   Helon_Chan, 2018/06/09, 初始化版本\n
  */
- void log_init(void)
+ void user_log_init(void)
  {
     ret_code_t err_code = NRF_LOG_INIT(NULL);
     APP_ERROR_CHECK(err_code);

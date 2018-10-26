@@ -11,20 +11,36 @@
 #ifndef USER_APPLICATION_H
 #define USER_APPLICATION_H
 
-/* =============
+/* 
+=============
 头文件包含
- =============*/
+=============
+*/
+#include "user_log.h"
+#include "user_pwm.h"
 
 
-
-/* =============
+/* 
+=============
 宏定义
- =============*/
+=============
+*/
 
 
 
-/* =============
+/*
+=============
 函数声明
- =============*/
-
+=============
+*/
+/**
+ * app初始化函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/10/26, 初始化版本\n
+ */
+ void user_app_init(void);
+ 
 #endif

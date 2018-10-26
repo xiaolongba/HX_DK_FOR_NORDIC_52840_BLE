@@ -1,0 +1,49 @@
+{
+    // Visual Studio Code launch.json for XMC 2Go development board 
+    "version": "0.2.0",
+    "configurations": [    
+
+      {
+        "type": "gnu-debugger",
+        "request": "launch",
+        "name": "GNU debugger",
+        "program": "${workspaceFolder}/armgcc/_build/nrf52840_xxaa.out",
+        "toolchain": "${config:arm-none-eabi.bin}",
+        "client": "arm-none-eabi-gdb",
+        "server": "JLinkGDBServer",
+        "windows": {
+          "server": "F:/JLink_V622g/JLinkGDBServerCL.exe",
+        },
+        "serverArgs": [
+          "-device", "nRF52840_xxAA",
+          "-if", "SWD",
+          "-speed", "4000"
+        ],
+        "serverPort": 2331,
+        "customVariables": [
+          "port0",
+          "port1",
+          "port2",
+        ],
+        "autoRun": true,
+        "debugOutput": true,
+        "preLaunchTask": "build firmware"
+      },
+      //下面是cortex debug插件
+      {
+        "cwd": "${workspaceRoot}",
+        "executable": "armgcc/_build/nrf52840_xxaa.out",
+        "name": "Debug Microcontroller",
+        "request": "launch",
+        "type": "cortex-debug",
+        "servertype": "jlink",
+        "runToMain": true,
+        "device": "nRF52840_xxAA",
+        "interface": "swd",
+        "ipAddress": null,
+        "serialNumber": null,      
+        "showDevDebugOutput": true,
+        // "preLaunchTask": "download flash",      
+      },
+    ]
+  }
