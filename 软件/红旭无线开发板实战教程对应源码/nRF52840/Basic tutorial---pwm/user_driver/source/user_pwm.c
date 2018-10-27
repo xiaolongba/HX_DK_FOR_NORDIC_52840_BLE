@@ -29,8 +29,8 @@ static nrfx_pwm_t gs_m_nrfx_pwm = NRFX_PWM_INSTANCE(0);
 /* 定义不同的占空比值 */
 static nrf_pwm_values_common_t duty_values [] = 
 {
-  0,                          ///< 0%
-  200,                        ///< 20%  
+  0,                          ///< 0% 
+  200,                        ///< 20%,这里指的是低电平占百分之20,下面的以此类推
   400,                        ///< 40%
   600,                        ///< 60%    
   800,                        ///< 80%
