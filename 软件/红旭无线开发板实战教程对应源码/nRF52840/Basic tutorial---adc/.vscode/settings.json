@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "nrf.h": "c",
+        "nrf52840.h": "c",
+        "user_application.h": "c",
+        "user_log.h": "c",
+        "user_multi_click.h": "c",
+        "user_adc.h": "c"
+    }
+}
