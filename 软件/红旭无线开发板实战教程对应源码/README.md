@@ -83,16 +83,24 @@
   
   讲解了如何使用app_timer实现按键的单击以及多击的功能
 
+- [什么是 PPI，它能干什么?](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---ppi)
+
+  讲解了如何使用ppi实现按键点亮LED
+
+- [如何使用硬件定时及计数器](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---hardware%20timer)
+
+  讲解了如何使用PPI+GPIOTE+TIMER实现硬件定时器以及计数器的功能
+
+
+- [脉冲宽度很难测?红旭可不怕](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---measure%20pluse%20width)
+
+  讲解了如何使用PPI+GPIOTE+TIMER,测量脉冲的占空比
+  
+- [不一样的 ADC 采集](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---adc)
+
+  讲解了如何使用过采样的方式，读取当前VDD的电压值，并将电压值打印出来
+
 - 小阶段总结
-
-- 什么是 PPI，它能干什么?
-
-- 如何使用硬件定时及计数器
-
-- 脉冲宽度很难测?红旭可不怕
-
-- 不一样的 ADC 采集
-
 ### 基础应用篇
 - BLE 基础知识
 
