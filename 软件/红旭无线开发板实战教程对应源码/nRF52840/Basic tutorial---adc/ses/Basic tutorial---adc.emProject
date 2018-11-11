@@ -26,6 +26,7 @@
       link_use_linker_script_file="No"
       linker_output_format="hex"
       linker_printf_fmt_level="long"
+      linker_printf_fp_enabled="Float"
       linker_printf_width_precision_supported="Yes"
       linker_section_placement_file="flash_placement.xml"
       linker_section_placement_macros="FLASH_PH_START=0x0;FLASH_PH_SIZE=0x100000;RAM_PH_START=0x20000000;RAM_PH_SIZE=0x40000;FLASH_START=0x26000;FLASH_SIZE=0xda000;RAM_START=0x20002210;RAM_SIZE=0x3ddf0"
@@ -33,20 +34,21 @@
       macros="CMSIS_CONFIG_TOOL=$(SDK_ROOT)/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar"
       project_directory=""
       project_type="Executable" />
-    <folder Name="None">
-      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf_common.s" />
-      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf52840.s" />
-      <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/system_nrf52840.c" />
-    </folder>
     <folder Name="Application">
       <file file_name="../config/sdk_config.h" />
       <file file_name="../main.c" />
+      <folder Name="None">
+        <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf_common.s" />
+        <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/ses_startup_nrf52840.s" />
+        <file file_name="$(SDK_ROOT)/modules/nrfx/mdk/system_nrf52840.c" />
+      </folder>
     </folder>
     <folder Name="Segger Startup Files">
       <file file_name="$(StudioDir)/source/thumb_crt0.s" />
     </folder>
     <configuration
       Name="Release"
+      debug_additional_load_file=""
       gcc_optimization_level="Optimize For Size" />
     <folder Name="UserDriver">
       <file file_name="../user_driver/source/user_application.c" />
@@ -88,6 +90,7 @@
       <file file_name="../../integration/nrfx/legacy/nrf_drv_clock.c" />
       <file file_name="../../modules/nrfx/drivers/src/nrfx_gpiote.c" />
       <file file_name="$(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_clock.c" />
+      <file file_name="../../modules/nrfx/drivers/src/nrfx_saadc.c" />
     </folder>
   </project>
   <configuration

@@ -29,9 +29,15 @@
  *              Ver0.0.1:
                   Helon_Chan, 2018/06/09, ≥ı ºªØ∞Ê±æ\n
  */
- void log_init(void)
- {
-    ret_code_t err_code = NRF_LOG_INIT(NULL);
-    APP_ERROR_CHECK(err_code);
-    NRF_LOG_DEFAULT_BACKENDS_INIT();
+void log_init(void)
+{
+  ret_code_t err_code = NRF_LOG_INIT(NULL);
+  APP_ERROR_CHECK(err_code);
+  NRF_LOG_DEFAULT_BACKENDS_INIT();
+  NRF_LOG_INFO("/******************************************************************************/\n");
+  NRF_LOG_INFO("                         Welcome to saadc demo project                          \n");
+  NRF_LOG_INFO("                         website :bbs.wireless-tech.cn                          \n");
+  NRF_LOG_INFO("                         QQ Group:671139854                                     \n");
+  NRF_LOG_INFO("                         Author  :wireless-tech                                 \n");
+  NRF_LOG_INFO("/******************************************************************************/\n");
  }

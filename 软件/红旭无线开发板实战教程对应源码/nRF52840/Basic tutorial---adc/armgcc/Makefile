@@ -44,9 +44,10 @@ SRC_FILES += \
   $(SDK_ROOT)/integration/nrfx/legacy/nrf_drv_clock.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_gpiote.c \
   $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_clock.c \
+  $(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_saadc.c \
   $(PROJ_DIR)/user_driver/source/user_log.c \
+  $(PROJ_DIR)/user_driver/source/user_adc.c \
   $(PROJ_DIR)/main.c \
-
 
 # Include folders common to all targets
 INC_FOLDERS += \
@@ -124,6 +125,8 @@ ASMFLAGS += -DSWI_DISABLE0
 LDFLAGS += $(OPT)
 LDFLAGS += -mthumb -mabi=aapcs -L$(SDK_ROOT)/modules/nrfx/mdk -T$(LINKER_SCRIPT)
 LDFLAGS += -mcpu=cortex-m4
+# add the feature for support float
+LDFLAGS += -u _printf_float
 LDFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 # let linker dump unused sections
 LDFLAGS += -Wl,--gc-sections

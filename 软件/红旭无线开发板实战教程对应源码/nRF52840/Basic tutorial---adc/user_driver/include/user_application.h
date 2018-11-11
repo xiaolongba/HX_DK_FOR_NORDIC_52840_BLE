@@ -19,7 +19,7 @@
 */
 #include "user_log.h"
 #include "user_multi_click.h"
-
+#include "user_adc.h"
 /*
 ===========================
 º¯ÊıÉùÃ÷
