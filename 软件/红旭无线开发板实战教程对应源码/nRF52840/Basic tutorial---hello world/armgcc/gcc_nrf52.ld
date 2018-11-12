@@ -3,11 +3,11 @@
 SEARCH_DIR(.)
 GROUP(-lgcc -lc -lnosys)
 
-/* 1.这里根据自己的具体情况修改相应的起始地址及长度
-   2.如果没带协议栈则从0x000000开始，否则要算上协议栈+MBR的地址 */
+/* 1.这里根据�?己的具体情况�?改相应的起�?�地址及长�?
+   2.如果没带协�??栈则�?0x000000开始，否则要算上协�?�?+MBR的地址 */
 MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x26000, LENGTH = 0xda000
+  FLASH (rx) : ORIGIN = 0x000000, LENGTH = 0x100000
   RAM (rwx) :  ORIGIN = 0x20002210, LENGTH = 0x3ddf0
 }
 
