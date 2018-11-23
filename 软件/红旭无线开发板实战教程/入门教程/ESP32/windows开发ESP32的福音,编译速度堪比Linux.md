@@ -1,6 +1,8 @@
 ## 前言
 在阅读本篇文章之前,为了更好地理解即将展开的内容,读者们还是需要提前阅读[如何搭建ESP32开发环境](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.md)以及[使用vscode开发ESP32之修订篇](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91ESP32%E4%B9%8B%E4%BF%AE%E8%AE%A2%E7%AF%87.md)这两篇文章.如果是我们的老朋友,那接下来的内容也自然可以看得明白.接下来,小编将给大家讲解使用全新的方式,更快更适合Windows环境下使用vscode来开发ESP32开发.
 
+> 这段时间在QQ群里经常有很多新人在看了笔者的这篇文章,按照步骤来操作之后，出现大概率无法正常编译的问题。当时小编听到他们的抱怨，心底就想 **“你们头脑能不能再Smart点”** ,大学的老师上课的PPT都用了几十年了，还不是照样教你们，你们出来社会不也照 样拿着几十K的月薪？难道你们连小编都不如吗？后来，我发现我日，乐鑫官方的SDK已经全面支持Cmake了。好吧，这个时候小编也不得不再次更新此教程了。随我慢慢道来……
+
 ## 系统环境
 小编要讲的内容均在以下环境进行测试通过，其他的系统环境理应也是大同小异.
 ![](https://raw.githubusercontent.com/xiaolongba/picture/master/%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE.png)
@@ -8,13 +10,16 @@
 ## 准备工作
 在开始进入主题之后,我们还要下载以下几个工具.
 
-- [ESP-IDF Tools Installer](https://dl.espressif.com/dl/esp-idf-tools-setup-1.1.exe)
+- [ESP-IDF Tools Installer](https://docs.espressif.com/projects/esp-idf/en/latest/get-started-cmake/windows-setup.html)
+	 
+	 打开上面的链接找到 **ESP-IDF Tools Installer**章节，下载最新版本的ESP-IDF Tools Installer即可。
 
 - [Git For Windows](https://gitforwindows.org/)
+
 	如果之前安装过，则不用再次下载此工具
 
 上面两个工具下载完成之后,均无脑地安装至自己指定的盘符下即可.
-### 下载Cmake特性的ESP-IDF
+### 下载Cmake特性的ESP-IDF（最新的版本已经默认全面支持Cmake了）
 这个SDK是必须要下载的.这个SDK跟前两篇[如何搭建ESP32开发环境](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAESP32%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.md)以及[使用vscode开发ESP32之修订篇](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/ESP32/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91ESP32%E4%B9%8B%E4%BF%AE%E8%AE%A2%E7%AF%87.md)中的SDK不一样.
 
 - 步骤1
@@ -26,12 +31,12 @@
 - 步骤2
 
   ```
-  git clone --branch feature/cmake --recursive https://github.com/espressif/esp-idf.git
+  git clone --recursive https://github.com/espressif/esp-idf.git
   ```
   ![](https://raw.githubusercontent.com/xiaolongba/picture/master/Cmake%20%E4%B8%8B%E8%BD%BD.gif)
 
 ### 设置环境变量
-这个操作是充要条件必不可少,否则会出现意想不到的情况.如果有天秀之才不听劝,然后出了问题就是活该.
+这个操作是充要条件必不可少,否则会出现意想不到的情况.如果有 **天秀之才**不听劝,然后出了问题就是活该.
 
 - 设置SDK的路径&增加编译工具的路径
 
@@ -144,7 +149,7 @@
 	"command": "idf.py",
 	"type": "shell",
 	"args": [
-	"clean"
+	"fullclean"
 	],
 	"presentation": {
 	"reveal": "always",
@@ -196,7 +201,7 @@
 	]
 	}
 	 ```
-	 注意,有可能**powershell**路径,不同的电脑有所不同,以上是小编的路径
+	 **注意**,**powershell** && **串口**路径有可能，不同的电脑有所不同,以上是小编的路径
 	
  - 详细的操作图示
 ![](https://raw.githubusercontent.com/xiaolongba/picture/master/%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1.gif)
@@ -253,5 +258,15 @@
 
 - [更多的命令](https://esp-idf.readthedocs.io/en/feature-cmake/api-guides/build-system.html#idf-py)
 
+## 效果展示
+ - menuconfig
+ 	  ![](https://raw.githubusercontent.com/xiaolongba/picture/master/Cmake_menuconfig.gif)
+	 	
+ - fullclean
+ 	![](https://raw.githubusercontent.com/xiaolongba/picture/master/Cmake_full_clean.gif)
+ - build
+ 	 ![](https://raw.githubusercontent.com/xiaolongba/picture/master/Cmake_build.gif)
+ 
+其他的类似烧录app等这些动作均跟上面的操作一致。
 ## 最后
 至此,就可以愉快地使用快捷键来开发ESP32啦.此文档解决了前面两篇中提到的**乱码**以及**速度过慢**的问题.编译速度已经达到在linux下编译的水准,应该是目前最完美的vscode开发esp32教程了.
