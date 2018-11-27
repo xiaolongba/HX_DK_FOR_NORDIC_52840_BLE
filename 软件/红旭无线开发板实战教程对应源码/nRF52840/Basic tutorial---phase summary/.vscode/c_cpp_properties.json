@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/user_driver/include",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/util",
+                "${workspaceFolder}/config",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx/mdk",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/softdevice/s140/headers",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/experimental_section_vars",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/strerror",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log/src",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/memobj",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/balloc"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "",
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules"
+                ]
+            },
+            "cStandard": "c11",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}
