@@ -1,0 +1,11 @@
+{
+  // Command Prompt
+// "terminal.integrated.shell.windows":
+//   "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "files.associations": {
+    "nrf_drv_uart.h": "c"
+  }
+  
+
+}

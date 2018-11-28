@@ -11,12 +11,24 @@
 #ifndef USER_LOG_H
 #define USER_LOG_H
 
-/* =============
+/* 
+=============
 头文件包含
- =============*/
-#include "nrf_log.h"
-#include "nrf_log_ctrl.h"
-#include "nrf_log_default_backends.h"
+=============
+*/
+#include "nrf_drv_uart.h"
+#include "app_error.h"
+#include <stdio.h>
+#include <stdarg.h>
+
+/* 
+=============
+宏定义
+=============
+*/
+#define MAX_FORMAT_BUFFER_SIZE	(255)
+#define DBG_ENABLE               1
+
 /**
  * log打印输出初始化函数
  * @param[in]   NULL

@@ -14,7 +14,10 @@
                 "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/strerror",
                 "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/log/src",
                 "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/memobj",
-                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/balloc"
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components/libraries/balloc",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx/legacy",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules/nrfx",
+                "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration/nrfx"
             ],
             "defines": [
                 "_DEBUG",
@@ -27,7 +30,8 @@
                 "path": [
                     "${workspaceFolder}",
                     "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/components",
-                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules"
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/modules",
+                    "C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/integration"
                 ]
             },
             "cStandard": "c11",
