@@ -51,6 +51,7 @@
     <folder Name="UserDriver">
       <file file_name="../user_driver/source/user_log.c" />
       <file file_name="../user_driver/include/user_log.h" />
+      <file file_name="../user_driver/source/user_app.c" />
     </folder>
     <folder Name="nRF_Log">
       <file file_name="../../components/libraries/log/src/nrf_log_backend_rtt.c" />

@@ -2,7 +2,9 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <BreakpointListItem trigger="" line="55" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../../components/libraries/log/src/nrf_log_backend_uart.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="95" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../main.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="55" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../components/libraries/log/src/nrf_log_backend_uart.c" useHWbreakpoint="false"/>
+  <BreakpointListItem trigger="" line="92" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../user_driver/source/user_app.c" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -26,7 +28,6 @@
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary"/>
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;Application"/>
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;nRF_Drivers"/>
-  <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;nRF_Libraries"/>
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;nRF_Log"/>
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;nRF_Segger_RTT"/>
   <ProjectSessionItem path="Basic tutorial---phase summary;Basic tutorial---phase summary;Segger Startup Files"/>
@@ -53,6 +54,11 @@
  <Watch1>
   <Watches active="1" update="Never">
    <Watchpoint numelements="0" expression="p_event" evalMode="1" name="p_event" radix="-1" linenumber="53" filename="../../components/libraries/log/src/nrf_log_backend_uart.c" list=""/>
+   <Watchpoint numelements="0" expression="p_instance" evalMode="1" name="p_instance" radix="16" linenumber="513" filename="../../integration/nrfx/legacy/nrf_drv_uart.h" list=""/>
+   <Watchpoint numelements="255" expression="s_formatBuffer" evalMode="2" name="s_formatBuffer" radix="-1" linenumber="60" filename="../user_driver/source/user_log.c" list=""/>
+   <Watchpoint numelements="255" expression="g_s_tx_buffer" evalMode="2" name="g_s_tx_buffer" radix="-1" linenumber="73" filename="../user_driver/source/user_app.c" list=""/>
+   <Watchpoint numelements="1" expression="m_cb" evalMode="2" name="m_cb" radix="-1" linenumber="334" filename="../../modules/nrfx/drivers/src/nrfx_uarte.c" list=""/>
+   <Watchpoint numelements="1" expression="g_s_rx_buffer" evalMode="2" name="g_s_rx_buffer" radix="-1" linenumber="95" filename="../user_driver/source/user_app.c" list=""/>
   </Watches>
  </Watch1>
  <Watch2>
@@ -65,7 +71,13 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="87" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="70" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="94" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="82" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="92" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_app.c" selected="1" top="84" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="430" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/hal/nrf_uarte.h" selected="0" top="421" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="568" useTextEdit="1" useBinaryEdit="0" left="0" path="../../integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="557" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="558" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/drivers/src/nrfx_uarte.c" selected="0" top="549" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="256" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/drivers/nrfx_common.h" selected="0" top="247" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="77" useTextEdit="1" useBinaryEdit="0" left="0" path="../../integration/nrfx/legacy/nrf_drv_uart.c" selected="0" top="68" codecName=""/>
  </Files>
- <ARMCrossStudioWindow activeProject="Basic tutorial---phase summary" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <ARMCrossStudioWindow activeProject="Basic tutorial---phase summary" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Helon/Desktop/test/nRF5_SDK_15.2.0_9412b96/Basic tutorial---phase summary/user_driver/source" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

@@ -54,35 +54,47 @@
                      Helon_Chan, 2018/06/09, 初始化版本\n
 */
 
-
-/* =============
+/*
+=============
 头文件包含
- =============*/
+=============
+*/
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
-#include "user_log.h"
+#include "user_app.h"
 
+/* 
+=============
+全局变量
+=============
+*/
+
+extern uint8_t g_s_rx_buffer[1];
  /**
  * 应用程序的函数入口
  * @param[in]   NULL
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
-                  Helon_Chan, 2018/06/09, 初始化版本\n
+                  Helon_Chan, 2018/12/02, 初始化版本\n
  */
 int main(void)
 {
-  /* log函数初始化  */
-  log_init();
-  NRF_LOG_INFO("/******************************************************************************/\n");
-  NRF_LOG_INFO("                         Welcome to wireless-tech world                         \n");
-  NRF_LOG_INFO("                         website :bbs.wireless-tech.cn                          \n");
-  NRF_LOG_INFO("                         QQ Group:671139854                                     \n");
-  NRF_LOG_INFO("/******************************************************************************/\n");
+  user_app_init();
+  HX_PRINTF("/******************************************************************************/\n");
+  HX_PRINTF("                         Welcome to phase summary project                       \n");
+  HX_PRINTF("                         website :bbs.wireless-tech.cn                          \n");
+  HX_PRINTF("                         QQ Group:671139854                                     \n");
+  HX_PRINTF("/******************************************************************************/\n");
+
   for(;;)
   {
-	NRF_LOG_PROCESS();
+    if(g_s_rx_buffer[0] != 0)
+    {
+      HX_PRINTF("temp is %d\n",g_s_rx_buffer[0]);
+      g_s_rx_buffer[0] = 0;
+    }    
   }
 }
 

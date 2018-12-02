@@ -4271,7 +4271,7 @@
 // <e> NRFX_UARTE_ENABLED - nrfx_uarte - UARTE peripheral driver
 //==========================================================
 #ifndef NRFX_UARTE_ENABLED
-#define NRFX_UARTE_ENABLED 1
+#define NRFX_UARTE_ENABLED 0
 #endif
 // <o> NRFX_UARTE0_ENABLED - Enable UARTE0 instance 
 #ifndef NRFX_UARTE0_ENABLED
@@ -4397,7 +4397,7 @@
 // <e> NRFX_UART_ENABLED - nrfx_uart - UART peripheral driver
 //==========================================================
 #ifndef NRFX_UART_ENABLED
-#define NRFX_UART_ENABLED 1
+#define NRFX_UART_ENABLED 0
 #endif
 // <o> NRFX_UART0_ENABLED - Enable UART0 instance 
 #ifndef NRFX_UART0_ENABLED
@@ -7416,7 +7416,7 @@
 // <e> NRF_LOG_BACKEND_UART_ENABLED - nrf_log_backend_uart - Log UART backend
 //==========================================================
 #ifndef NRF_LOG_BACKEND_UART_ENABLED
-#define NRF_LOG_BACKEND_UART_ENABLED 1
+#define NRF_LOG_BACKEND_UART_ENABLED 0
 #endif
 // <o> NRF_LOG_BACKEND_UART_TX_PIN - UART TX pin 
 #ifndef NRF_LOG_BACKEND_UART_TX_PIN
@@ -7458,6 +7458,55 @@
 
 #ifndef NRF_LOG_BACKEND_UART_TEMP_BUFFER_SIZE
 #define NRF_LOG_BACKEND_UART_TEMP_BUFFER_SIZE 64
+#endif
+
+// </e>
+
+// <e> HX_LOG__UART_ENABLED - hx_log__uart - Log UART backend
+//==========================================================
+#ifndef HX_LOG_UART_ENABLED
+#define HX_LOG_UART_ENABLED 1
+#endif
+// <o> HX_LOG_UART_TX_PIN - UART TX pin 
+#ifndef HX_LOG_UART_TX_PIN
+#define HX_LOG_UART_TX_PIN 8
+#endif
+// <o> HX_LOG_UART_RX_PIN - UART RX pin 
+#ifndef HX_LOG_UART_RX_PIN
+#define HX_LOG_UART_RX_PIN 6
+#endif
+
+// <o> HX_LOG_UART_BAUDRATE  - Default Baudrate
+ 
+// <323584=> 1200 baud 
+// <643072=> 2400 baud 
+// <1290240=> 4800 baud 
+// <2576384=> 9600 baud 
+// <3862528=> 14400 baud 
+// <5152768=> 19200 baud 
+// <7716864=> 28800 baud 
+// <10289152=> 38400 baud 
+// <15400960=> 57600 baud 
+// <20615168=> 76800 baud 
+// <30801920=> 115200 baud 
+// <61865984=> 230400 baud 
+// <67108864=> 250000 baud 
+// <121634816=> 460800 baud 
+// <251658240=> 921600 baud 
+// <268435456=> 1000000 baud 
+
+#ifndef HX_LOG_UART_BAUDRATE
+#define HX_LOG_UART_BAUDRATE 30801920
+#endif
+
+// <o> HX_LOG_UART_TEMP_BUFFER_SIZE - Size of buffer for partially processed strings. 
+// <i> Size of the buffer is a trade-off between RAM usage and processing.
+// <i> if buffer is smaller then strings will often be fragmented.
+// <i> It is recommended to use size which will fit typical log and only the
+// <i> longer one will be fragmented.
+
+#ifndef HX_LOG_UART_TEMP_BUFFER_SIZE
+#define HX_LOG_UART_TEMP_BUFFER_SIZE 255
 #endif
 
 // </e>

@@ -26,18 +26,28 @@
 宏定义
 =============
 */
-#define MAX_FORMAT_BUFFER_SIZE	(255)
-#define DBG_ENABLE               1
+
+/* 
+=============
+函数声明
+=============
+*/
 
 /**
- * log打印输出初始化函数
- * @param[in]   NULL
+ * uart初始化函数
+ * @param[in]   nrf_drv_uart:串口实例
+ * @param[in]   nrf_uart_event_handler:uart事件回调处理函数
+  * @param[in]   rx_buffer:uart的rx缓冲区
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
                   Helon_Chan, 2018/06/09, 初始化版本\n
+ *              Ver0.0.2:
+                  Helon_Chan, 2018/11/28, 全面放弃使用官方的log模块，直接怼串口
  */
- void log_init(void);
+void user_uart_init(nrf_drv_uart_t *nrf_drv_uart,
+										nrf_uart_event_handler_t nrf_uart_event_handler,										
+										uint8_t *rx_buffer);
 
 
 #endif  //USER_LOG_H
