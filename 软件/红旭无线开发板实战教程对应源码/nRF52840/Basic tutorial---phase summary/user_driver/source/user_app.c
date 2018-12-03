@@ -24,15 +24,15 @@
 全局变量
 =============
 */
-// static uint8_t s_formatBuffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
+
 /* 定义一个1字节的tx缓冲区 */
 static uint8_t g_s_tx_buffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
 /* 定义一个字节的rx缓冲区 */
-uint8_t g_s_rx_buffer[1]={0};
+static uint8_t g_s_rx_buffer[1]={0};
 /* 定义uart0实例 */
 static nrf_drv_uart_t g_m_uart_id = NRF_DRV_UART_INSTANCE(0);
 
-uint8_t temp = 0; 
+volatile uint8_t temp = 0; 
 /* 
 =============
 函数定义
@@ -92,7 +92,8 @@ static void user_uart_evt_handler(nrf_drv_uart_event_t *p_event, void *p_context
   switch (p_event->type)
   {
   case NRF_DRV_UART_EVT_RX_DONE:
-    nrf_drv_uart_rx(&g_m_uart_id,g_s_rx_buffer,1);        
+    nrf_drv_uart_rx(&g_m_uart_id,g_s_rx_buffer,1);   
+	temp = g_s_rx_buffer[0];
     break;
   default:
     break;

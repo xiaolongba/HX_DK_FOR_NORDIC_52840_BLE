@@ -70,7 +70,7 @@
 =============
 */
 
-extern uint8_t g_s_rx_buffer[1];
+extern volatile uint8_t temp;
  /**
  * 应用程序的函数入口
  * @param[in]   NULL
@@ -86,14 +86,23 @@ int main(void)
   HX_PRINTF("                         Welcome to phase summary project                       \n");
   HX_PRINTF("                         website :bbs.wireless-tech.cn                          \n");
   HX_PRINTF("                         QQ Group:671139854                                     \n");
-  HX_PRINTF("/******************************************************************************/\n");
-
+  HX_PRINTF("/==============================================================================/\n");
+  HX_PRINTF("--> This is the phase summary project to test what the basic tutorials said,\n");
+  HX_PRINTF("--> and there are total 5 modular test projects,please input the corresponded\n");
+  HX_PRINTF("--> the number to come into the corresponded the test project.\n");
+  HX_PRINTF("--> Such as \"1\" for testing the button. \n");
+  HX_PRINTF("/==============================================================================/\n");
+  HX_PRINTF("1.BUTTON\n");
+  HX_PRINTF("2.LED\n");
+  HX_PRINTF("3.ADC\n");
+  HX_PRINTF("4.UART\n");  
+  HX_PRINTF("5.Pulse Width Measure\n");
   for(;;)
   {
-    if(g_s_rx_buffer[0] != 0)
+    if(temp != 0)
     {
-      HX_PRINTF("temp is %d\n",g_s_rx_buffer[0]);
-      g_s_rx_buffer[0] = 0;
+      HX_PRINTF("temp is %X\n",temp);
+      temp = 0;
     }    
   }
 }
