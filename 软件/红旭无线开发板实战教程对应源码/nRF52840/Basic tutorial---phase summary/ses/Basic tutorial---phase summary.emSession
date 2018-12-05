@@ -69,10 +69,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="82" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="1" top="73" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="1" y="50" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_app.c" selected="0" top="40" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="101" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="85" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="107" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_app.c" selected="1" top="97" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="430" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/hal/nrf_uarte.h" selected="0" top="421" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="568" useTextEdit="1" useBinaryEdit="0" left="0" path="../../integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="557" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="566" useTextEdit="1" useBinaryEdit="0" left="0" path="../../integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="557" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="572" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/drivers/src/nrfx_uarte.c" selected="0" top="554" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="256" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/drivers/nrfx_common.h" selected="0" top="247" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="77" useTextEdit="1" useBinaryEdit="0" left="0" path="../../integration/nrfx/legacy/nrf_drv_uart.c" selected="0" top="68" codecName="Default"/>

@@ -53,4 +53,14 @@ void user_app_init(void);
  */
 void user_customer_printf(char *format, ...);
 
+
+/**
+ * 串口接收处理函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/12/5, 初始化版本\n
+ */
+void user_uart_recevice_process(void);
 #endif

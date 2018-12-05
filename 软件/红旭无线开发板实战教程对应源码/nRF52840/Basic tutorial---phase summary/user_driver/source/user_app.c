@@ -17,8 +17,6 @@
 
 #include "user_app.h"
 
-
-
 /* 
 =============
 全局变量
@@ -64,16 +62,11 @@ void user_customer_printf(char *format, ...)
 	if (iWriteNum > HX_LOG_UART_TEMP_BUFFER_SIZE)
 		iWriteNum = HX_LOG_UART_TEMP_BUFFER_SIZE;
 
-//  nrf_drv_uart_tx(&g_m_uart_id, g_s_tx_buffer, iWriteNum);
-//  while (nrf_drv_uart_tx_in_progress(&g_m_uart_id))
-//    ;
   for (i = 0; i < iWriteNum; i++)
   {
-    while (nrf_drv_uart_tx_in_progress(&g_m_uart_id))
-      ;
-    nrf_drv_uart_tx(&g_m_uart_id, g_s_tx_buffer + i, 1);
     /* 等待tx空闲时，即将数据发送出去 */
-    //  		while(nrf_drv_uart_tx_in_progress(&g_m_uart_id));
+    while (nrf_drv_uart_tx_in_progress(&g_m_uart_id));
+    nrf_drv_uart_tx(&g_m_uart_id, g_s_tx_buffer + i, 1);        
   }
 }
 
@@ -100,6 +93,44 @@ static void user_uart_evt_handler(nrf_drv_uart_event_t *p_event, void *p_context
   }
 }
 
+/**
+ * 串口接收处理函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/12/5, 初始化版本\n
+ */
+void user_uart_recevice_process(void)
+{
+  switch(temp)
+  {
+    /* BUTTON */
+    case 1:
+      HX_PRINTF("/==============================================================================/\n");
+      HX_PRINTF("--> You can achieve click、Double click、Multi click in this submenu.\n");
+      HX_PRINTF("/==============================================================================/\n");
+      break;
+    /* LED */
+    case 2:
+      break;
+    /* ADC */
+    case 3:
+      break;
+    /* UART */  
+    case 4:
+      break;
+    /* Pluse Width Measure */
+    case 5:
+      break;
+    default:
+      if (temp != 0x00)
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 1~5 !!!\r\n",temp);
+      break;
+  }
+  if (temp != 0x00)
+    temp = 0x00;
+}
 /**
  * 应用层初始化
  * @param[in]   NULL

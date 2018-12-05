@@ -70,7 +70,7 @@
 =============
 */
 
-extern volatile uint8_t temp;
+
  /**
  * 应用程序的函数入口
  * @param[in]   NULL
@@ -99,11 +99,7 @@ int main(void)
   HX_PRINTF("5.Pulse Width Measure\n");
   for(;;)
   {
-    if(temp != 0)
-    {
-      HX_PRINTF("temp is %X\n",temp);
-      temp = 0;
-    }    
+    user_uart_recevice_process();
   }
 }
 
