@@ -29,33 +29,36 @@ static uint8_t s_formatBuffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
 */
 
 /**
- * uart初始化函数
- * @param[in]   nrf_drv_uart:串口实例
- * @param[in]   nrf_uart_event_handler:uart事件回调处理函数
-  * @param[in]   rx_buffer:uart的rx缓冲区
+ * uart初始化函数 
+ * @param[in]   app_uart_event_handler:uart事件回调处理函数  
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
                   Helon_Chan, 2018/06/09, 初始化版本\n
  *              Ver0.0.2:
                   Helon_Chan, 2018/11/28, 全面放弃使用官方的log模块，直接怼串口
+*               Ver0.0.3:
+                  Helon_Chan, 2018/12/15, 因为使用driver的uart会出现丢包的情况故放弃,直接使用官方的app_uart
  */
-void user_uart_init(nrf_drv_uart_t *nrf_drv_uart,
-										nrf_uart_event_handler_t nrf_uart_event_handler,										
-										uint8_t *rx_buffer)
+void user_log_init(app_uart_event_handler_t app_uart_event_handler)
 {
-	nrf_drv_uart_config_t m_config = NRF_DRV_UART_DEFAULT_CONFIG;
-	m_config.pseltxd = HX_LOG_UART_TX_PIN;
-	m_config.pselrxd = HX_LOG_UART_RX_PIN;
-	m_config.pselcts = NRF_UART_PSEL_DISCONNECTED;
-	m_config.pselrts = NRF_UART_PSEL_DISCONNECTED;
-	m_config.baudrate = (nrf_uart_baudrate_t)HX_LOG_UART_BAUDRATE;
-	ret_code_t err_code = nrf_drv_uart_init(nrf_drv_uart, &m_config, nrf_uart_event_handler);	
-	APP_ERROR_CHECK(err_code);		
-	err_code = nrf_drv_uart_rx(nrf_drv_uart,rx_buffer,1);
+	ret_code_t err_code;
+	app_uart_comm_params_t m_app_uart_comm_param;
+	m_app_uart_comm_param.flow_control = APP_UART_FLOW_CONTROL_DISABLED;
+	m_app_uart_comm_param.use_parity = false;
+	m_app_uart_comm_param.rx_pin_no = HX_LOG_UART_RX_PIN;
+	m_app_uart_comm_param.tx_pin_no = HX_LOG_UART_TX_PIN;
+	m_app_uart_comm_param.rts_pin_no = UART_PIN_DISCONNECTED;
+	m_app_uart_comm_param.cts_pin_no = UART_PIN_DISCONNECTED;  
+	m_app_uart_comm_param.baud_rate = HX_LOG_UART_BAUDRATE;
+
+	APP_UART_FIFO_INIT(&m_app_uart_comm_param,
+										 UART_RX_BUFFER,
+										 UART_TX_BUFFER,
+										 app_uart_event_handler,
+										 APP_IRQ_PRIORITY_LOWEST,
+										 err_code);
 	APP_ERROR_CHECK(err_code);
-	// err_code = nrf_drv_uart_tx(&g_m_uart_id,tx_buffer,sizeof(tx_buffer));
-	// APP_ERROR_CHECK(err_code);
 }
 
 
