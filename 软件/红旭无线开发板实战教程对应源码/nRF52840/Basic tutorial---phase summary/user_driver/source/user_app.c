@@ -25,12 +25,10 @@
 
 /* 定义一个1字节的tx缓冲区 */
 static uint8_t g_s_tx_buffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
-/* 定义一个字节的rx缓冲区 */
-static uint8_t g_s_rx_buffer[1]={0};
-/* 定义uart0实例 */
-static nrf_drv_uart_t g_m_uart_id = NRF_DRV_UART_INSTANCE(0);
-/* 存放接收到的串口数据的临时变量 */
-uint8_t temp = 0; 
+// /* 定义一个字节的rx缓冲区 */
+// static uint8_t g_s_rx_buffer[1]={0};
+// /* 定义uart0实例 */
+// static nrf_drv_uart_t g_m_uart_id = NRF_DRV_UART_INSTANCE(0);
 /* 定义菜单结构体变量 */
 modular_test_menu_t g_m_menu;
 
@@ -102,7 +100,7 @@ void main_menu_display(void)
 
 
 /**
- * 一级子菜单识别
+ * 子菜单识别
  * @param[in]   NULL
  * @retval      返回当前在哪个菜单，详情就参考em_submenu枚举
  * @par         修改日志
@@ -110,36 +108,8 @@ void main_menu_display(void)
                   Helon_Chan, 2018/12/15, 初始化版本\n
  */
 static uint8_t user_submenu_identification(void)
-{
-  if(g_m_menu.button_submenu)
-  {
-    return PRIMARY_BUTTON;
-  }
-  if(g_m_menu.led_menu.led_primary_submenu)
-  {
-    if(g_m_menu.led_menu.ppi_secondary_submenu)
-    {
-      return SECONDARY_PPI;
-    }
-    if(g_m_menu.led_menu.pwm_secondary_sumenu)
-    {
-      return SECONDARY_PWM;
-    }
-    if(g_m_menu.led_menu.timer_secondary_submenu)
-    {
-      return SECONDARY_TIMER;
-    }
-    return PRIMARY_LED;
-  }
-  if(g_m_menu.adc_sumenu)
-  {
-    return PRIMARY_ADC;
-  }
-  if(g_m_menu.pluse_width_measure_submenu)
-  {
-    return PRIMARY_PWM_MEASURE;
-  }
-  return MAIN_MENU;
+{  
+  return g_m_menu.current_menu;
 }
 
 
@@ -156,18 +126,16 @@ static void user_button_submenu_handler(uint8_t type)
   switch (type)
   {
   /* 进入子菜单 */
-  case ENTER:
-    g_m_menu.button_submenu = 1;
-    g_m_menu.main_menu = 0;
+  case PRIMARY_BUTTON:
+    g_m_menu.current_menu = PRIMARY_BUTTON;
     HX_PRINTF("/==============================================================================/\n");
     HX_PRINTF("--> You can implement click、Double click、Multi click after go to this submenu.\n");
     HX_PRINTF("--> 0. Back to the upper menu.\n");
     HX_PRINTF("/==============================================================================/\n");
     break;
   /* 退出子菜单 */
-  case EXIT:
-    g_m_menu.button_submenu = 0;
-    g_m_menu.main_menu = 1;
+  case EXIT_PRIMARY_MENU:
+    g_m_menu.current_menu = MAIN_MENU;
     main_menu_display();
     break;
   }
@@ -177,7 +145,7 @@ static void user_button_submenu_handler(uint8_t type)
 
 /**
  * LED子菜单处理
- * @param[in]   type：ENTER表示进入子菜单，EXIT表示退出子菜单
+ * @param[in]   type：详情请参考em_submenu_action枚举
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
@@ -188,44 +156,61 @@ static void user_led_submenu_handler(uint8_t type)
   switch (type)
   {
   /* 进入一级子菜单 */
-  case ENTER:
-    if(!g_m_menu.led_menu.led_primary_submenu)
-    {
-      g_m_menu.led_menu.led_primary_submenu = 1;
-      g_m_menu.main_menu = 0;
-      HX_PRINTF("/==============================================================================/\n");
-      HX_PRINTF("--> You can implement the LED related functions in this submenu.\n");
-      HX_PRINTF("--> 0. Back to the upper menu.\n");
-      HX_PRINTF("--> 1. PPI\n");
-      HX_PRINTF("--> 2. PWM\n");
-      HX_PRINTF("--> 3. TIMER\n");
-      HX_PRINTF("/==============================================================================/\n");
-    }
-    /* 二级子菜单处理 */
-    else
-    {
-      switch (temp)
-      {
-      case 1:
-        HX_PRINTF("/==============================================================================/\n");
-        HX_PRINTF("--> Press the user button to control led on or off in this submenu.\n");
-        HX_PRINTF("--> 0. Back to the upper menu.\n");
-        HX_PRINTF("/==============================================================================/\n");
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      }
-    }
+  case PRIMARY_LED:
+    g_m_menu.current_menu = PRIMARY_LED;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can implement the LED related functions in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("--> 1. PPI\n");
+    HX_PRINTF("--> 2. PWM\n");
+    HX_PRINTF("--> 3. TIMER\n");
+    HX_PRINTF("--> 4. RGB\n");
+    HX_PRINTF("/==============================================================================/\n");
     break;
-  case EXIT:
-    g_m_menu.led_menu.led_primary_submenu = 0;
-    g_m_menu.main_menu = 1;
+  case SECONDARY_PPI:
+    g_m_menu.current_menu = SECONDARY_PPI;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> Press the user button to control led on or off in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  case SECONDARY_PWM:
+    g_m_menu.current_menu = SECONDARY_PWM;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can modify the PWM duty cycle in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("--> 1. 20% \n");
+    HX_PRINTF("--> 2. 40% \n");
+    HX_PRINTF("--> 3. 60% \n");
+    HX_PRINTF("--> 4. 80% \n");
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  case SECONDARY_TIMER:
+    g_m_menu.current_menu = SECONDARY_TIMER;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can modify the blink frequency in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("--> 1. 100ms \n");
+    HX_PRINTF("--> 2. 200ms \n");
+    HX_PRINTF("--> 3. 300ms \n");
+    HX_PRINTF("--> 4. 400ms \n");
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  case SECONDARY_RGB:
+    g_m_menu.current_menu = SECONDARY_RGB;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can select the led color in this submenu. The default color is Red.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("--> 1. Red \n");
+    HX_PRINTF("--> 2. Green \n");
+    HX_PRINTF("--> 3. Blue \n");    
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  case EXIT_PRIMARY_MENU:
+    g_m_menu.current_menu = MAIN_MENU;
     main_menu_display();
     break;
   }
-  
 }
 
 /**
@@ -237,11 +222,23 @@ static void user_led_submenu_handler(uint8_t type)
                   Helon_Chan, 2018/12/15, 初始化版本\n
  */
 static void user_adc_submenu_handler(uint8_t type)
-{
-  HX_PRINTF("/==============================================================================/\n");
-  HX_PRINTF("--> You can implement the ADC Measure in this submenu.\n");
-  HX_PRINTF("--> 0. Back to the upper menu.\n");
-  HX_PRINTF("/==============================================================================/\n");
+{  
+  switch (type)
+  {
+  /* 进入子菜单 */
+  case PRIMARY_ADC:
+    g_m_menu.current_menu = PRIMARY_ADC;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can implement the ADC Measure in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  /* 退出子菜单 */
+  case EXIT_PRIMARY_MENU:
+    g_m_menu.current_menu = MAIN_MENU;
+    main_menu_display();
+    break;
+  }
 }
 
 /**
@@ -253,11 +250,23 @@ static void user_adc_submenu_handler(uint8_t type)
                   Helon_Chan, 2018/12/15, 初始化版本\n
  */
 static void user_pluse_width_measure_submenu_handler(uint8_t type)
-{
-  HX_PRINTF("/==============================================================================/\n");
-  HX_PRINTF("--> You can implement Pluse Width Measure function in this submenu.\n");
-  HX_PRINTF("--> 0. Back to the upper menu.\n");
-  HX_PRINTF("/==============================================================================/\n");
+{  
+  switch (type)
+  {
+  /* 进入子菜单 */
+  case PRIMARY_PWM_MEASURE:
+    g_m_menu.current_menu = PRIMARY_PWM_MEASURE;
+    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> You can implement Pluse Width Measure function in this submenu.\n");
+    HX_PRINTF("--> 0. Back to the upper menu.\n");
+    HX_PRINTF("/==============================================================================/\n");
+    break;
+  /* 退出子菜单 */
+  case EXIT_PRIMARY_MENU:
+    g_m_menu.current_menu = MAIN_MENU;
+    main_menu_display();
+    break;
+  }
 }
 
 
@@ -270,41 +279,163 @@ static void user_pluse_width_measure_submenu_handler(uint8_t type)
  *              Ver0.0.1:
                   Helon_Chan, 2018/12/5, 初始化版本\n
  */
-static void user_uart_recevice_process(void)
+static void user_uart_recevice_process(uint8_t rx_buffer)
 {
-  if(g_m_menu.main_menu)
+  switch(g_m_menu.current_menu)
   {
-    switch (temp)
-    {
-    /* BUTTON */
-    case 1:
-      user_button_submenu_handler(ENTER);
+    /* 主菜单 */
+    case MAIN_MENU:
+      switch (rx_buffer)
+      {
+      /* BUTTON */
+      case 1:
+        user_button_submenu_handler(PRIMARY_BUTTON);
+        break;
+      /* LED */
+      case 2:
+        user_led_submenu_handler(PRIMARY_LED);
+        break;
+      /* ADC */
+      case 3:
+        user_adc_submenu_handler(PRIMARY_ADC);
+        break;
+      /* Pluse Width Measure */
+      case 4:
+        user_pluse_width_measure_submenu_handler(PRIMARY_PWM_MEASURE);
+        break;
+      /* 其他的数字则无效 */
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 1~4 !!!\r\n", rx_buffer);
+        break;
+      }
       break;
-    /* LED */
-    case 2:
-      user_led_submenu_handler(ENTER);
+    /* 按键一级子菜单 */
+    case PRIMARY_BUTTON:
+      switch (rx_buffer)
+      {
+      /* 返回上一级菜单 */
+      case 0:
+        user_button_submenu_handler(EXIT_PRIMARY_MENU);
+        break;      
+      /* 其他的数字则无效 */
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0 in this submenu!!!\r\n", rx_buffer);
+        break;
+      }
       break;
-    /* ADC */
-    case 3:
-      user_adc_submenu_handler(ENTER);
+    /* LED一级子菜单 */
+    case PRIMARY_LED:
+      switch(rx_buffer)
+      {
+        /* 返回上一级菜单 */
+        case 0:
+          user_led_submenu_handler(EXIT_PRIMARY_MENU);
+          break;
+        /* 进入PPI二级菜单 */
+        case 1:
+          user_led_submenu_handler(SECONDARY_PPI);
+          break;
+        /* 进入PWM二级菜单 */
+        case 2:
+          user_led_submenu_handler(SECONDARY_PWM);
+          break;
+        /* 进入TIMER二级菜单 */
+        case 3:
+          user_led_submenu_handler(SECONDARY_TIMER);
+          break;
+        /* 进入RGB二级菜单 */
+        case 4:
+          user_led_submenu_handler(SECONDARY_RGB);
+          break;
+        default:
+          HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
+          break;
+      }
+    break;
+    /* LED二级子菜单PPI */
+    case SECONDARY_PPI:
+      switch (rx_buffer)
+      {
+      case 0:
+        user_led_submenu_handler(PRIMARY_LED);
+        break;
+      }
       break;
-    /* Pluse Width Measure */
-    case 4:
-      user_pluse_width_measure_submenu_handler(ENTER);
+    case SECONDARY_PWM:
+      switch (rx_buffer)
+      {
+      case 0:
+        user_led_submenu_handler(PRIMARY_LED);
+        break;
+      /* 输出20%的占空比 */
+      case 1:
+        break;
+      /* 输出40%的占空比 */
+      case 2:
+        break;
+      /* 输出60%的占空比 */
+      case 3:
+        break;
+      /* 输出80%的占空比 */
+      case 4:
+        break;
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
+        break;
+      }
       break;
-    /* 其他的数字则无效 */
-    default:
-      HX_PRINTF("Invalid Command is %d.Please input the numeric 1~4 !!!\r\n", temp);        
+    case SECONDARY_TIMER:
+      switch (rx_buffer)
+      {
+      case 0:
+        user_led_submenu_handler(PRIMARY_LED);
+        break;
+      /* LED灯100ms闪烁 */
+      case 1:
+        break;
+      /* LED灯200ms闪烁 */
+      case 2:
+        break;
+      /* LED灯300ms闪烁 */
+      case 3:
+        break;
+      /* LED灯400ms闪烁 */
+      case 4:
+        break;
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
+        break;
+      }
       break;
-    }
-  }
-  else
-  {
-
-  }
-  
-  if (temp != 0x00)
-    temp = 0x00;
+    case SECONDARY_RGB:
+      switch (rx_buffer)
+      {
+      case 0:
+        user_led_submenu_handler(PRIMARY_LED);
+        break;
+      /* 红色LED灯 */
+      case 1:
+        break;
+      /* 绿色LED灯 */
+      case 2:
+        break;
+      /* 蓝色LED灯 */
+      case 3:
+        break;
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0~3 in this submenu!!!\r\n", rx_buffer);
+        break;
+      }
+      break;
+    case PRIMARY_ADC:
+      switch (rx_buffer)
+      {
+      case 0:
+        user_adc_submenu_handler(EXIT_PRIMARY_MENU);
+        break;
+      }
+      break;
+  }   
 }
 
 /**
@@ -316,12 +447,14 @@ static void user_uart_recevice_process(void)
                   Helon_Chan, 2018/11/28, 初始化函数
  */
 static void user_uart_evt_handler(app_uart_evt_t *p_app_uart_event)
-{    
+{
+  /* 存放接收到的串口数据的临时变量 */
+  uint8_t rx_buffer_temp = 0;
   switch (p_app_uart_event->evt_type)
   {
   case APP_UART_DATA_READY:
-    app_uart_get(&temp);    
-    user_uart_recevice_process();    
+    app_uart_get(&rx_buffer_temp);
+    user_uart_recevice_process(rx_buffer_temp);
     break;
   default:
     break;
@@ -342,5 +475,5 @@ void user_app_init(void)
   /* log函数初始化  */
   user_log_init(user_uart_evt_handler);
   /* 默认是在主菜单 */
-  g_m_menu.main_menu = 1;
+  g_m_menu.current_menu = MAIN_MENU;
 }

@@ -34,43 +34,36 @@
 结构体声明
 =============
 */
-/* led二级子菜单结构体 */
-typedef struct
-{
-  uint8_t ppi_secondary_submenu : 1;
-  uint8_t timer_secondary_submenu : 1;
-  uint8_t pwm_secondary_sumenu : 1;  
-  uint8_t led_primary_submenu : 1;
-} led_menu_t;
 
 /* 声明菜单结构体 */
 typedef struct
 {
-  uint8_t button_submenu : 1;  
-  uint8_t adc_sumenu : 1;
-  uint8_t pluse_width_measure_submenu : 1;
-  uint8_t main_menu : 1;
-  led_menu_t led_menu;
+  uint8_t current_menu : 4;
+  uint8_t secondary_submenu : 4;  
 } modular_test_menu_t;
 
-/* 进入或者退出子菜单的枚举 */
+/* 菜单动作的枚举 */
 enum em_submenu_action
 {
-  ENTER,
-  EXIT,
+  // PRIMARY_SUBMENU,                          ///< 一级子菜单
+  // SECONDARY_SUBMENU,                        ///< 二级子菜单
+  // THREE_LEVEL_SUBMENU,                      ///< 三级子菜单    
+  BACK_TO_UPPER_MENU,                       ///< 返回上一次菜单  
+  EXIT_PRIMARY_MENU,                        ///< 退出当前的一级子菜单
 };
 
 /* 子菜单枚举 */
 enum em_submenu
 {
-  MAIN_MENU,
-  PRIMARY_BUTTON,
-  PRIMARY_LED,
-  PRIMARY_ADC,
-  PRIMARY_PWM_MEASURE,
-  SECONDARY_PPI,
-  SECONDARY_PWM,
-  SECONDARY_TIMER,
+  MAIN_MENU = 1,                            ///< 主菜单
+  PRIMARY_BUTTON = 2,                       ///< 按键一级子菜单
+  PRIMARY_LED = 3,                          ///< LED一级子菜单
+  PRIMARY_ADC = 4,                          ///< ADC一级子菜单
+  PRIMARY_PWM_MEASURE = 5,                  ///< PWM测量一级子菜单  
+  SECONDARY_PPI = 6,                        ///< LED的二级子菜单PPI
+  SECONDARY_PWM = 7,                        ///< LED的二级子菜单PWM
+  SECONDARY_TIMER = 8,                      ///< LED的二级子菜单TIMER  
+  SECONDARY_RGB = 9,                        ///< LED的二级子菜单RGB 
 };
 /* 
 =============
