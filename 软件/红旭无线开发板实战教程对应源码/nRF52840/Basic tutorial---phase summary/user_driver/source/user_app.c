@@ -179,10 +179,10 @@ static void user_led_submenu_handler(uint8_t type)
     HX_PRINTF("/==============================================================================/\n");
     HX_PRINTF("--> You can modify the PWM duty cycle in this submenu.\n");
     HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("--> 1. 20% \n");
-    HX_PRINTF("--> 2. 40% \n");
-    HX_PRINTF("--> 3. 60% \n");
-    HX_PRINTF("--> 4. 80% \n");
+    HX_PRINTF("--> 1. 20%c \n",'%');
+    HX_PRINTF("--> 2. 40%c\n",'%');
+    HX_PRINTF("--> 3. 60%c\n",'%');
+    HX_PRINTF("--> 4. 80%c\n",'%');
     HX_PRINTF("/==============================================================================/\n");
     break;
   case SECONDARY_TIMER:
@@ -359,6 +359,10 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
         break;
+      /* 其他的数字则无效 */
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0 in this submenu!!!\r\n", rx_buffer);
+        break;
       }
       break;
     case SECONDARY_PWM:
@@ -428,13 +432,18 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       }
       break;
     case PRIMARY_ADC:
+    case PRIMARY_PWM_MEASURE:
       switch (rx_buffer)
       {
       case 0:
         user_adc_submenu_handler(EXIT_PRIMARY_MENU);
         break;
+      /* 其他的数字则无效 */
+      default:
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 0 in this submenu!!!\r\n", rx_buffer);
+        break;
       }
-      break;
+      break;    
   }   
 }
 
