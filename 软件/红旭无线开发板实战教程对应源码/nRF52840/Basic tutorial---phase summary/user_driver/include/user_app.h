@@ -17,6 +17,7 @@
 =============
 */
 #include "user_log.h"
+#include "user_multi_click.h"
 
 /* 
 =============
@@ -25,6 +26,7 @@
 */
 #if HX_LOG_UART_ENABLED
 #define HX_PRINTF(format, ...) user_customer_printf(format, ##__VA_ARGS__)
+#define NRF_LOG_INFO(...)
 #else
 #define HX_PRINTF(...)
 #endif

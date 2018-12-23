@@ -15,8 +15,8 @@
 =============
 */
 
-#include "user_app.h"
 
+#include "user_app.h"
 /* 
 =============
 全局变量
@@ -40,6 +40,48 @@ modular_test_menu_t g_m_menu;
 */
 
 /**
+ * 按键单击、多击处理函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/08/19, 初始化版本\n
+ */
+void user_multi_click_handler(uint8_t button_no, uint8_t *click_counts)
+{
+  switch(button_no)
+  {
+    case BUTTON1:
+      if (*click_counts != 0)
+        HX_PRINTF("click counts is %d\n", *click_counts);
+      *click_counts = 0;
+      break;
+    default:
+      break;
+  }
+}
+
+/**
+ * 按键长按处理函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/08/19, 初始化版本\n
+ */
+void user_long_pressed_handler(uint8_t button_no)
+{
+  switch(button_no)
+  {
+    case BUTTON1:
+      HX_PRINTF("gpio%d long pressed\n",button_no);      
+      break;
+    default:
+      break;
+  }
+}
+
+/**
  * 重新映射串口
  * @param[in]   format：输出的格式
  * @retval      ...：可变长度的参数
@@ -49,25 +91,24 @@ modular_test_menu_t g_m_menu;
  */
 void user_customer_printf(char *format, ...)
 {
-	volatile uint8_t iWriteNum = 0, i = 0;
-	va_list ap;
+  volatile uint8_t iWriteNum = 0, i = 0;
+  va_list ap;
 
-	if (!format)
-		return;
+  if (!format)
+    return;
 
-	va_start(ap, format);
+  va_start(ap, format);
 
-	iWriteNum = vsprintf((char *)g_s_tx_buffer, format, ap);
+  iWriteNum = vsprintf((char *)g_s_tx_buffer, format, ap);
 
-	va_end(ap);
+  va_end(ap);
 
-	if (iWriteNum > HX_LOG_UART_TEMP_BUFFER_SIZE)
-		iWriteNum = HX_LOG_UART_TEMP_BUFFER_SIZE;
+  if (iWriteNum > HX_LOG_UART_TEMP_BUFFER_SIZE)
+    iWriteNum = HX_LOG_UART_TEMP_BUFFER_SIZE;
 
-  
   for (i = 0; i < iWriteNum; i++)
-  {    
-    app_uart_put(g_s_tx_buffer[i]);   
+  {
+    app_uart_put(g_s_tx_buffer[i]);
   }
 }
 
@@ -129,14 +170,18 @@ static void user_button_submenu_handler(uint8_t type)
   case PRIMARY_BUTTON:
     g_m_menu.current_menu = PRIMARY_BUTTON;
     HX_PRINTF("/==============================================================================/\n");
-    HX_PRINTF("--> You can implement click、Double click、Multi click after go to this submenu.\n");
+    HX_PRINTF("--> You can implement click、Double click、Multi click and Long Pressafter go to this submenu.\n");
     HX_PRINTF("--> 0. Back to the upper menu.\n");
     HX_PRINTF("/==============================================================================/\n");
+    /* 使能按键 */
+    app_button_enable();
     break;
   /* 退出子菜单 */
   case EXIT_PRIMARY_MENU:
     g_m_menu.current_menu = MAIN_MENU;
     main_menu_display();
+    /* 除能按键 */
+    app_button_disable();
     break;
   }
   
@@ -485,4 +530,11 @@ void user_app_init(void)
   user_log_init(user_uart_evt_handler);
   /* 默认是在主菜单 */
   g_m_menu.current_menu = MAIN_MENU;
+
+  /* 1.初始化了app_timer模块以及相对应的app_timer实例
+     2.其他的地方就不用再调用app_timer的初始化了
+   */
+  user_button_timer_init();
+  /* 这里已经初始了低频时钟了,其他地方不需要再次调用了 */
+  user_multi_click_init(user_multi_click_handler, user_long_pressed_handler, BUTTON_COUNTS);
 }

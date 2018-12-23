@@ -16,7 +16,7 @@
       arm_target_device_name="nRF52840_xxAA"
       arm_target_interface_type="SWD"
       c_preprocessor_definitions="CONFIG_GPIO_AS_PINRESET;FLOAT_ABI_HARD;INITIALIZE_USER_SECTIONS;NO_VTOR_CONFIG;NRF52840_XXAA;NRF_SD_BLE_API_VERSION=6;S140;NOT_SOFTDEVICE_PRESENT;SWI_DISABLE0"
-      c_user_include_directories="$(SDK_ROOT)/components/toolchain/cmsis/include;$(SDK_ROOT)/components/libraries/log;$(SDK_ROOT)/components/libraries/util;$(SDK_ROOT)/Basic tutorial---phase summary/config;$(SDK_ROOT)/modules/nrfx/mdk;$(SDK_ROOT)/components/softdevice/s140/headers;$(SDK_ROOT)/components/libraries/experimental_section_vars;$(SDK_ROOT)/components/libraries/strerror;$(SDK_ROOT)/components/libraries/log/src;$(SDK_ROOT)/components/libraries/memobj;$(SDK_ROOT)\\components\\libraries\\balloc;$(SDK_ROOT)\\Basic tutorial---phase summary\\user_driver\\include;$(SDK_ROOT)\\external\\fprintf;$(SDK_ROOT)\\integration\\nrfx\\legacy;$(SDK_ROOT)\\modules\\nrfx;$(SDK_ROOT)\\integration\\nrfx;$(SDK_ROOT)\\modules\\nrfx\\drivers\\include;$(SDK_ROOT)\\components\\libraries\\atomic;$(SDK_ROOT)\\components\\libraries\\delay;$(SDK_ROOT)\\components\\libraries\\uart;$(SDK_ROOT)\\components\\libraries\\fifo;$(SDK_ROOT)\\external\\segger_rtt;$(SDK_ROOT)\\components\\libraries\\ringbuf"
+      c_user_include_directories="$(SDK_ROOT)/components/toolchain/cmsis/include;$(SDK_ROOT)/components/libraries/log;$(SDK_ROOT)/components/libraries/util;$(SDK_ROOT)/Basic tutorial---phase summary/config;$(SDK_ROOT)/modules/nrfx/mdk;$(SDK_ROOT)/components/softdevice/s140/headers;$(SDK_ROOT)/components/libraries/experimental_section_vars;$(SDK_ROOT)/components/libraries/strerror;$(SDK_ROOT)/components/libraries/log/src;$(SDK_ROOT)/components/libraries/memobj;$(SDK_ROOT)\\components\\libraries\\balloc;$(SDK_ROOT)\\Basic tutorial---phase summary\\user_driver\\include;$(SDK_ROOT)\\external\\fprintf;$(SDK_ROOT)\\integration\\nrfx\\legacy;$(SDK_ROOT)\\modules\\nrfx;$(SDK_ROOT)\\integration\\nrfx;$(SDK_ROOT)\\modules\\nrfx\\drivers\\include;$(SDK_ROOT)\\components\\libraries\\atomic;$(SDK_ROOT)\\components\\libraries\\delay;$(SDK_ROOT)\\components\\libraries\\uart;$(SDK_ROOT)\\components\\libraries\\fifo;$(SDK_ROOT)\\components\\libraries\\button;$(SDK_ROOT)\\components\\libraries\\ringbuf;$(SDK_ROOT)\\modules\\nrfx\\hal;$(SDK_ROOT)\\components\\libraries\\timer"
       debug_additional_load_file="D:/Project/wireless_tech/wireless_tech_template/components/softdevice/s140/hex/s140_nrf52_6.0.0_softdevice.hex"
       debug_register_definition_file="../../../../../../modules/nrfx/mdk/nrf52840.svd"
       debug_start_from_entry_point_symbol="No"
@@ -52,6 +52,7 @@
       <file file_name="../user_driver/source/user_log.c" />
       <file file_name="../user_driver/include/user_log.h" />
       <file file_name="../user_driver/source/user_app.c" />
+      <file file_name="../user_driver/source/user_multi_click.c" />
     </folder>
     <folder Name="nRF_Log">
       <file file_name="../../components/libraries/log/src/nrf_log_backend_rtt.c" />
@@ -78,12 +79,17 @@
       <file file_name="../../components/libraries/ringbuf/nrf_ringbuf.c" />
       <file file_name="../../components/libraries/uart/app_uart_fifo.c" />
       <file file_name="../../components/libraries/fifo/app_fifo.c" />
+      <file file_name="../../components/libraries/timer/app_timer.c" />
+      <file file_name="../../components/libraries/button/app_button.c" />
     </folder>
     <folder Name="nRF_Drivers">
       <file file_name="../../integration/nrfx/legacy/nrf_drv_uart.c" />
       <file file_name="../../modules/nrfx/drivers/src/nrfx_uarte.c" />
       <file file_name="../../modules/nrfx/drivers/src/nrfx_uart.c" />
       <file file_name="../../modules/nrfx/drivers/src/prs/nrfx_prs.c" />
+      <file file_name="../../integration/nrfx/legacy/nrf_drv_clock.c" />
+      <file file_name="../../modules/nrfx/drivers/src/nrfx_gpiote.c" />
+      <file file_name="$(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_clock.c" />
     </folder>
   </project>
   <configuration
