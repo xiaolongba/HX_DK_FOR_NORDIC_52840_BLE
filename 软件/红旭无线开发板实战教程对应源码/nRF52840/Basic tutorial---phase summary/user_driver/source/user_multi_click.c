@@ -144,7 +144,7 @@ static void user_short_press_handler(void *p_context)
 *               Ver0.0.1: 
                   Helon_Chan, 2018/08/19, 初始化版本\n 
 */
-static ret_code_t lfclk_config(void)
+ret_code_t lfclk_config(void)
 {
   /* 初始化nrf_drv_clock模块 */
   ret_code_t err_code = nrf_drv_clock_init();
@@ -167,16 +167,18 @@ static ret_code_t lfclk_config(void)
 * @note        修改日志 
 *               Ver0.0.1: 
                   Helon_Chan, 2018/08/26, 初始化版本\n 
+*               Ver0.0.2: 
+                  Helon_Chan, 2018/12/26, 屏蔽了app_timer初始化\n                   
 */
 ret_code_t user_button_timer_init(void)
 {
   ret_code_t err_code = NRF_SUCCESS;
-  err_code = app_timer_init();
-  if(err_code != NRF_SUCCESS)
-  {
-    NRF_LOG_INFO("app_timer_init is %d\n",err_code);
-    return err_code;
-  }  
+  // err_code = app_timer_init();
+  // if(err_code != NRF_SUCCESS)
+  // {
+  //   NRF_LOG_INFO("app_timer_init is %d\n",err_code);
+  //   return err_code;
+  // }  
   err_code = app_timer_create(&g_long_press_timer_id,APP_TIMER_MODE_SINGLE_SHOT,user_long_press_handler);
   if(err_code != NRF_SUCCESS)
   {
@@ -205,19 +207,21 @@ ret_code_t user_button_timer_init(void)
 *               Ver0.0.1: 
                   Helon_Chan, 2018/08/19, 初始化版本\n 
 *               Ver0.0.2: 
-                  Helon_Chan, 2018/12/23, 初始化时不使能按键\n                  
+                  Helon_Chan, 2018/12/23, 初始化时不使能按键\n   
+*               Ver0.0.3: 
+                  Helon_Chan, 2018/12/26, 屏蔽了开启32.768KHz时钟的参数\n                                 
 */
 ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,user_long_pressed_handler_t long_pressed_handler,uint8_t button_counts)
 {
   // uint8_t loop_counts;
   ret_code_t err_code = NRF_SUCCESS;
   
-  err_code = lfclk_config();
-  if(err_code != NRF_SUCCESS)
-  {
-    NRF_LOG_INFO("lfclk_config is %d\n",err_code);
-    return err_code;
-  }
+  // err_code = lfclk_config();
+  // if(err_code != NRF_SUCCESS)
+  // {
+  //   NRF_LOG_INFO("lfclk_config is %d\n",err_code);
+  //   return err_code;
+  // }
 
   if((!multi_click_handler)||(!button_counts))
   {

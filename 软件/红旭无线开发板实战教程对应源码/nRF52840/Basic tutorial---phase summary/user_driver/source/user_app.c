@@ -14,9 +14,8 @@
 头文件包含
 =============
 */
-
-
 #include "user_app.h"
+
 /* 
 =============
 全局变量
@@ -215,9 +214,11 @@ static void user_led_submenu_handler(uint8_t type)
   case SECONDARY_PPI:
     g_m_menu.current_menu = SECONDARY_PPI;
     HX_PRINTF("/==============================================================================/\n");
-    HX_PRINTF("--> Press the user button to control led on or off in this submenu.\n");
+    HX_PRINTF("--> The led is on or off by 1000ms interval in this submenu.\n");
     HX_PRINTF("--> 0. Back to the upper menu.\n");
     HX_PRINTF("/==============================================================================/\n");
+    nrf_drv_timer_enable(&hardware_timer0);
+    nrf_drv_gpiote_out_task_enable(LED_NUMBER);
     break;
   case SECONDARY_PWM:
     g_m_menu.current_menu = SECONDARY_PWM;
@@ -403,6 +404,8 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
+        nrf_drv_timer_disable(&hardware_timer0);  
+        nrf_drv_gpiote_out_task_disable(LED_NUMBER);
         break;
       /* 其他的数字则无效 */
       default:
@@ -526,15 +529,32 @@ static void user_uart_evt_handler(app_uart_evt_t *p_app_uart_event)
  */
 void user_app_init(void)
 {  
+  ret_code_t err_code = NRF_SUCCESS;
   /* log函数初始化  */
   user_log_init(user_uart_evt_handler);
   /* 默认是在主菜单 */
   g_m_menu.current_menu = MAIN_MENU;
 
-  /* 1.初始化了app_timer模块以及相对应的app_timer实例
-     2.其他的地方就不用再调用app_timer的初始化了
-   */
+  /* 初始化app_timer模块 */
+  err_code = app_timer_init();
+  if(err_code != NRF_SUCCESS)
+  {
+    NRF_LOG_INFO("app_timer_init is %d\n",err_code);
+//    return err_code;
+  }  
+
+  /* 开启32.768KHz的时钟 */
+  err_code = lfclk_config();
+  if(err_code != NRF_SUCCESS)
+  {
+    NRF_LOG_INFO("lfclk_config is %d\n",err_code);
+//    return err_code;
+  }
+
+  /* 创建用于按键的定时器 */
   user_button_timer_init();
   /* 这里已经初始了低频时钟了,其他地方不需要再次调用了 */
   user_multi_click_init(user_multi_click_handler, user_long_pressed_handler, BUTTON_COUNTS);
+  /* 初始化GPIOTE+PPI+TIMER0 */
+  user_gpiote_timer0_init();
 }

@@ -88,4 +88,14 @@ ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,
 */
 ret_code_t user_button_timer_init(void);
 
+/** 
+* 开启32.768KHz的时钟,在sdk_config.h中可以选择是RC还是XTAL
+* @param[in]   null
+* @retval      null
+* @note        如果使能了SOFT_DEVICE则不需要调用此函数，因为使能协议栈时会初始化LFCLK，这里我们没有使能协议栈故用户自己调用
+* @note        修改日志 
+*               Ver0.0.1: 
+                  Helon_Chan, 2018/08/19, 初始化版本\n 
+*/
+ret_code_t lfclk_config(void);
 #endif /* USER_MULTI_CLICK_H */

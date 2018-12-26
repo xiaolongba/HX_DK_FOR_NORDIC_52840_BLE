@@ -50,9 +50,9 @@
       gcc_optimization_level="Optimize For Size" />
     <folder Name="UserDriver">
       <file file_name="../user_driver/source/user_log.c" />
-      <file file_name="../user_driver/include/user_log.h" />
       <file file_name="../user_driver/source/user_app.c" />
       <file file_name="../user_driver/source/user_multi_click.c" />
+      <file file_name="../user_driver/source/user_ppi.c" />
     </folder>
     <folder Name="nRF_Log">
       <file file_name="../../components/libraries/log/src/nrf_log_backend_rtt.c" />
@@ -89,7 +89,10 @@
       <file file_name="../../modules/nrfx/drivers/src/prs/nrfx_prs.c" />
       <file file_name="../../integration/nrfx/legacy/nrf_drv_clock.c" />
       <file file_name="../../modules/nrfx/drivers/src/nrfx_gpiote.c" />
-      <file file_name="$(SDK_ROOT)/modules/nrfx/drivers/src/nrfx_clock.c" />
+      <file file_name="../../modules/nrfx/drivers/src/nrfx_clock.c" />      
+      <file file_name="../../modules/nrfx/drivers/src/nrfx_ppi.c" />
+      <file file_name="../../integration/nrfx/legacy/nrf_drv_ppi.c" />
+      <file file_name="../../modules/nrfx/drivers/src/nrfx_timer.c" />
     </folder>
   </project>
   <configuration
