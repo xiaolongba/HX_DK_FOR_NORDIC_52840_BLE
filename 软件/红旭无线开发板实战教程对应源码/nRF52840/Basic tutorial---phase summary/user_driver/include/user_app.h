@@ -19,7 +19,8 @@
 #include "user_log.h"
 #include "user_multi_click.h"
 #include "user_ppi.h"
-
+#include "user_pwm.h"
+#include "user_common.h"
 /* 
 =============
 条件编译
@@ -27,6 +28,7 @@
 */
 #if HX_LOG_UART_ENABLED
 #define HX_PRINTF(format, ...) user_customer_printf(format, ##__VA_ARGS__)
+
 #define NRF_LOG_INFO(...)
 #else
 #define HX_PRINTF(...)
@@ -47,10 +49,7 @@ typedef struct
 
 /* 菜单动作的枚举 */
 enum em_submenu_action
-{
-  // PRIMARY_SUBMENU,                          ///< 一级子菜单
-  // SECONDARY_SUBMENU,                        ///< 二级子菜单
-  // THREE_LEVEL_SUBMENU,                      ///< 三级子菜单    
+{  
   BACK_TO_UPPER_MENU,                       ///< 返回上一次菜单  
   EXIT_PRIMARY_MENU,                        ///< 退出当前的一级子菜单
 };
@@ -68,6 +67,8 @@ enum em_submenu
   SECONDARY_TIMER = 8,                      ///< LED的二级子菜单TIMER  
   SECONDARY_RGB = 9,                        ///< LED的二级子菜单RGB 
 };
+
+
 /* 
 =============
 函数声明

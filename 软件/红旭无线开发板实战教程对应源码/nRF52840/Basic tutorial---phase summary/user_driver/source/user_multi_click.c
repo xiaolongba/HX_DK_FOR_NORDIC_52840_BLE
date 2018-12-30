@@ -173,12 +173,7 @@ ret_code_t lfclk_config(void)
 ret_code_t user_button_timer_init(void)
 {
   ret_code_t err_code = NRF_SUCCESS;
-  // err_code = app_timer_init();
-  // if(err_code != NRF_SUCCESS)
-  // {
-  //   NRF_LOG_INFO("app_timer_init is %d\n",err_code);
-  //   return err_code;
-  // }  
+
   err_code = app_timer_create(&g_long_press_timer_id,APP_TIMER_MODE_SINGLE_SHOT,user_long_press_handler);
   if(err_code != NRF_SUCCESS)
   {
@@ -213,15 +208,7 @@ ret_code_t user_button_timer_init(void)
 */
 ret_code_t user_multi_click_init(user_multi_click_handler_t multi_click_handler,user_long_pressed_handler_t long_pressed_handler,uint8_t button_counts)
 {
-  // uint8_t loop_counts;
   ret_code_t err_code = NRF_SUCCESS;
-  
-  // err_code = lfclk_config();
-  // if(err_code != NRF_SUCCESS)
-  // {
-  //   NRF_LOG_INFO("lfclk_config is %d\n",err_code);
-  //   return err_code;
-  // }
 
   if((!multi_click_handler)||(!button_counts))
   {

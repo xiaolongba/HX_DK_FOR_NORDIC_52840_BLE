@@ -8,7 +8,8 @@
     "user_app.h": "c",
     "user_log.h": "c",
     "user_multi_click.h": "c",
-    "user_ppi.h": "c"
+    "user_ppi.h": "c",
+    "user_pwm.h": "c"
   }
   
 

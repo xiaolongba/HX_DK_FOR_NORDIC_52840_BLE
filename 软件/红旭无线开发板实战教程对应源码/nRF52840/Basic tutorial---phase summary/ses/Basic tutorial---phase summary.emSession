@@ -2,8 +2,6 @@
 <session>
  <Bookmarks/>
  <Breakpoints groups="Breakpoints" active_group="Breakpoints">
-  <BreakpointListItem trigger="" line="83" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="2" filename="../main.c" useHWbreakpoint="false"/>
-  <BreakpointListItem trigger="" line="55" counter="0" hardwareBreakpoint="" isFunctionBreakpoint="false" action="" expression="" group="Breakpoints" type="Breakpoint" state="4" filename="../../components/libraries/log/src/nrf_log_backend_uart.c" useHWbreakpoint="false"/>
   <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
  </Breakpoints>
  <ExecutionProfileWindow/>
@@ -54,9 +52,9 @@
    <Watchpoint numelements="0" expression="p_event" evalMode="1" name="p_event" radix="-1" linenumber="53" filename="../../components/libraries/log/src/nrf_log_backend_uart.c" list=""/>
    <Watchpoint numelements="0" expression="p_instance" evalMode="1" name="p_instance" radix="16" linenumber="513" filename="../../integration/nrfx/legacy/nrf_drv_uart.h" list=""/>
    <Watchpoint numelements="255" expression="s_formatBuffer" evalMode="2" name="s_formatBuffer" radix="-1" linenumber="61" filename="../user_driver/source/user_log.c" list=""/>
-   <Watchpoint numelements="255" expression="g_s_tx_buffer" evalMode="2" name="g_s_tx_buffer" radix="-1" linenumber="115" filename="../user_driver/source/user_app.c" list=""/>
+   <Watchpoint numelements="255" expression="g_s_tx_buffer" evalMode="2" name="g_s_tx_buffer" radix="-1" linenumber="114" filename="../user_driver/source/user_app.c" list=""/>
    <Watchpoint numelements="1" expression="m_cb" evalMode="2" name="m_cb" radix="-1" linenumber="334" filename="../../modules/nrfx/drivers/src/nrfx_uarte.c" list=""/>
-   <Watchpoint numelements="1" expression="g_s_rx_buffer" evalMode="2" name="g_s_rx_buffer" radix="-1" linenumber="138" filename="../user_driver/source/user_app.c" list=""/>
+   <Watchpoint numelements="1" expression="g_s_rx_buffer" evalMode="2" name="g_s_rx_buffer" radix="-1" linenumber="137" filename="../user_driver/source/user_app.c" list=""/>
    <Watchpoint numelements="0" expression="err_code" evalMode="0" name="err_code" radix="16" linenumber="40" filename="../user_driver/source/user_ppi.c" list=""/>
   </Watches>
  </Watch1>
@@ -70,13 +68,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="58" y="216" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_app.c" selected="1" top="202" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="82" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="66" codecName=""/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="6" y="47" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_ppi.c" selected="0" top="39" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="18" y="25" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/include/user_ppi.h" selected="0" top="9" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="7495" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="0" top="7473" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="481" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/hal/nrf_timer.h" selected="0" top="465" codecName=""/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="621" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/hal/nrf_gpio.h" selected="0" top="618" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="82" useTextEdit="1" useBinaryEdit="0" left="0" path="../main.c" selected="0" top="63" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="469" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_app.c" selected="0" top="444" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="52" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_pwm.c" selected="0" top="48" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="44" y="135" useTextEdit="1" useBinaryEdit="0" left="0" path="../user_driver/source/user_ppi.c" selected="0" top="113" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="256" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/drivers/src/nrfx_gpiote.c" selected="0" top="234" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="250" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/mdk/nrf52840_peripherals.h" selected="0" top="237" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="137" useTextEdit="1" useBinaryEdit="0" left="0" path="../../modules/nrfx/hal/nrf_gpiote.h" selected="0" top="124" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="91" useTextEdit="1" useBinaryEdit="0" left="0" path="../../components/libraries/uart/app_uart_fifo.c" selected="0" top="73" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="152" useTextEdit="1" useBinaryEdit="0" left="0" path="../../components/libraries/low_power_pwm/low_power_pwm.c" selected="1" top="152" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="Basic tutorial---phase summary" fileDialogDefaultFilter="" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="F:/Bluetooth/Nordic/SDK/nRF5_SDK_15.2.0_9412b96/Basic tutorial---phase summary/user_driver/source" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

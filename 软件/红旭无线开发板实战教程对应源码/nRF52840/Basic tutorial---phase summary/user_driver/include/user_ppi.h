@@ -27,14 +27,17 @@
 #include "nrf_drv_timer.h"
 #include "nrf_gpio.h"
 #include "nrfx_timer.h"
+#include "user_common.h"
 /*
 ===========================
 宏定义
 =========================== 
 */
 
-#define KEY_NUMBER          13                        ///< 锟斤拷锟斤拷锟斤拷应锟斤拷GPIO锟斤拷为P0.13
-#define LED_NUMBER          26                        ///< LED锟斤拷应锟斤拷GPIO锟斤拷为P0.26
+#define KEY_NUMBER          13                        ///< 按键对应的GPIO为P0.13
+#define R_LED_NUMBER        26                        ///< LED对应的GPIO为P0.26
+#define G_LED_NUMBER        13+P0_PIN_NUM             ///< LED对应的GPIO为P1.13
+#define B_LED_NUMBER        15+P0_PIN_NUM             ///< LED对应的GPIO为P1.15
 
 #if HX_LOG_UART_ENABLED
 #define NRF_LOG_INFO(...)
@@ -45,7 +48,7 @@
 外部变量声明
 =========================== 
 */
-extern nrf_drv_timer_t hardware_timer0;
+extern nrf_drv_timer_t g_m_hardware_timer0;
 
 
 /**
@@ -57,7 +60,7 @@ extern nrf_drv_timer_t hardware_timer0;
                   Helon_Chan, 2018/12/26, 初始化版本\n
  */
 
-void user_gpiote_timer0_init(void);
+void user_gpiote_timer0_ppi_init(void);
 
 
 

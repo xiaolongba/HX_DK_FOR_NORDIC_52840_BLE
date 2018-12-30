@@ -15,7 +15,6 @@
 =============
 */
 #include "user_app.h"
-
 /* 
 =============
 全局变量
@@ -24,14 +23,19 @@
 
 /* 定义一个1字节的tx缓冲区 */
 static uint8_t g_s_tx_buffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
-// /* 定义一个字节的rx缓冲区 */
-// static uint8_t g_s_rx_buffer[1]={0};
-// /* 定义uart0实例 */
-// static nrf_drv_uart_t g_m_uart_id = NRF_DRV_UART_INSTANCE(0);
+
 /* 定义菜单结构体变量 */
 modular_test_menu_t g_m_menu;
 
+/* 存放LED颜色的全局静态变量，默认是红色 */
+uint8_t led_color = COMMON_R_LED_NUMBER;
 
+/* 
+=============
+外部变量声明
+=============
+*/
+extern low_power_pwm_t gs_m_low_power_pwm;
 /* 
 =============
 函数定义
@@ -121,16 +125,16 @@ void user_customer_printf(char *format, ...)
  */
 void main_menu_display(void)
 {
-  HX_PRINTF("/******************************************************************************/\n");
+  HX_PRINTF("\n/******************************************************************************/\n");
   HX_PRINTF("                         Welcome to phase summary project                       \n");
   HX_PRINTF("                         website :bbs.wireless-tech.cn                          \n");
   HX_PRINTF("                         QQ Group:671139854                                     \n");
-  HX_PRINTF("/==============================================================================/\n");
+  HX_PRINTF("/******************************************************************************/\n");
   HX_PRINTF("--> This is the phase summary project to test what the basic tutorials said,\n");
   HX_PRINTF("--> and there are total 4 modular test projects,please input the corresponded\n");
   HX_PRINTF("--> number to come into the corresponded the test project.\n");
   HX_PRINTF("--> Such as \"1\" for testing the button. \n");
-  HX_PRINTF("/==============================================================================/\n");
+  HX_PRINTF("/******************************************************************************/\n");
   HX_PRINTF("1.BUTTON\n");
   HX_PRINTF("2.LED\n");
   HX_PRINTF("3.ADC\n");  
@@ -168,10 +172,10 @@ static void user_button_submenu_handler(uint8_t type)
   /* 进入子菜单 */
   case PRIMARY_BUTTON:
     g_m_menu.current_menu = PRIMARY_BUTTON;
-    HX_PRINTF("/==============================================================================/\n");
-    HX_PRINTF("--> You can implement click、Double click、Multi click and Long Pressafter go to this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/****************************************************************************************/\n");
+    HX_PRINTF("-->You can implement click、Double click、Multi click and Long Pressafter go to this submenu.\n");
+    HX_PRINTF("/*******************************************************************************************/\n");
+    HX_PRINTF(" 0. Back to the upper menu.\n");    
     /* 使能按键 */
     app_button_enable();
     break;
@@ -202,55 +206,73 @@ static void user_led_submenu_handler(uint8_t type)
   /* 进入一级子菜单 */
   case PRIMARY_LED:
     g_m_menu.current_menu = PRIMARY_LED;
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/****************************************************************************************/\n");
     HX_PRINTF("--> You can implement the LED related functions in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("--> 1. PPI\n");
-    HX_PRINTF("--> 2. PWM\n");
-    HX_PRINTF("--> 3. TIMER\n");
-    HX_PRINTF("--> 4. RGB\n");
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("/******************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    HX_PRINTF("1. PPI\n");
+    HX_PRINTF("2. PWM\n");
+    HX_PRINTF("3. TIMER\n");
+    HX_PRINTF("4. RGB\n");    
     break;
   case SECONDARY_PPI:
     g_m_menu.current_menu = SECONDARY_PPI;
-    HX_PRINTF("/==============================================================================/\n");
-    HX_PRINTF("--> The led is on or off by 1000ms interval in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("/==============================================================================/\n");
-    nrf_drv_timer_enable(&hardware_timer0);
-    nrf_drv_gpiote_out_task_enable(LED_NUMBER);
+    HX_PRINTF("\n/****************************************************************************************/\n");
+    HX_PRINTF("--> The led is on or off via PPI by the 1000ms interval in this submenu.\n");    
+    HX_PRINTF("--> Or select which led color your favorite.\n");
+    HX_PRINTF("/******************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    HX_PRINTF("1. Set the LED color to Red.\n");
+    HX_PRINTF("2. Set the LED color to Green.\n");
+    HX_PRINTF("3. Set the LED color to Blue.\n");
+    
+    nrf_drv_timer_enable(&g_m_hardware_timer0);    
+    nrf_drv_gpiote_out_task_enable(led_color);
     break;
   case SECONDARY_PWM:
     g_m_menu.current_menu = SECONDARY_PWM;
-    HX_PRINTF("/==============================================================================/\n");
-    HX_PRINTF("--> You can modify the PWM duty cycle in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("--> 1. 20%c \n",'%');
-    HX_PRINTF("--> 2. 40%c\n",'%');
-    HX_PRINTF("--> 3. 60%c\n",'%');
-    HX_PRINTF("--> 4. 80%c\n",'%');
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/******************************************************************************************/\n");
+    HX_PRINTF("--> You can modify the PWM duty cycle in this submenu,the default PWM duty cyce is 5%c\n",'%');
+    HX_PRINTF("--> Or select which led color your favorite.\n");
+    HX_PRINTF("/********************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    HX_PRINTF("1. 20%c \n",'%');
+    HX_PRINTF("2. 40%c\n",'%');
+    HX_PRINTF("3. 60%c\n",'%');
+    HX_PRINTF("4. 80%c\n",'%');
+    HX_PRINTF("5. Set the LED color to Red.\n");
+    HX_PRINTF("6. Set the LED color to Green.\n");
+    HX_PRINTF("7. Set the LED color to Blue.\n");
+    
+    low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.05);    
+    low_power_pwm_start(&gs_m_low_power_pwm, 1<<26);    
     break;
   case SECONDARY_TIMER:
     g_m_menu.current_menu = SECONDARY_TIMER;
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/******************************************************************************************/\n");
     HX_PRINTF("--> You can modify the blink frequency in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("--> 1. 100ms \n");
-    HX_PRINTF("--> 2. 200ms \n");
-    HX_PRINTF("--> 3. 300ms \n");
-    HX_PRINTF("--> 4. 400ms \n");
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("--> Or select which led color your favorite.\n");
+    HX_PRINTF("/********************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    HX_PRINTF("1. 100ms \n");
+    HX_PRINTF("2. 200ms \n");
+    HX_PRINTF("3. 300ms \n");
+    HX_PRINTF("4. 400ms \n");
+    HX_PRINTF("5. Set the LED color to Red.\n");
+    HX_PRINTF("6. Set the LED color to Green.\n");
+    HX_PRINTF("7. Set the LED color to Blue.\n");
+    
     break;
   case SECONDARY_RGB:
     g_m_menu.current_menu = SECONDARY_RGB;
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/******************************************************************************************/\n");
     HX_PRINTF("--> You can select the led color in this submenu. The default color is Red.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("--> 1. Red \n");
-    HX_PRINTF("--> 2. Green \n");
-    HX_PRINTF("--> 3. Blue \n");    
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("/********************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    HX_PRINTF("1. Red \n");
+    HX_PRINTF("2. Green \n");
+    HX_PRINTF("3. Blue \n");    
+    
     break;
   case EXIT_PRIMARY_MENU:
     g_m_menu.current_menu = MAIN_MENU;
@@ -274,10 +296,11 @@ static void user_adc_submenu_handler(uint8_t type)
   /* 进入子菜单 */
   case PRIMARY_ADC:
     g_m_menu.current_menu = PRIMARY_ADC;
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/******************************************************************************************/\n");
     HX_PRINTF("--> You can implement the ADC Measure in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("/********************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    
     break;
   /* 退出子菜单 */
   case EXIT_PRIMARY_MENU:
@@ -302,10 +325,11 @@ static void user_pluse_width_measure_submenu_handler(uint8_t type)
   /* 进入子菜单 */
   case PRIMARY_PWM_MEASURE:
     g_m_menu.current_menu = PRIMARY_PWM_MEASURE;
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("\n/******************************************************************************************/\n");
     HX_PRINTF("--> You can implement Pluse Width Measure function in this submenu.\n");
-    HX_PRINTF("--> 0. Back to the upper menu.\n");
-    HX_PRINTF("/==============================================================================/\n");
+    HX_PRINTF("/********************************************************************************************/\n");
+    HX_PRINTF("0. Back to the upper menu.\n");
+    
     break;
   /* 退出子菜单 */
   case EXIT_PRIMARY_MENU:
@@ -404,8 +428,84 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
-        nrf_drv_timer_disable(&hardware_timer0);  
-        nrf_drv_gpiote_out_task_disable(LED_NUMBER);
+        nrf_drv_timer_disable(&g_m_hardware_timer0);  
+        nrf_drv_gpiote_out_task_disable(led_color);
+        break;
+      /* Red */
+      case 1:
+       if(led_color != COMMON_R_LED_NUMBER)
+       {
+         nrf_drv_timer_disable(&g_m_hardware_timer0);
+         nrf_drv_gpiote_out_task_disable(led_color);
+         nrf_drv_gpiote_out_uninit(led_color);
+         
+         led_color = COMMON_R_LED_NUMBER;
+
+         /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
+             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
+           */
+         nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);
+         
+         /* 将event和task通过选中的ppi_channel连接起来 */
+         nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
+                                    g_hardware_timer0_compare_evt_addr,
+                                    nrf_drv_gpiote_out_task_addr_get(led_color));
+         nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);
+         nrf_drv_gpiote_out_task_enable(led_color);
+         /* 使能选中的PPI的通道 */
+         nrf_drv_timer_enable(&g_m_hardware_timer0);
+         HX_PRINTF("The current led color is RED.\n");
+       }
+        break;
+      /* Green */
+      case 2:    
+        if(led_color != COMMON_G_LED_NUMBER)
+        {
+          nrf_drv_timer_disable(&g_m_hardware_timer0);  
+          nrf_drv_gpiote_out_task_disable(led_color);
+          nrf_drv_gpiote_out_uninit(led_color);          
+
+          led_color = COMMON_G_LED_NUMBER + P0_PIN_NUM;
+          /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
+             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
+           */
+          nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);       
+
+          /* 将event和task通过选中的ppi_channel连接起来 */
+          nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
+                                     g_hardware_timer0_compare_evt_addr,
+                                     nrf_drv_gpiote_out_task_addr_get(led_color));
+          nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);          
+          nrf_drv_gpiote_out_task_enable(led_color);
+          /* 使能选中的PPI的通道 */
+          nrf_drv_timer_enable(&g_m_hardware_timer0);
+          HX_PRINTF("The current led color is Green.\n");
+        }
+        break;
+      /* Blue */
+      case 3:
+       if(led_color != COMMON_B_LED_NUMBER)
+       {
+         nrf_drv_timer_disable(&g_m_hardware_timer0);
+         nrf_drv_gpiote_out_task_disable(led_color);
+         nrf_drv_gpiote_out_uninit(led_color);   
+
+         led_color = COMMON_B_LED_NUMBER + P0_PIN_NUM;
+         /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
+             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
+           */
+         nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);
+        
+         /* 将event和task通过选中的ppi_channel连接起来 */
+         nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
+                                    g_hardware_timer0_compare_evt_addr,
+                                    nrf_drv_gpiote_out_task_addr_get(led_color));
+         nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);
+         nrf_drv_gpiote_out_task_enable(led_color);
+         /* 使能选中的PPI的通道 */
+         nrf_drv_timer_enable(&g_m_hardware_timer0);
+         HX_PRINTF("The current led color is Blue.\n");
+       }  
         break;
       /* 其他的数字则无效 */
       default:
@@ -418,18 +518,33 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
+        low_power_pwm_stop(&gs_m_low_power_pwm);
         break;
       /* 输出20%的占空比 */
       case 1:
+        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.2);
         break;
       /* 输出40%的占空比 */
-      case 2:
+      case 2:  
+        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.4);
         break;
       /* 输出60%的占空比 */
       case 3:
+        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.6);
         break;
       /* 输出80%的占空比 */
       case 4:
+        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.8);
+        break;
+      /* 红色 */
+      case 5:
+        if(led_color != )
+        break;
+      /* 绿色 */
+      case 6:
+        break;
+      /* 蓝色 */
+      case 7:
         break;
       default:
         HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
@@ -540,7 +655,6 @@ void user_app_init(void)
   if(err_code != NRF_SUCCESS)
   {
     NRF_LOG_INFO("app_timer_init is %d\n",err_code);
-//    return err_code;
   }  
 
   /* 开启32.768KHz的时钟 */
@@ -548,13 +662,14 @@ void user_app_init(void)
   if(err_code != NRF_SUCCESS)
   {
     NRF_LOG_INFO("lfclk_config is %d\n",err_code);
-//    return err_code;
   }
 
   /* 创建用于按键的定时器 */
   user_button_timer_init();
-  /* 这里已经初始了低频时钟了,其他地方不需要再次调用了 */
+  /* 用户按键初始化 */
   user_multi_click_init(user_multi_click_handler, user_long_pressed_handler, BUTTON_COUNTS);
   /* 初始化GPIOTE+PPI+TIMER0 */
-  user_gpiote_timer0_init();
+  user_gpiote_timer0_ppi_init();
+  /* PWM初始化 */
+  user_pwm_init();
 }
