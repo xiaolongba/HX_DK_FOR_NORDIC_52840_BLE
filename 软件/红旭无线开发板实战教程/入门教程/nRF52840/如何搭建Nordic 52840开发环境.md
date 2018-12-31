@@ -43,7 +43,7 @@
 
 - 运行环境
 
-   其实那个插件是需要java来运行的，有的人电脑并没有java的环境。因此，很多新人按照着网上的方法也搞不定的原因就在于此，那么java环境要安装哪个呢？如下所示：
+   其实那个插件(**CMSIS_Configuration_Wizard.jar**)是需要java来运行的 **(Nordic的SDK包中已经包含了该插件)**，有的人电脑并没有java的环境。因此，很多新人按照着网上的方法也搞不定的原因就在于此，那么java环境要安装哪个呢？如下所示：
    > [java环境](https://java.com/en/download/win10.jsp)
    
    安装完成之后，在CMD中检查是否安装成功。
@@ -53,6 +53,13 @@
  - 操作步聚
    
    安装完上面的java运行环境就可以打开**SEGGER Embedded Studio**,并执行接下来的配置操作了。
+   
+   - 指定**CMSIS_Configuration_Wizard.jar**插件的路径
+      ```c
+      CMSIS_CONFIG_TOOL=$(SDK_ROOT)/external_tools/cmsisconfig/CMSIS_Configuration_Wizard.jar
+      ```
+      ![](Tutorial%20Pictures/Extension_Path.gif)
+      
    - <code>File</code>-><code>Open Studio Folder</code>-><code>External Tools Configuration</code>，将打开的内容填充为以下的内容
    
       ```c
