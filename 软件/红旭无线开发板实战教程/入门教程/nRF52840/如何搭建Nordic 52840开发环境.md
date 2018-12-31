@@ -45,10 +45,14 @@
 
    其实那个插件是需要java来运行的，有的人电脑并没有java的环境。因此，很多新人按照着网上的方法也搞不定的原因就在于此，那么java环境要安装哪个呢？如下所示：
    > [java环境](https://java.com/en/download/win10.jsp)
-  
+   
+   安装完成之后，在CMD中检查是否安装成功。
+   
+   ![](Tutorial%20Pictures/java_verison.png)
+   
  - 操作步聚
    
-   安装后上面的java运行环境就可以，打开**SEGGER Embedded Studio**,然后接下来的配置操作了。
+   安装完上面的java运行环境就可以打开**SEGGER Embedded Studio**,并执行接下来的配置操作了。
    - <code>File</code>-><code>Open Studio Folder</code>-><code>External Tools Configuration</code>，将打开的内容填充为以下的内容
    
       ```c
@@ -86,6 +90,15 @@
 
       ```
 
+      ![](Tutorial%20Pictures/tools_xml.PNG)
+      
+  - 启动GUI配置界面
+   
+      如果上面的两个步骤都没有问题，打开任意一个工程之后，执行以下两个中的任意一个均可打开GUI界面
+      - <code>右击“sdk_config.h”</code>-><code>CMSIS Configuration Wizard Ctrl+Y</code>
+      - 直接使用快捷键<code>Ctrl+Y</code>
+      ![](Tutorial%20Pictures/GUI_Setting.gif)
+      
 ## 打开第一个工程
 按照上文中的那些描述,此时开发环境搭建已经完成了99%,接下来只需打开一个示例工程,编译并烧录至红旭nRF52840+ESP32 Mini无线开发板即可完成您的第一个工程.步骤如下所示:
 - 下载[Nordic 52840 BLE软件开发包，即SDK](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/nRF5-SDK-zip/59021)并解压
