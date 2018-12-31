@@ -20,6 +20,7 @@
 #include "user_multi_click.h"
 #include "user_ppi.h"
 #include "user_pwm.h"
+#include "user_adc.h"
 #include "user_common.h"
 /* 
 =============

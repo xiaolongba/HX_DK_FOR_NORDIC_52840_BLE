@@ -17,10 +17,10 @@
 宏定义
 =============
 */
-#define COMMON_R_LED_NUMBER 26               ///< LED对应的GPIO为P0.26
-#define COMMON_G_LED_NUMBER 15               ///< LED对应的GPIO为P1.15
-#define COMMON_B_LED_NUMBER 13               ///< LED对应的GPIO为P1.13
-
+#define COMMON_R_LED_NUMBER         26               ///< LED对应的GPIO为P0.26
+#define COMMON_G_LED_NUMBER         15               ///< LED对应的GPIO为P1.15
+#define COMMON_B_LED_NUMBER         13               ///< LED对应的GPIO为P1.13
+#define DEFAULT_BLINK_FREQUENCY     1000             ///< 单位ms
 
 /* 
 =============
@@ -28,9 +28,8 @@
 =============
 */
 extern uint8_t led_color;
-extern nrf_drv_timer_t g_m_hardware_timer0;
-extern nrf_ppi_channel_t g_m_nrf_ppi_channel1;
-extern uint32_t g_hardware_timer0_compare_evt_addr;
-extern nrf_drv_gpiote_out_config_t g_m_gpiote_out_config;
+extern uint8_t pwm_duty_cycle;
+extern uint32_t blink_frequency;
+
 
 #endif //USER_COMMON_H

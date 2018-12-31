@@ -16,25 +16,19 @@
 头文件包含
 =============
 */
-#include "low_power_pwm.h"
+#include "app_pwm.h"
 #include "user_log.h"
-
+#include "nrf_drv_clock.h"
+#include "user_common.h"
 /* 
 =============
 宏定义
 =============
 */
-
-#define SOFTWARE_PWM            0                               ///< 使用硬件定时器产生PWM波形
-#define HARDWARE_PWM            0                               ///< 使用硬件的PWM产生PWM波形
-#define LOW_POWER_PWM           1                               ///< 使用RTC(32768Hz)产生PWM波形
-
 #if HX_LOG_UART_ENABLED
 #define NRF_LOG_INFO(...)
 #endif
 
-#define BROAD_LED               26
-#define BROAD_LED_MASK          1<<BROAD_LED
 /* 
 =============
 函数声明
@@ -42,17 +36,37 @@
 */
 
 /**
- * pwm初始化函数,通过硬件Timer1生成PWM波形，默认不使能APP_PWM
- * @param[in]   p_instance:指向app_pwm_t的实例指针
+ * pwm初始化函数,通过Timer1生成PWM波形,默认的PWM占空比为百分之5
+ * @param[in]   color:指定LED的颜色，详情请参考user_common.h头文件
  * @retval      NULL
  * @par         修改日志
  *              Ver0.0.1:
                   Helon_Chan, 2018/07/28, 初始化版本\n
-*               Ver0.0.2:
-                  Helon_Chan, 2018/12/30, 屏蔽了硬件PWM和RTC定时器生成PWM的初始化函数\n            
+ *              Ver0.0.2:
+                  Helon_Chan, 2018/12/30, 屏蔽了硬件PWM和硬件定时器生成PWM的初始化函数\n            
+ *              Ver0.0.3:
+                  Helon_Chan, 2018/12/31, 使能硬件PWM,屏蔽了RTC以及硬件PWM\n
  */
+void user_pwm_init(uint32_t color,app_pwm_duty_t duty);
 
-void user_pwm_init(void);
+/**
+ * 取消初始化app_pwm
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/12/31, 初始化版本\n           
+*/
+void user_pwm_uninit(void);
 
+/**
+ * 设置PWM的占空比
+ * @param[in]   duty:想要设置的占空比，单位为百分比（%）
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/12/31, 初始化版本\n           
+*/
+void user_set_pwm_duty_cycle(app_pwm_duty_t duty);
 
 #endif  //USER_PWM_H

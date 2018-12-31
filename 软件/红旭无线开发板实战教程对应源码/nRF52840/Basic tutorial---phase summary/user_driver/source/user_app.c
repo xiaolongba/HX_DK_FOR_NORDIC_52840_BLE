@@ -26,16 +26,18 @@ static uint8_t g_s_tx_buffer[HX_LOG_UART_TEMP_BUFFER_SIZE];
 
 /* 定义菜单结构体变量 */
 modular_test_menu_t g_m_menu;
-
 /* 存放LED颜色的全局静态变量，默认是红色 */
 uint8_t led_color = COMMON_R_LED_NUMBER;
+
+/* 存放ADC的值的缓冲 */
+static nrf_saadc_value_t m_buffer_pool[1]; 
 
 /* 
 =============
 外部变量声明
 =============
 */
-extern low_power_pwm_t gs_m_low_power_pwm;
+
 /* 
 =============
 函数定义
@@ -131,14 +133,13 @@ void main_menu_display(void)
   HX_PRINTF("                         QQ Group:671139854                                     \n");
   HX_PRINTF("/******************************************************************************/\n");
   HX_PRINTF("--> This is the phase summary project to test what the basic tutorials said,\n");
-  HX_PRINTF("--> and there are total 4 modular test projects,please input the corresponded\n");
+  HX_PRINTF("--> and there are total 3 modular test projects,please input the corresponded\n");
   HX_PRINTF("--> number to come into the corresponded the test project.\n");
   HX_PRINTF("--> Such as \"1\" for testing the button. \n");
   HX_PRINTF("/******************************************************************************/\n");
   HX_PRINTF("1.BUTTON\n");
   HX_PRINTF("2.LED\n");
   HX_PRINTF("3.ADC\n");  
-  HX_PRINTF("4.Pulse Width Measure\n");
 }
 
 
@@ -213,7 +214,6 @@ static void user_led_submenu_handler(uint8_t type)
     HX_PRINTF("1. PPI\n");
     HX_PRINTF("2. PWM\n");
     HX_PRINTF("3. TIMER\n");
-    HX_PRINTF("4. RGB\n");    
     break;
   case SECONDARY_PPI:
     g_m_menu.current_menu = SECONDARY_PPI;
@@ -225,9 +225,9 @@ static void user_led_submenu_handler(uint8_t type)
     HX_PRINTF("1. Set the LED color to Red.\n");
     HX_PRINTF("2. Set the LED color to Green.\n");
     HX_PRINTF("3. Set the LED color to Blue.\n");
-    
-    nrf_drv_timer_enable(&g_m_hardware_timer0);    
-    nrf_drv_gpiote_out_task_enable(led_color);
+
+    led_color = COMMON_R_LED_NUMBER;
+    user_gpiote_timer0_ppi_init(led_color,DEFAULT_BLINK_FREQUENCY);
     break;
   case SECONDARY_PWM:
     g_m_menu.current_menu = SECONDARY_PWM;
@@ -243,14 +243,13 @@ static void user_led_submenu_handler(uint8_t type)
     HX_PRINTF("5. Set the LED color to Red.\n");
     HX_PRINTF("6. Set the LED color to Green.\n");
     HX_PRINTF("7. Set the LED color to Blue.\n");
-    
-    low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.05);    
-    low_power_pwm_start(&gs_m_low_power_pwm, 1<<26);    
+
+    user_pwm_init(COMMON_R_LED_NUMBER,5);
     break;
   case SECONDARY_TIMER:
     g_m_menu.current_menu = SECONDARY_TIMER;
     HX_PRINTF("\n/******************************************************************************************/\n");
-    HX_PRINTF("--> You can modify the blink frequency in this submenu.\n");
+    HX_PRINTF("--> You can modify the blink frequency in this submenu.The default blink frequency is 1000ms.\n");
     HX_PRINTF("--> Or select which led color your favorite.\n");
     HX_PRINTF("/********************************************************************************************/\n");
     HX_PRINTF("0. Back to the upper menu.\n");
@@ -262,18 +261,8 @@ static void user_led_submenu_handler(uint8_t type)
     HX_PRINTF("6. Set the LED color to Green.\n");
     HX_PRINTF("7. Set the LED color to Blue.\n");
     
-    break;
-  case SECONDARY_RGB:
-    g_m_menu.current_menu = SECONDARY_RGB;
-    HX_PRINTF("\n/******************************************************************************************/\n");
-    HX_PRINTF("--> You can select the led color in this submenu. The default color is Red.\n");
-    HX_PRINTF("/********************************************************************************************/\n");
-    HX_PRINTF("0. Back to the upper menu.\n");
-    HX_PRINTF("1. Red \n");
-    HX_PRINTF("2. Green \n");
-    HX_PRINTF("3. Blue \n");    
-    
-    break;
+    user_gpiote_timer0_ppi_init(COMMON_R_LED_NUMBER,DEFAULT_BLINK_FREQUENCY);
+    break;  
   case EXIT_PRIMARY_MENU:
     g_m_menu.current_menu = MAIN_MENU;
     main_menu_display();
@@ -300,7 +289,7 @@ static void user_adc_submenu_handler(uint8_t type)
     HX_PRINTF("--> You can implement the ADC Measure in this submenu.\n");
     HX_PRINTF("/********************************************************************************************/\n");
     HX_PRINTF("0. Back to the upper menu.\n");
-    
+    user_adc_sample_start();
     break;
   /* 退出子菜单 */
   case EXIT_PRIMARY_MENU:
@@ -309,37 +298,6 @@ static void user_adc_submenu_handler(uint8_t type)
     break;
   }
 }
-
-/**
- * 脉冲宽度测量子菜单处理
- * @param[in]   type：ENTER表示进入子菜单，EXIT表示退出子菜单
- * @retval      NULL
- * @par         修改日志
- *              Ver0.0.1:
-                  Helon_Chan, 2018/12/15, 初始化版本\n
- */
-static void user_pluse_width_measure_submenu_handler(uint8_t type)
-{  
-  switch (type)
-  {
-  /* 进入子菜单 */
-  case PRIMARY_PWM_MEASURE:
-    g_m_menu.current_menu = PRIMARY_PWM_MEASURE;
-    HX_PRINTF("\n/******************************************************************************************/\n");
-    HX_PRINTF("--> You can implement Pluse Width Measure function in this submenu.\n");
-    HX_PRINTF("/********************************************************************************************/\n");
-    HX_PRINTF("0. Back to the upper menu.\n");
-    
-    break;
-  /* 退出子菜单 */
-  case EXIT_PRIMARY_MENU:
-    g_m_menu.current_menu = MAIN_MENU;
-    main_menu_display();
-    break;
-  }
-}
-
-
 
 /**
  * 串口接收处理函数
@@ -368,14 +326,10 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       /* ADC */
       case 3:
         user_adc_submenu_handler(PRIMARY_ADC);
-        break;
-      /* Pluse Width Measure */
-      case 4:
-        user_pluse_width_measure_submenu_handler(PRIMARY_PWM_MEASURE);
-        break;
+        break;      
       /* 其他的数字则无效 */
       default:
-        HX_PRINTF("Invalid Command is %d.Please input the numeric 1~4 !!!\r\n", rx_buffer);
+        HX_PRINTF("Invalid Command is %d.Please input the numeric 1~3 !!!\r\n", rx_buffer);
         break;
       }
       break;
@@ -428,84 +382,37 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
-        nrf_drv_timer_disable(&g_m_hardware_timer0);  
-        nrf_drv_gpiote_out_task_disable(led_color);
+        user_gpiote_timer0_ppi_uninit();
         break;
       /* Red */
       case 1:
-       if(led_color != COMMON_R_LED_NUMBER)
-       {
-         nrf_drv_timer_disable(&g_m_hardware_timer0);
-         nrf_drv_gpiote_out_task_disable(led_color);
-         nrf_drv_gpiote_out_uninit(led_color);
-         
-         led_color = COMMON_R_LED_NUMBER;
-
-         /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
-             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
-           */
-         nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);
-         
-         /* 将event和task通过选中的ppi_channel连接起来 */
-         nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
-                                    g_hardware_timer0_compare_evt_addr,
-                                    nrf_drv_gpiote_out_task_addr_get(led_color));
-         nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);
-         nrf_drv_gpiote_out_task_enable(led_color);
-         /* 使能选中的PPI的通道 */
-         nrf_drv_timer_enable(&g_m_hardware_timer0);
-         HX_PRINTF("The current led color is RED.\n");
-       }
+        if (led_color != COMMON_R_LED_NUMBER)
+        {
+          led_color = COMMON_R_LED_NUMBER;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, DEFAULT_BLINK_FREQUENCY);
+          HX_PRINTF("The current led color is Red!!!\r\n");
+        }
         break;
       /* Green */
-      case 2:    
-        if(led_color != COMMON_G_LED_NUMBER)
+      case 2:
+        if (led_color != (COMMON_G_LED_NUMBER + P0_PIN_NUM))
         {
-          nrf_drv_timer_disable(&g_m_hardware_timer0);  
-          nrf_drv_gpiote_out_task_disable(led_color);
-          nrf_drv_gpiote_out_uninit(led_color);          
-
           led_color = COMMON_G_LED_NUMBER + P0_PIN_NUM;
-          /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
-             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
-           */
-          nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);       
-
-          /* 将event和task通过选中的ppi_channel连接起来 */
-          nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
-                                     g_hardware_timer0_compare_evt_addr,
-                                     nrf_drv_gpiote_out_task_addr_get(led_color));
-          nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);          
-          nrf_drv_gpiote_out_task_enable(led_color);
-          /* 使能选中的PPI的通道 */
-          nrf_drv_timer_enable(&g_m_hardware_timer0);
-          HX_PRINTF("The current led color is Green.\n");
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, DEFAULT_BLINK_FREQUENCY);
+          HX_PRINTF("The current led color is Green!!!\r\n");
         }
         break;
       /* Blue */
       case 3:
-       if(led_color != COMMON_B_LED_NUMBER)
-       {
-         nrf_drv_timer_disable(&g_m_hardware_timer0);
-         nrf_drv_gpiote_out_task_disable(led_color);
-         nrf_drv_gpiote_out_uninit(led_color);   
-
-         led_color = COMMON_B_LED_NUMBER + P0_PIN_NUM;
-         /* 1.设置LED灯对应的GPIO口被hardware timer0 compare event控制，且每次有EVENT触发GPIO OUT TASK时，取反当前的LED灯
-             2.注意，除能之后nrf_drv_gpiote_out_init应该最先被调用，否则无效
-           */
-         nrf_drv_gpiote_out_init(led_color, &g_m_gpiote_out_config);
-        
-         /* 将event和task通过选中的ppi_channel连接起来 */
-         nrf_drv_ppi_channel_assign(g_m_nrf_ppi_channel1,
-                                    g_hardware_timer0_compare_evt_addr,
-                                    nrf_drv_gpiote_out_task_addr_get(led_color));
-         nrf_drv_ppi_channel_enable(g_m_nrf_ppi_channel1);
-         nrf_drv_gpiote_out_task_enable(led_color);
-         /* 使能选中的PPI的通道 */
-         nrf_drv_timer_enable(&g_m_hardware_timer0);
-         HX_PRINTF("The current led color is Blue.\n");
-       }  
+        if (led_color != (COMMON_B_LED_NUMBER + P0_PIN_NUM))
+        {
+          led_color = COMMON_B_LED_NUMBER + P0_PIN_NUM;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, DEFAULT_BLINK_FREQUENCY);
+          HX_PRINTF("The current led color is Blue!!!\r\n");
+        }
         break;
       /* 其他的数字则无效 */
       default:
@@ -518,33 +425,57 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
-        low_power_pwm_stop(&gs_m_low_power_pwm);
+        user_pwm_uninit();
         break;
       /* 输出20%的占空比 */
       case 1:
-        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.2);
+        user_set_pwm_duty_cycle(20);
+        HX_PRINTF("The current PMW duty cycle is 20%c!!!\r\n", '%');
         break;
       /* 输出40%的占空比 */
-      case 2:  
-        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.4);
+      case 2:
+        user_set_pwm_duty_cycle(40);
+        HX_PRINTF("The current PMW duty cycle is 40%c!!!\r\n", '%');
         break;
       /* 输出60%的占空比 */
       case 3:
-        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.6);
+        user_set_pwm_duty_cycle(60);
+        HX_PRINTF("The current PMW duty cycle is 60%c!!!\r\n", '%');
         break;
       /* 输出80%的占空比 */
       case 4:
-        low_power_pwm_duty_set(&gs_m_low_power_pwm, UINT8_MAX * 0.8);
+        user_set_pwm_duty_cycle(80);
+        HX_PRINTF("The current PMW duty cycle is 80%c!!!\r\n", '%');
         break;
       /* 红色 */
       case 5:
-        if(led_color != )
+        if (led_color != COMMON_R_LED_NUMBER)
+        {
+          led_color = COMMON_R_LED_NUMBER;
+          user_pwm_uninit();
+          user_pwm_init(led_color, pwm_duty_cycle);
+          HX_PRINTF("The current led color is Red!!!\r\n");
+        }
         break;
       /* 绿色 */
       case 6:
+        if (led_color != (COMMON_G_LED_NUMBER + P0_PIN_NUM))
+        {
+          led_color = COMMON_G_LED_NUMBER + P0_PIN_NUM;
+          user_pwm_uninit();
+          user_pwm_init(led_color, pwm_duty_cycle);
+          HX_PRINTF("The current led color is Green!!!\r\n");
+        }
         break;
       /* 蓝色 */
       case 7:
+        if (led_color != (COMMON_B_LED_NUMBER + P0_PIN_NUM))
+        {
+          led_color = COMMON_B_LED_NUMBER + P0_PIN_NUM;
+          user_pwm_uninit();
+          user_pwm_init(led_color, pwm_duty_cycle);
+          HX_PRINTF("The current led color is Blue!!!\r\n");
+        }
         break;
       default:
         HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
@@ -556,46 +487,84 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
       {
       case 0:
         user_led_submenu_handler(PRIMARY_LED);
+        user_gpiote_timer0_ppi_uninit();
         break;
       /* LED灯100ms闪烁 */
       case 1:
+        if (blink_frequency != 100)
+        {
+          blink_frequency = 100;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current blink frequency is %dms!!!\r\n", blink_frequency);
+        }
         break;
       /* LED灯200ms闪烁 */
       case 2:
+        if (blink_frequency != 200)
+        {
+          blink_frequency = 200;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current blink frequency is %dms!!!\r\n", blink_frequency);
+        }
         break;
       /* LED灯300ms闪烁 */
       case 3:
+        if (blink_frequency != 300)
+        {
+          blink_frequency = 300;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current blink frequency is %dms!!!\r\n", blink_frequency);
+        }
         break;
       /* LED灯400ms闪烁 */
       case 4:
+        if (blink_frequency != 400)
+        {
+          blink_frequency = 400;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current blink frequency is %dms!!!\r\n", blink_frequency);
+        }
+        break;
+      /* 红色 */
+      case 5:
+        if (led_color != COMMON_R_LED_NUMBER)
+        {
+          led_color = COMMON_R_LED_NUMBER;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current led color is Red!!!\r\n");
+        }
+        break;
+      /* 绿色 */
+      case 6:
+        if (led_color != (COMMON_G_LED_NUMBER + P0_PIN_NUM))
+        {
+          led_color = COMMON_G_LED_NUMBER + P0_PIN_NUM;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current led color is Green!!!\r\n");
+        }
+        break;
+      /* 蓝色 */
+      case 7:
+        if (led_color != (COMMON_B_LED_NUMBER + P0_PIN_NUM))
+        {
+          led_color = COMMON_B_LED_NUMBER + P0_PIN_NUM;
+          user_gpiote_timer0_ppi_uninit();
+          user_gpiote_timer0_ppi_init(led_color, blink_frequency);
+          HX_PRINTF("The current led color is Blue!!!\r\n");
+        }
         break;
       default:
         HX_PRINTF("Invalid Command is %d.Please input the numeric 0~4 in this submenu!!!\r\n", rx_buffer);
         break;
       }
       break;
-    case SECONDARY_RGB:
-      switch (rx_buffer)
-      {
-      case 0:
-        user_led_submenu_handler(PRIMARY_LED);
-        break;
-      /* 红色LED灯 */
-      case 1:
-        break;
-      /* 绿色LED灯 */
-      case 2:
-        break;
-      /* 蓝色LED灯 */
-      case 3:
-        break;
-      default:
-        HX_PRINTF("Invalid Command is %d.Please input the numeric 0~3 in this submenu!!!\r\n", rx_buffer);
-        break;
-      }
-      break;
-    case PRIMARY_ADC:
-    case PRIMARY_PWM_MEASURE:
+    case PRIMARY_ADC:    
       switch (rx_buffer)
       {
       case 0:
@@ -606,8 +575,8 @@ static void user_uart_recevice_process(uint8_t rx_buffer)
         HX_PRINTF("Invalid Command is %d.Please input the numeric 0 in this submenu!!!\r\n", rx_buffer);
         break;
       }
-      break;    
-  }   
+      break;
+    }
 }
 
 /**
@@ -633,6 +602,45 @@ static void user_uart_evt_handler(app_uart_evt_t *p_app_uart_event)
   }
 }
 
+/**
+ * adc事件回调处理函数
+ * @param[in]   NULL
+ * @retval      NULL
+ * @par         修改日志
+ *              Ver0.0.1:
+                  Helon_Chan, 2018/11/11, 初始化版本\n
+ */
+static void user_saadc_event_handler(nrfx_saadc_evt_t const *p_event)
+{
+  ret_code_t err_code;
+  char float_str[80] = {0};
+  float adc_value;
+
+  switch (p_event->type)
+  {
+  /* 转换完成，如果有多路ADC采集，则此时表示多路采集完成，
+        读ADC值则有多少路就要读多少次，这里只有一路所以只读一路的值 */
+  case NRF_DRV_SAADC_EVT_DONE:
+    /* 只需转换一个通道，如果这里有4个通道，则填充4，以此类推 */
+    err_code = nrf_drv_saadc_buffer_convert(p_event->data.done.p_buffer, 1);
+    NRF_LOG_INFO("nrf_drv_saadc_buffer_convert is %d\n", err_code);
+
+    adc_value = p_event->data.done.p_buffer[0] * 3.6 / 16384;
+
+    /* 这里是Nordic自带的打印浮点数，但是只保留小数点后两位，
+         这里不使用，仅供后来人使用或者了解 */
+    // NRF_LOG_INFO("adc_value is " NRF_LOG_FLOAT_MARKER " voltage \n",
+    //                   NRF_LOG_FLOAT(adc_value));
+
+    /* 保留小数点后4位,这里还需要在工程项目中使能float,否则这个sprintf函数用不了 */
+    sprintf(float_str, "VDD is %.4f voltage\n", adc_value);
+    /* 采样得到VDD电压值 */
+    HX_PRINTF("%s\n", float_str);
+    break;
+  default:
+    break;
+  }
+}
 
 /**
  * 应用层初始化
@@ -668,8 +676,7 @@ void user_app_init(void)
   user_button_timer_init();
   /* 用户按键初始化 */
   user_multi_click_init(user_multi_click_handler, user_long_pressed_handler, BUTTON_COUNTS);
-  /* 初始化GPIOTE+PPI+TIMER0 */
-  user_gpiote_timer0_ppi_init();
-  /* PWM初始化 */
-  user_pwm_init();
+
+  /* ADC初始化 */
+  user_adc_init(user_saadc_event_handler,m_buffer_pool);  
 }
