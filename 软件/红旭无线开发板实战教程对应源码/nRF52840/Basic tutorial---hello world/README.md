@@ -1,5 +1,5 @@
 # 前言
-这是红旭无线开发板的nRF52840第一课 **(Nordic 52840的第一课Hello World)** 源码,该源码是基于[模板工程](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/%E6%A8%A1%E6%9D%BF%E5%B7%A5%E7%A8%8B)的基础上添加的应用程序.
+这是红旭无线开发板的nRF52840第一课 **(Nordic 52840的第一课Hello World)** 源码,该源码是基于[模板工程](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---template%20project)的基础上添加的应用程序.
 
 # 如何使用
 下载了源码直接用 **SEGGER Embedded Studio for ARM** 打开并编译是没有用的,这个有点嵌入式开发常识的人都知道绝逼会报错的.那么应该如何使用呢?其实,
