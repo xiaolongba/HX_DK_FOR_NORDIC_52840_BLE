@@ -100,7 +100,10 @@
 
   讲解了如何使用过采样的方式，读取当前VDD的电压值，并将电压值打印出来
 
-- 小阶段总结
+- [小阶段总结](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---phase%20summary)
+
+  该源码主要是将上面的内容，通过菜单的方式汇集成一个工程，做一个阶段性的总结
+  
 ### 基础应用篇
 - BLE 基础知识
 
