@@ -2,7 +2,7 @@
 
 该子目录主要存放开发nRF52840所需要的一些上位机辅助软件,具体如下所示:
   - [SEGGER Embedded Studio for ARM IDE](https://www.segger.com/downloads/embedded-studio/)
-  - [nRF-Connect-Windows](https://www.nordicsemi.com/eng/nordic/Products/nRF52840/nRF-Connect-Windows/58847)
+  - [nRF-Connect-Windows](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop/Download#infotabs)
   
     该软件主要是配合USB Dongle做一些辅助的评估测试以及一些电流测试相关的应用,更多详情请安装软件之后查看;
   - [nRFgo Studio-Win64](https://www.nordicsemi.com/eng/nordic/Products/nRFgo-Studio/nRFgo-Studio-Win64/14964)
