@@ -201,7 +201,7 @@
 	]
 	}
 	 ```
-	 **注意**,**powershell** && **串口**路径有可能，不同的电脑有所不同,以上是小编的路径
+	 **注意**,有可能不同的电脑**powershell路径** && **串口号**也不尽相同,以上是小编的路径
 	
  - 详细的操作图示
 ![](https://raw.githubusercontent.com/xiaolongba/picture/master/%E9%85%8D%E7%BD%AE%E4%BB%BB%E5%8A%A1.gif)
