@@ -61,6 +61,7 @@
 - [Nordic 52840 Dongle开发板](https://item.taobao.com/item.htm?spm=2013.1.w4004-16973646497.9.206015c7pA0j2L&id=580295327820)
 
     该开发板主要由我们红旭根据Nordic 52840芯片并参考官方推荐电路设计完成，LED灯以及按键跟官方的Dongle完全PIN对PIN且烧录口已通过排针引出来，相较于官方的Dongle更符合开发者的习惯，是做为BLE Mesh、Zigbee、Thread组网节点的首选。
+    
     ![](pics/Nordic%2052840%20Dongle.png)
 ## 技术交流
 - QQ群
