@@ -3,35 +3,28 @@
 
 - **Nordic 52840规格书**
 
-  <code>[官方的文档中心](http://infocenter.nordicsemi.com/index.jsp)</code>--><code>nRF52 Series</code>--><code>nRF52840</code>--><code>nRF52840 Product Specification 版本号</code>
+  <code>[官方的文档中心](https://www.nordicsemi.com/DocLib)</code>--><code>nRF52840 Core Documentation</code>--><code>nRF52840 Product Specification 版本号</code>
   ```c
   例如:nRF52840 Product Specification v1.0
-  ```
-
-- **Nordic 52840简介**
-
-  <code>[官方的文档中心](http://infocenter.nordicsemi.com/index.jsp)</code>--><code>nRF52 Series</code>--><code>nRF52840</code>--><code>nRF52840 Product Brief 版本号</code>
-  ```c
-  例如:nRF52840 Product Brief v2.0
   ```
   
 - **Nordic 52840协议栈规格书**
 
-  <code>[官方的文档中心](http://infocenter.nordicsemi.com/index.jsp)</code>--><code>nRF52 Series</code>--><code>SoftDevices</code>--><code>S140 SoftDevice</code>--><code>S140 SoftDevice Specification</code>--><code>S140 SoftDevice Specification 版本号</code>
+  <code>[官方的文档中心](https://www.nordicsemi.com/DocLib)</code>--><code>SoftDevice Specifications</code>--><code>S140 SoftDevice Specification 版本号</code>
   ```c
   例如:S140 SoftDevice Specification v1.1
   ```
 
 - **Nordic 52840勘误表**
 
-  <code>[官方的文档中心](http://infocenter.nordicsemi.com/index.jsp)</code>--><code>nRF52 Series</code>--><code>nRF52840</code>--><code>Errata</code>--><code>nRF52840芯片版本号 Errata</code>
+  <code>[官方的文档中心](https://www.nordicsemi.com/DocLib)</code>--><code>nRF52840 Core Documentation</code>--><code>nRF52840芯片版本号 Errata 版本号</code>
   ```c
-  例如:nRF52840 Rev 1 Errata
+  例如:nRF52840 Revision 1 Errata v1.1
   ```
 
-- [**Nordic 52840型号说明表(官方会不定期更新)**](http://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.nrf52%2Fdita%2Fnrf52%2Fcompatibility_matrix%2FnRF52840_ic_revision_overview.html)
+- [**Nordic 52840型号说明表(官方会不定期更新)**](https://www.nordicsemi.com/DocLib/Content/Comp_Matrix/nRF52840/latest/COMP/nrf52840/nRF52840_ic_revision_overview)
 
   该链接主要是nRF52840不同IC版本所对应的编码,包括工程样品以及后面量产后的IC编码
 
    
-如果需要更多的文档可以到[官方的文档中心](https://infocenter.nordicsemi.com/index.jsp)下载
+如果需要更多的文档可以到[官方的文档中心](https://www.nordicsemi.com/DocLib)下载
