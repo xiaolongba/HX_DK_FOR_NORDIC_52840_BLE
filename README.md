@@ -50,15 +50,18 @@
 
 以上仅显示Nordic 52840相关的内容,想了解ESP32相关的内容,请在另外一个代码仓[查看](https://github.com/xiaolongba/HX_DK_FOR_ESP32)
 ## 购买链接
-- [Nordic 52840 + ESP32 Mini开发板](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-16973646507.20.6eb1196c1FlaxB&id=568845368797)
+- [Nordic 52840 + ESP32 Mini开发板](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-16973646507.20.6eb1196c1FlaxB&id=568845368797)    
 
     该开发板主要由ESP32+Nordic 52840组成，适合热衷于WiFI+BLE的技术开发者进行项目评估及自身技术提升，**如果仅仅是想学习ESP32的工程师，不推荐购买我们的开发板，您可以在网上购买ESP32最小系统的开发板会更划算**。
+    ![](pics/ESP32%2BNordic%2052840.png)
 - [Nordic 52840 Mini开发板](https://item.taobao.com/item.htm?spm=2013.1.w4004-16973646497.7.206015c7pA0j2L&id=576599477442)
 
-    该开发板主要由我们红旭根据Nordic 52840芯片并参考官方推荐电路设计完成，适合热衷于BLE5.0、Zigbee、Thread以及BLE Mesh的技术开发者进行项目评估及自身技术提升。  
+    该开发板主要由我们红旭根据Nordic 52840芯片并参考官方推荐电路设计完成，适合热衷于BLE5.0、Zigbee、Thread以及BLE Mesh的技术开发者进行项目评估及自身技术提升。
+    ![](pics/Nordic%2052840%20Mini.png)
 - [Nordic 52840 Dongle开发板](https://item.taobao.com/item.htm?spm=2013.1.w4004-16973646497.9.206015c7pA0j2L&id=580295327820)
 
     该开发板主要由我们红旭根据Nordic 52840芯片并参考官方推荐电路设计完成，LED灯以及按键跟官方的Dongle完全PIN对PIN且烧录口已通过排针引出来，相较于官方的Dongle更符合开发者的习惯，是做为BLE Mesh、Zigbee、Thread组网节点的首选。
+    ![](pics/Nordic%2052840%20Dongle.png)
 ## 技术交流
 - QQ群
 
