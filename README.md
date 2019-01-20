@@ -49,6 +49,8 @@
 - [【SDK】nRF52840软件开发包](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/Nordic%2052840%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%8C%85/README.md)
 
 以上仅显示Nordic 52840相关的内容,想了解ESP32相关的内容,请在另外一个代码仓[查看](https://github.com/xiaolongba/HX_DK_FOR_ESP32)
+
+<!--
 ## 购买链接
 - [Nordic 52840 + ESP32 Mini开发板](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-16973646507.20.6eb1196c1FlaxB&id=568845368797)    
 
@@ -63,6 +65,8 @@
     该开发板主要由我们红旭根据Nordic 52840芯片并参考官方推荐电路设计完成，LED灯以及按键跟官方的Dongle完全PIN对PIN且烧录口已通过排针引出来，相较于官方的Dongle更符合开发者的习惯，是做为BLE Mesh、Zigbee、Thread组网节点的首选。
     
     ![](pics/Nordic%2052840%20Dongle.png)
+-->    
+
 ## 技术交流
 - QQ群
 
