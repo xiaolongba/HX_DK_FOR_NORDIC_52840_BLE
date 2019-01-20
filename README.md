@@ -80,6 +80,9 @@
 - Github
 
     也可以直接在这个代码仓的issues向我发起提问 **(24小时内回复!!!)**
+    ![](pics/Summit%20your%20issues%20step1.png)
+    ![](pics/Summit%20your%20issues%20step2.png)
+    ![](pics/Summit%20your%20issues%20step3.png)
 
 
 
