@@ -138,8 +138,8 @@ nrfx_pwm_simple_playback(&gs_m_nrfx_pwm, &s_m_seq, 3, 0);
   
 ### 效果展示
 - RTC
- ![](index_files/bfe50dad-d203-43a5-8502-fe77acb46d31.png)
+ ![](the%20releated%20pics%20about%20tutorials/PWM_FOR_RTC.png)
 - TIMER
- ![](index_files/e71e2d54-7361-4cfc-80d4-f308b8c14442.png)
+ ![](the%20releated%20pics%20about%20tutorials/PWM_FOR_TIMER.png)
 - 硬件PWM
- ![](index_files/b74afcec-e20d-44db-873e-e138641faeee.png)
+ ![](the%20releated%20pics%20about%20tutorials/PWM_FOR_HARDWARE_PWM.png)
