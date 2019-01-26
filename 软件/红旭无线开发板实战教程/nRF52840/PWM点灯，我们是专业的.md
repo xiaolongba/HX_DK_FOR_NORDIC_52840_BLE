@@ -16,9 +16,7 @@
    SEGGER Embedded Studio for ARM 4.12
    ```
 - Source code
-   ```
-   Basic tutorial---pwm
-   ```
+   > [Basic tutorial---pwm](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Basic%20tutorial---pwm)
  
 ## PWM实现方式
 像这些基本常用的外设，Nordic大多都封装成库了，小编在这里也不建议大家重复造轮子，造轮子的时代已经过去了，我们现在要做的是如何造发动机，即让项目跑起来动起来。接下来小编将会大家呈现三种方式去实现PWM,以下是小编写好的工程通过宏切换从而实现不同的实现方式。
