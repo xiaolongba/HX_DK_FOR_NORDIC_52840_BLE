@@ -89,7 +89,9 @@
 
   该文档讲解了如何使用RTC、TIMER1、硬件PWM来实现PWM
 
-- 单击,双击,N 击又有何难?
+- [单击,双击,N 击又有何难?](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/%E5%8D%95%E5%87%BB%2C%E5%8F%8C%E5%87%BB%2CN%20%E5%87%BB%E5%8F%88%E6%9C%89%E4%BD%95%E9%9A%BE%3F.md)
+
+  该篇章里介绍如何使用nrf52840搭配官方的APP_BUTTON和APP_TIMER模块，实现单击、长按、多击的功能。
 
 - 什么是 PPI，它能干什么?
 
