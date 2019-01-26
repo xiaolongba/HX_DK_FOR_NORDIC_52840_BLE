@@ -85,7 +85,9 @@
 
   该文档讲解了如何使用模板工程创建自己的第一个**Hello World**工程,并介绍了通过**UART**以及**RTT**打印输出Hello World信息
 
-- PWM 点灯,我是专业的
+- [PWM 点灯,我是专业的](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/PWM%E7%82%B9%E7%81%AF%EF%BC%8C%E6%88%91%E4%BB%AC%E6%98%AF%E4%B8%93%E4%B8%9A%E7%9A%84.md)
+
+  该文档讲解了如何使用RTC、TIMER1、硬件PWM来实现PWM
 
 - 单击,双击,N 击又有何难?
 
