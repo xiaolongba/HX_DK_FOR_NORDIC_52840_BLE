@@ -255,8 +255,6 @@ RTT的效果查看,相对于UART来说会麻烦一些.但是也只是首次要�
 
 ## 最后
 该教程对应的源码,放在[红旭无线开发板的github代码仓](https://github.com/xiaolongba/wireless-tech/tree/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B%E5%AF%B9%E5%BA%94%E6%BA%90%E7%A0%81/nRF52840/Nordic%2052840%E7%9A%84%E7%AC%AC%E4%B8%80%E8%AF%BEHello%20World),热烈欢迎各行业大佬斧正,鄙人虚心接受任何批评以及赞扬.
-## 技术交流
-![QQ群](https://raw.githubusercontent.com/xiaolongba/picture/master/QQ%20Group.jpg)
 
 **本文原创,转载请注明出处**
 
