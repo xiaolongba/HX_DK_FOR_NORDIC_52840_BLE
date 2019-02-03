@@ -97,7 +97,9 @@
 
   该篇章里介绍如何通过一个GPIO产生Event去触发另外一个GPIO去执行它的Task，小编这里用到的是用按键产生一个Event,LED来实现这个Task
 
-- 如何使用硬件定时及计数器
+- [如何使用硬件定时及计数器](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A1%AC%E4%BB%B6%E5%AE%9A%E6%97%B6%E5%99%A8%E5%8F%8A%E8%AE%A1%E6%95%B0%E5%99%A8.md)
+
+  该篇主要介绍了如何使用nrf52840的硬件TIMER，并通过PPI实现TIMER0以一秒的间隔亮灭LED，TIMER1计数按键按下的次数
 
 - 脉冲宽度很难测?红旭可不怕
 
