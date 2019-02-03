@@ -141,3 +141,5 @@ nrfx_pwm_simple_playback(&gs_m_nrfx_pwm, &s_m_seq, 3, 0);
  ![](the%20releated%20pics%20about%20tutorials/PWM_FOR_TIMER.png)
 - 硬件PWM
  ![](the%20releated%20pics%20about%20tutorials/PWM_FOR_HARDWARE_PWM.png)
+
+**本文原创,转载请注明出处**
