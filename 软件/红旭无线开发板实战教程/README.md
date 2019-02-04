@@ -101,7 +101,9 @@
 
   该篇主要介绍了如何使用nrf52840的硬件TIMER，并通过PPI实现TIMER0以一秒的间隔亮灭LED，TIMER1计数按键按下的次数
 
-- 脉冲宽度很难测?红旭可不怕
+- [脉冲宽度如何测量](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/%E5%A6%82%E4%BD%95%E6%B5%8B%E9%87%8F%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6.md)
+
+  该篇章主要讲解了如何使用TIMER，PPI，GPIOTE,PWM四个模块实现脉冲宽度的测量。
 
 - 不一样的 ADC 采集
 
