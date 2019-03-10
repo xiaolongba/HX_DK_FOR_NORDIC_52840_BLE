@@ -94,6 +94,9 @@ void user_app_gpiote_ppi_init(void)
 
 ## 最后
 希望看了这篇文章之后，大家的妈妈再也不用担心你不懂PPI啦，最终的效果如下图所示
-**图片待补充**
+
+![](https://raw.githubusercontent.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/the%20releated%20pics%20about%20tutorials/Basci_tutorial_PPI.png)
+
+![](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840/the%20releated%20pics%20about%20tutorials/Basci_tutorial_PPI_GIF.png)
 
 **本文原创,转载请注明出处**
