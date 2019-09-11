@@ -66,7 +66,7 @@
     
     ![](pics/Nordic%2052840%20Dongle.png)
 -->    
-
+## [SIG MESH教程代码仓](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE_MESH_PUBLIC)
 ## 技术交流
 - QQ群
 
