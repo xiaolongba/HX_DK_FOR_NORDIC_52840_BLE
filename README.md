@@ -50,6 +50,8 @@
 
 以上仅显示Nordic 52840相关的内容,想了解ESP32相关的内容,请在另外一个代码仓[查看](https://github.com/xiaolongba/HX_DK_FOR_ESP32)
 
+**注意，由于人员配备不足以及ESP32的资料足够多，目前已经放弃对ESP32的技术支持，纯限群里自主交流（群里有相应的ESP32大佬）**
+
 <!--
 ## 购买链接
 - [Nordic 52840 + ESP32 Mini开发板](https://item.taobao.com/item.htm?spm=a1z10.5-c-s.w4002-16973646507.20.6eb1196c1FlaxB&id=568845368797)    
