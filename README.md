@@ -70,7 +70,7 @@
 ## 技术交流
 - QQ群
 
-    ![QQ群](https://raw.githubusercontent.com/xiaolongba/picture/master/QQ%20Group.jpg)
+    ![QQ群](https://raw.githubusercontent.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/master/pics/qq_group_QR_Code.png)
 
     QQ群主要用于自主的技术以及行业信息交流，现常驻活跃技术人员350+ **（仅限技术开发者加入，非技术人员请勿加入免得发现被踢）**
     
