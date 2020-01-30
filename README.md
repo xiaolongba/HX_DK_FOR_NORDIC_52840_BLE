@@ -1,14 +1,14 @@
-# 红旭无线开发板（Nordic 52840 + ESP32）
+# 红旭无线开发板
 
-红旭无线开发板主要由乐鑫**ESP32**模块以及**Nordic 52840**模块组成，涵盖了目前市面上大部分的主流无线通讯协议，可以满足大部分的物联网应用场景。
+红旭无线开发板主要由**Nordic 52840**模块组成，涵盖了目前市面上大部分的主流无线通讯协议，可以满足大部分的物联网应用场景。
 ## 简介
 红旭无线开发板主要由以下两大部分组成
-- NRF52840+ESP32 Mini核心板
-- NRF52840以及ESP32的各个外设配件(例如传各种感器模块、语音识别模块、锂电池充放电模块等等)
+- NRF52840核心板
+- NRF52840的各个外设配件(例如传各种感器模块、语音识别模块、锂电池充放电模块等等)
 
-红旭无线开发板包括丰富的硬件资源，**NRF52840**以及**ESP32**模块的IO口均全部引出。同时，红旭无线开发板支持**WiFi**、**BLE5.0**、**Zigbee3.0**、**Thread**、**2.4G**以及**SIG MESH**等市面上主流的无线通讯协议，基本上满足用户大部分的功能需求，特别是智能家居的应用场景。
+红旭无线开发板包括丰富的硬件资源，**NRF52840**模块的IO口均全部引出。同时，红旭无线开发板支持**BLE5.0**、**Zigbee3.0**、**Thread**、**2.4G**以及**SIG MESH**等市面上主流的无线通讯协议，基本上满足用户大部分的功能需求，特别是智能家居的应用场景。
 
-红旭无线开发板可以同时运行**Wifi+BLE5.0+Zigbee/Thread**或者**Wifi+SIG MESH**两种模式，并且提供丰富的示例以及软件实战教程，希望大家通过红旭无线开发板学习到这些无线技术，从而在工作上如鱼得水，获得更高的薪酬，为共和国的无线事业作出贡献，登上人生巅峰。
+红旭无线开发板可以同时运行**BLE5.0+Zigbee/Thread**或者**SIG MESH**两种模式，并且提供丰富的示例以及软件实战教程，希望大家通过红旭无线开发板学习到这些无线技术，从而在工作上如鱼得水，获得更高的薪酬，为共和国的无线事业作出贡献，登上人生巅峰。
 ![NRF52840+ESP32 Mini海报图](./pics/HX_DK_LOGO_Brochure.png)
 ## 硬件规格
 - Nordic高性能多协议共存的SoC nRF52840
@@ -27,7 +27,7 @@
 - 锂电池供电接口
 - 一个复位按键以及用户按键
 
-## 引脚位图
+## 引脚位图（待更新，正在制作ING）
 红旭无线开发板中的所有IO口均引出成2.54mm间隔的排针，具体如下图所示：
 
 ![红旭开发板硬件模块图](https://raw.githubusercontent.com/xiaolongba/wireless-tech/master/pics/%E7%BA%A2%E6%97%AD%E5%BC%80%E5%8F%91%E6%9D%BF%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%9B%BE.jpg)
@@ -68,16 +68,17 @@
     
     ![](pics/Nordic%2052840%20Dongle.png)
 -->    
-## [SIG MESH教程代码仓](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE_MESH_PUBLIC)
 ## 技术交流
 - QQ群
 
-    ![QQ群](https://raw.githubusercontent.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/master/pics/qq_group_QR_Code.png)
-
+    [![](https://img.shields.io/badge/QQ%E6%8A%80%E6%9C%AF%E4%BA%A4%E6%B5%81%E7%BE%A4-711478146-red)](https://raw.githubusercontent.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE/master/pics/qq_group_QR_Code.png) 
+    
     QQ群主要用于自主的技术以及行业信息交流，无广告纯技术探讨 **（仅限技术开发者加入，非技术人员请勿加入免得发现被踢）**
     
-- [技术论坛](http://bbs.wireless-tech.cn/)
+- 技术论坛
 
+    [![](https://img.shields.io/badge/BBS-bbs.wireless--tech.cn-red)](http://bbs.wireless-tech.cn/)
+    
     强烈建议在这个论坛上寻求帮助，我们可以免费为您解答相关的技术问题，**论坛里有大佬(24小时内回复!!!)**
 - Github
 
@@ -86,5 +87,8 @@
     ![](pics/Summit%20your%20issues%20step2.png)
     ![](pics/Summit%20your%20issues%20step3.png)
 
+## 红旭其他代码仓
+- Mesh Public
 
+  [![](https://img.shields.io/badge/Github-github.com%2Fxiaolongba%2FHX__DK__FOR__NORDIC__52840__BLE__MESH__PUBLIC-red)](https://github.com/xiaolongba/HX_DK_FOR_NORDIC_52840_BLE_MESH_PUBLIC)
 
