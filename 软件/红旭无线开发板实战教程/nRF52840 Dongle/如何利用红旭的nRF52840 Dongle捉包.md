@@ -1,17 +1,17 @@
 # Ç°ÑÔ
 Ğ¡±àÖ®Ç°¾­³£¶ÔÈºÀïµÄÍøÓÑËµ¡°¼¸Ê®¿éÇ®µÄ×½°ü¶¼¿ÉÒÔ×½MeshÊı¾İ°üµÄ»°£¬ÄÇEllisysºÍFrontline²»¾Íµ¹±ÕÁËÂğ£¿¡±ºóÀ´·¢ÏÖĞ¡±à»¹ÊÇÌ«¡°²İÂÊ¡±ÁË£»
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2020122321055017.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/too_hasty.png)
 
 Ëæ×Å¿Æ¼¼µØ²»¶Ï·¢Õ¹£¬Ä¿Ç°ÊÇ¿ÉÒÔÊ¹ÓÃµÍ³É±¾µÄÓ²¼şÀ´ÊµÏÖMeshÊı¾İµÄ×½°üÓë½âÃÜµÄ£¬ÄÇÃ´µ½µ×ÊÇÔõÃ´×öµÄÄØ£¿Here we go!
 
 # Ç°ÆÚ×¼±¸
 Ê×ÏÈ£¬ÎÒÃÇĞèÒªÈçÏÂ¼¸¸ö¹¤¾ß£º
 - [ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867) 
-	![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223210700922.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+	![](./local_pics/hx_52840_dongle.png)
 
 - ´óÃû¶¦¶¦µÄĞ­Òé·ÖÎöÈí¼ş[Wireshark](https://www.wireshark.org/)
 	
-    ![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211014317.png)
+    ![](./local_pics/wireshark.png)
 
 	> °²×°×îĞÂµÄ°æ±¾¼´¿É
 
@@ -24,30 +24,30 @@
 
 ÖÁÓÚ£¬ÉÏÊöÌá¼°µ½µÄPython¡¢WiresharkÒÔ¼°nRF Connect for DesktopµÄÈí¼ş°²×°ÕâÀï²»±í£¨ÒòÎªÎÒÊµÔÚÏë²»Ã÷°×Á¬¸öÈí¼ş¶¼²»»á°²×°µÄ¹¤³ÌÊ¦ÎªÊ²Ã´»¹À´×ö¼¼Êõ¿ª·¢£©£»
 
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211031661.png)
+![](./local_pics/i_dont_understand.png)
 # ÉÕÂ¼×¥°ü¹Ì¼ş
 ÔÚÉÕÂ¼Ö®Ç°£¬ÎÒÃÇ»¹ĞèÒªÔÚnRF Connect for DesktopÖĞ°²×°nRF Connect Programmer£¨°²×°¹ı³Ì²»±í£©£¬°²×°ºóµÄ½çÃæÈçÏÂÍ¼ËùÊ¾£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211057469.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/nRF_programmer.png)
 ´ò¿ªProgrammer±ã¿ÉÒÔ¶ÔºìĞñµÄ52840 Dongle½øĞĞ×½°ü¹Ì¼şµØÉÕÂ¼£¬ÆäÖĞ×½°üµÄ¹Ì¼şÔÚnRF Sniffer for Bluetooth LEÖĞ¿ÉÒÔÕÒµ½£¬ÈçÏÂÍ¼ËùÊ¾£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2020122321111220.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211119660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/sniffer_firmware.png)
+![](./local_pics/downloading.png)
 1. Ôö¼Ó×¥°üµÄ¹Ì¼ş
 2. ×¥°ü¹Ì¼şµÄÂ·¾¶
 3. ×îºó×°ÔØ³É¹¦ºóµÄÏÔÊ¾
 
 ¼ÓÔØ×¥°ü¹Ì¼şÖ®ºó£¬²åÈë[ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867)£»Èç¹ûÇı¶¯°²×°Õı³£µÄ»°£¬Ò»°ã´ËÊ±Programmer»áÕÒµ½Ó³ÉäµÄ´®¿Ú£¬ÈçÏÂÍ¼ËùÊ¾£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211252798.png)
+![](./local_pics/COM_Port.png)
 µ«ÊÇ£¬´ËÊ±ÏÈ**Ôİ²»Ñ¡Ôñ´®¿Ú**£¬»¹ĞèÒª°´ÏÂÏÂÍ¼ºìÉ«¸ßÁÁµÄ°´¼ü½øÈëUSB DFUÄ£Ê½£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223211532545.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/dongle_red_highlghted.png)
 Èç¹û´ËÊ±ºìµÆÉÁÁÁ£¬ÔòËµÃ÷DongleÒÑ¾­½øÈëÁËUSB DFUÄ£Ê½£¬ÏÖÔÚ¿ÉÒÔÑ¡ÖĞ¸ÃÉè±¸²¢½øĞĞ×¥°ü¹Ì¼şµÄÉÕÂ¼£»
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223212136419.gif)
+![](./local_pics/dongle_blink.gif)
 Èç¹û³öÏÖÏÂÍ¼ËùÊ¾½çÃæ£¬ÔòËµÃ÷Á¬½ÓDongle³É¹¦ÇÒ¿ÉÒÔÕı³£½øĞĞ¹Ì¼şÉÕÂ¼£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223212906177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/firmware_download.png)
 1.  ±íÊ¾¸úDongle½¨Á¢Á¬½Ó³É¹¦
 1. ÉÕÂ¼×¥°ü¹Ì¼ş
 
 Èç¹ûÉÏÊöµÄ²Ù×÷¾ùÕıÈ·ÇÒÕı³£µÄ»°£¬ÄÇÃ´×îÖÕ»á³öÏÖÈçÏÂ½çÃæ£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223213011440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/download_successfully.png)
 ´ËÊ±£¬×¥°ü¹Ì¼şÒÑ¾­ÉÕÂ¼Íê³ÉÁË£¬½ÓÏÂÀ´ÎÒÃÇ¼ÌĞøÅäÖÃÈí¼ş¡£
 # Èí¼şÅäÖÃ
 ÒòÎªÎÒÃÇ×îÖÕÊÇµ÷ÓÃWireshark¶Ô×¥È¡µ½µÄÊı¾İ°ü½øĞĞĞ­Òé·ÖÎö£¬ËùÒÔÎÒÃÇ´ËÊ±»¹ĞèÒª¶ÔÉÏÊöÏÂÔØµÄ
@@ -59,14 +59,14 @@
 
 	> pip3 install -r requirements.txt
 	
-	![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2020122321324346.gif)
+	![](./local_pics/open_floder_with_cmd.gif)
 ÒòÎªĞ¡±àÒÑ¾­°²×°¹ıÁË£¬ËùÒÔÌáÊ¾ËµÒÑ¾­°²×°Íê³É£»Èç¹ûÊÇµÚÒ»´Î°²×°µÄ»°¾Í»á×Ô¶¯ÏÂÔØÏàÓ¦µÄÒÀÀµ°ü£»
 2. ¸´ÖÆNordicµÄ×½°ü¹¤¾ßµ½WiresharkµÄÎÄ¼şÖĞ£º
 
     a. ´ò¿ªWiresharkÈí¼ş£¬²¢Ñ¡Ôñ**Help** --> **About Wireshark**
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223213551407.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/wireshark_extcap.png)
 b. Ñ¡Ôñ **¡°Floders¡±** £¬²¢Ë«»÷**Global Extcap path**¾Í»áÌøµ½Ïà¶ÔÓ¦µÄÂ·¾¶£¬²¢¸´ÖÆ**Sniffer_Software/extcap/**ÎÄ¼ş¼ĞÖĞµÄÄÚÈİ£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223213654491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/wireshark_extcap_copy.png)
 c. »ù±¾ÉÏ£¬Õâ¸öÊ±Èí¼şµÄÅäÖÃÒÑ¾­Íê³ÉÁË£»´ËÊ±ÎÒÃÇÔÚ¸´ÖÆºóµÄÕâ¸öÄ¿Â¼ÏÂ£¬¿ÉÒÔÓÃÈçÏÂÃüÁî½øĞĞÑéÖ¤ÊÇ·ñÅäÖÃ³É¹¦£º
 	> nrf_sniffer_ble.bat --extcap-interfaces
 
@@ -74,29 +74,31 @@ c. »ù±¾ÉÏ£¬Õâ¸öÊ±Èí¼şµÄÅäÖÃÒÑ¾­Íê³ÉÁË£»´ËÊ±ÎÒÃÇÔÚ¸´ÖÆºóµÄÕâ¸öÄ¿Â¼ÏÂ£¬¿ÉÒÔÓÃÈçÏÂÃ
 	![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/202012232211396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
 # ×¥°üÔ­Àí
 ¿ÉÄÜÓĞ¶ÁÕß´ËÊ±ÓĞµã²»ÄÍ·³ÁË£¬µ«ÊÇÔÚ¿ªÊ¼×¥°üÖ®Ç°£¬Ğ¡±à¾õµÃ»¹ÊÇºÜÓĞ±ØÒª¸ú´ó¼Ò½²½²Õâ¸ö×¥°üÔ­Àíµ½µ×ÊÇÔõÃ´ÑùµÄ£»·Ï»°²»¶àËµ£¬ÀÏ¹æ¾Ø---ÉÏÍ¼£¡£¡£¡
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221220261.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/plugin_confirmation.png)
 ´ÓÉÏÍ¼¿ÉÖª£¬Èç¹û½ö½öÊÇ×¥È¡¹ã²¥°üµÄ»°£¬ÄÇÃ´¾ÍÊ¡ÊÂ¶àÁË£¬Ö±½Ó¶Ô×Å37£¬38£¬39Èı¸ö¹ã²¥ĞÅµÀÉ¨Ãè£¬È»ºó¶Ô×¥È¡µ½µÄÊı¾İ½øĞĞ½âÎö¼´¿É£»µ±È»Èç¹ûÊÇÀ©Õ¹¹ã²¥°üµÄ»°£¬¿ÉÄÜ»á±È½ÏÂé·³Ğ©£¬µ«ÊÇÕâ¸öĞ¡±àÒÔºó»á×¨ÃÅ¿ª¸öÕÂ½Ú½øĞĞ½²½â£»ÖÚËùÖÜÖª£¬BLEÁ¬½ÓÉÏÖ®ºóÃ¿¸öÁ¬½Ó¼ä¸ô¶¼ÊÇ»áÌøÆµµÄ£¬ÄÇÃ´Õâ¸öÊ±ºò×¥°üÆ÷ÓÖÊÇÔõÃ´×½µÄÄØ£¿BLE 5.0Ö®Ç°£¬ÌøÆµµÄ²½³¤ÊÇ¹Ì¶¨µÄ£¬µ«ÊÇ5.0Ö®ºóÌøÆµµÄ²½³¤Ôò±ä³ÉËæ»úÁË£¬ÕâÑù¶Ô×¥°üÆ÷µÄÒªÇó¾Í¸ü¸ßÁË£»µ«ÊÇ£¬ÔÙ¸´ÔÓÒ²ÊÇÍ¨¹ıÊıÑ§¹«Ê½¼ÆËã³öÀ´µÄ£¬ÏÖÔÚºó»ÚÃ»ÓĞ°ÑÊıÑ§Ñ§ºÃ°É£¿
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221240521.png)
+![](./local_pics/math_makes_me_happy.png)
 ÓÉÓÚ5.0Ö®ºóµÄÌøÆµËã·¨±È½Ï¸´ÔÓ£¬Ğ¡±àÕâÀï²»±í£¬¸ĞĞËÈ¤µÄ¶ÁÕß¿ÉÒÔ×ÔĞĞÔÄ¶ÁSpec£»µ«ÊÇ£¬ÏñĞ¡±àÕâÑùµÄÑ§ÔüÀ´Ëµ£¬ÓĞÃ»ÓĞ°ì·¨Í¨¹ıÊäÈëÄ³Ğ©Öµ£¬¼´¿ÉËã³öÌøÆµµÄÁĞ±íÄØ£¿´ğ°¸£ºµ±È»ÊÇÓĞµÄ£¬Õâ¸öÊ±ºò¾Í²»µÃ²»¼À³öÒ»¸öÉñÆ÷ÁË£¬ÏÈÈÃ´ó»ï¿´¿´Ğ§¹û£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221255726.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/hopping_selection_2.png)
 ºìÉ«¸ßÁÁÊÇ¼ÆËã³öÀ´µÄÌøÆµÁĞ±í£¬¶øÏÂÍ¼ÊÇÊµ¼Ê×¥°üÊ±µÄÊı¾İÍ¨µÀÁĞ±í£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221311825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/channel_capture.png)
 ´ÓÉÏÊöµÄÁ½·ùÍ¼£¬ÎÒÃÇ¿ÉÒÔ¿´µ½µÚ0~4¸öÁ¬½ÓÊÂ¼şµÄÌøÆµĞÅµÀ¸ú×¥°üµÃµ½µÄÊı¾İĞÅµÀÊÇÍêÈ«Ò»ÑùµÄ£»ÆäÖĞ**CONNECT_IND**µÄÏûÏ¢Ğ¯´øÓĞ**Access Address**£¬ÎÒÃÇÀûÓÃÉñÆ÷Ö»Òª½«**Access Address**ÖµµÄÄÚÈİÊäÈë½øÈ¥¼´¿É¼ÆËã³öÕû¸öÌøÆµÁĞ±í£»Í¬Àí£¬×¥°üÆ÷¾ÍÀûÓÃÕâ¸ö**CONNECT_IND**µÄÏûÏ¢£¬¼ÆËã³öÏÂÒ»¸öĞÅµÀÔÚÄÄÀï£¬**´Ó¶øÊµÏÖ×¥°üµÄÄ¿µÄ£¬ÕâÒ²ÊÇÎªÊ²Ã´ÔÚ×¥È¡Êı¾İ°üÊ±£¬Ò»¶¨ÒªÔÚ¹ã²¥Ç°¾Í´ò¿ªSniffer£¬·ñÔò×¥È¡²»µ½Êı¾İ°ü**£»
 # ¿ªÊ¼×¥°ü
 ½ÓÏÂÀ´£¬Ğ¡±àÕıÊ½½²½â¿ªÊ¼±¾ÆªÎÄÕÂµÄÖØµã£¬Ò²ÊÇ´ó¼Ò×îÏ²»¶µÄ»·½Ú£¬ÄÇÃ´ÔõÃ´Ê¹ÓÃ[ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867)½øĞĞ×¥È¡MeshÊı¾İ°ü²¢½âÃÜÄØ£¿
 1. Ê×ÏÈ£¬´ò¿ªWiresharkÑ¡Ôñ[ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867)£¬ÈçÏÂÍ¼ËùÊ¾£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221507991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/dongle_open.png)
 2. Ë«»÷ÉÏÍ¼ÖĞµÄ **¡°nRF Sniffer for Bluetooth LE COM22¡±**£¬¼´¿É¿ªÊ¼×¥°ü
 3. ÓÉÓÚÎÒÃÇÖÜ±ß»á´óÁ¿´æÔÚÆäËûÎÒÃÇ²»ÏëÒªµÄBLEÊı¾İ°ü£¬ÄÇÃ´Õâ¸öÊ±ºò¾ÍĞèÒª¹ıÂËÒ»ÏÂ£¬ÕâÀïĞ¡±à¹ıÂËÁËÆÕÍ¨µÄBLEÊı¾İ°ü£¬Ö»±£ÁôÁËMeshÏà¹ØµÄÊı¾İ°üÒÔ¼°ÓÃÓÚ²âÊÔÄÇ¸öÉè±¸£¬¹ıÂËµÄÃüÁîÈçÏÂ£º
 	> ((pbadv) || (provisioning)||(btmesh)||(beacon) ) && ((btle.advertising_address == eb:7b:7a:14:1c:02)||(btle.advertising_address == d3:31:5a:db:35:91))
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221548383.png)
+
+	![](./local_pics/sniffer_filter.png)
 4. ÆäÖĞÒ»¸ö [HX-DK-ÏÄ Z1A00](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-22261057662.6.43ba2c2cqFeXqh&id=608555326842)ÏÂÔØNordic¹Ù·½µÄLight_Switch¹Ì¼ş£¬ÁíÍâÒ»¸ö [HX-DK-ÏÄ Z1A00](https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-22261057662.6.43ba2c2cqFeXqh&id=608555326842)ÏÂÔØNordic¹Ù·½µÄProvisioner¹Ì¼ş
 5. °´ÏÂProvisionerÄÇ¸ö¿ª·¢°åµÄ**Button 1**£¬´ËÊ±ProvisionerÕâ¸ö¿ª·¢°å¾Í¿ªÊ¼¶ÔÎ´ÈëÍøµÄÉè±¸½øĞĞÅäÍø
 6. Õâ¸öÊ±ºò[ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867)¾Í»á½«Õû¸öÈëÍø¹ı³Ì×¥È¡£¬²¢ÏÔÊ¾ÔÚWireshark½çÃæÉÏ£»È»¶ø£¬ÎÒÃÇ´ó¼Ò¶¼ÖªµÀ£¬MeshÈëÍøÖ®ºóËùÓĞµÄÊı¾İ¶¼ÊÇÍ¨¹ı¼ÓÃÜµÄ£¬ÄÇÃ´Èç¹û½âÃÜÄØ£¿Õâ¸öÆäÊµ¸úEllisysÊÇÒ»ÑùµÄ£¬Ö»ÒªÊäÈëNetkey,Appkey,DevKeyÒÔ¼°IV Index¼´¿É£»Ëæ±ãÑ¡ÖĞÒ»¸ö¼ÓÃÜºóµÄMeshÊı¾İ°ü£¬½«Ç°ÃæÌáµ½µÄÄÚÈİÌî³ä½øÈ¥£¬¾ßÌå²Ù×÷ÈçÏÂ£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2020122322173212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/sniffer_key.png)
 °´ÕÕÉÏÍ¼ÖĞµÄ²½ÖèÌî³äNetkey,Appkey,DevKeyÒÔ¼°IV Index£¬ÕâÀïÒÔĞ¡±àµÄÎªÀı£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221749431.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221800844.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/sniffer_net_app_key.png)
+![](./local_pics/sniffer_devkey.png)
 ĞèÒª×¢ÒâµÄÊÇ£º**ËùÓĞµÄKey¶¼ÒªÔÚÇ°Ãæ¼ÓÉÏ¡°0x¡±£¬ÆäÖĞSRC AddressÖ¸µÄÊÇ½ÚµãÔªËØµÄÊ×µØÖ·**£»ÖÁ´Ë£¬Wireshark¾Í¿ÉÒÔ½âÎöËùÓĞMesh¼ÓÃÜÖ®ºóµÄÄÚÈİÁË£»
 # ÊµÑé½á¹û
 ÏÂÃæÊÇĞ¡±àÓÃ[ºìĞñÎŞÏßµÄ52840 Dongle](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4023-22232069203.13.753f3551e5TkFc&id=598472801867)×¥È¡µ½µÄMeshÈëÍøÒÔ¼°ÅäÖÃµÄÕû¸ö¹ı³Ì£º
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/20201223221904522.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9sb25nYmE=,size_16,color_FFFFFF,t_70)
+![](./local_pics/test_result.png)
