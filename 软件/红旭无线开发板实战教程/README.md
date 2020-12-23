@@ -182,6 +182,10 @@
 - [如何修复或者更新nRF52840 Dongle固件](https://github.com/xiaolongba/wireless-tech/blob/master/%E8%BD%AF%E4%BB%B6/%E7%BA%A2%E6%97%AD%E6%97%A0%E7%BA%BF%E5%BC%80%E5%8F%91%E6%9D%BF%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/nRF52840%20Dongle/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0nRF52840%20Dongle%E5%9B%BA%E4%BB%B6.md)
 
   讲解了如何更新或者修复nRF52840 Dongle的固件
+
+- [如何利用红旭的nRF52840 Dongle捉包](./nRF52840%20Dongle/如何利用红旭的nRF52840%20Dongle捉包.md)
+
+  讲解了如何利用红旭的nRF52840 Dongle抓取并解密Mesh数据包
 <!--
 ## nRF52840之Zigbee
 ### 入门基础应用篇
