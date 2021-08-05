@@ -74,4 +74,4 @@ C:\Users\Administrator\Desktop\New_folder\nRF5_SDK_15.2.0_9412b96\examples\dfu\o
 
 # 最后
 打开**nRF Connect**,选择**Bluetooth Low Energy**,选择nRF52840 Dongle映射出来的串口，即可完成升级。效果图如下所示：
-![](https://raw.githubusercontent.com/xiaolongba/picture/master/upgrate%20nRF52840%20%20Dongle.gif)
+![](https://github.com/xiaolongba/picture/blob/master/upgrate%20nRF52840%20%20Dongle.gif)
